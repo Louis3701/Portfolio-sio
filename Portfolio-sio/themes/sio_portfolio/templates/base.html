@@ -44,11 +44,11 @@ Il permet ainsi de définir l'entête et le pied de page de toutes les pages du 
 
 </head>
 
-<body class="m-0 p-0">
+<body class="m-0 p-0 {% block body_class %}{% endblock %}">
     <!-- INCLUSION DU HEADER : -->
-    {% include 'includes/header.html' %}
+    {% block header %}{% include 'includes/header.html' %}{% endblock %}
 
-    <main class="container mt-5 p-0 min-vh-100">
+    <main class="{% block main_class %}container mt-5 p-0{% endblock %} min-vh-100">
         <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
         {% block content %}{% endblock %}
     </main>

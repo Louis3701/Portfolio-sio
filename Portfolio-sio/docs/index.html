@@ -34,44 +34,8 @@
 
 </head>
 
-<body class="m-0 p-0">
+<body class="m-0 p-0 home">
     <!-- INCLUSION DU HEADER : -->
-
-<!-- -------- -->
-<!-- HEADER : -->
-<!-- -------- -->
-
-
-<header class="container-fluid py-2 background-header">
-
-<div class="container">
-    <div class="row">
-        <!-- Logo : -->
-        <div class="col-md-4 m-0 p-0 align-content-center text-center">
-            <a href="./" title="Page d'accueil" class="navbar-brand">
-                <img src="./theme/logo/logo.png" alt="logo du portfolio" style="height: 80px;">
-            </a>
-        </div>
-
-        <div class="col-8 m-0 p-0 align-content-center text-center d-none d-md-block">
-            <!-- Titre principal : -->
-            <h1 class="m-0 p-0 ">Louis Caron Nagel</h1>
-
-
-            <!-- Titre secondaire : -->
-            <p class="m-0 p-0">
-                <i>Mon parcours de formation</i>
-            </p>
-
-        </div>
-    </div>
-
-</div>
-    
-</header>
-
-
-<!-- NAVBAR : -->
 <div class="container-fluid m-0 p-0 sticky-top bg-dark shadow">
 
 
@@ -165,50 +129,107 @@
         </div>
 
     </nav>       </div>
+
     <main class="container mt-5 p-0 min-vh-100">
         <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
 
+<!-- HERO -->
+<div class="hero-section">
+    <svg class="hero-geo" viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="1200" cy="80"  r="200" fill="#7F77DD"/>
+        <circle cx="100"  cy="400" r="150" fill="#D4537E"/>
+        <circle cx="700"  cy="450" r="120" fill="#EF9F27"/>
+        <circle cx="400"  cy="100" r="80"  fill="#5DCAA5"/>
+        <circle cx="900"  cy="200" r="60"  fill="#ED93B1"/>
+        <polygon points="1000,10 1080,160 920,160" fill="#AFA9EC"/>
+        <polygon points="200,20 270,140 130,140" fill="#FAC775"/>
+        <rect x="50"  y="150" width="70" height="70" rx="12" fill="#7F77DD" transform="rotate(20,85,185)"/>
+        <rect x="1250" y="300" width="60" height="60" rx="10" fill="#D4537E" transform="rotate(15,1280,330)"/>
+        <rect x="600"  y="30"  width="50" height="50" rx="8"  fill="#EF9F27" transform="rotate(35,625,55)"/>
+    </svg>
 
-<!-- Texte d'accueil : -->
-<!-- ------------------ -->
-<div class="text-center py-5">
-    <h1 class="h2">Bienvenue sur mon Portfolio BTS SIO</h1>
-    <p class="lead-4 mt-3">
-    </p>
+    <div class="hero-inner">
+        <span class="hero-badge">✦ BTS SIO — option SLAM ✦</span>
+        <div class="hero-avatar-ring">
+            <div class="hero-avatar-inner">LN</div>
+        </div>
+        <h1 class="hero-title">Portfolio BTS SIO SLAM</h1>
+        <p class="hero-subtitle">Mon parcours de formation</p>
+        <div class="hero-pills">
+            <span class="hero-pill pill-purple">Développement</span>
+            <span class="hero-pill pill-pink">Réseaux &amp; SI</span>
+            <span class="hero-pill pill-amber">Veille techno.</span>
+            <span class="hero-pill pill-teal">BTS SIO</span>
+        </div>
+        <div class="hero-btns">
+            <a href="#cards" class="btn-hero-main">Découvrir mon parcours</a>
+            <a href="#cards" class="btn-hero-sec">Mes réalisations</a>
+        </div>
+    </div>
+
+    <div class="hero-scroll">
+        <span>↓</span>
+    </div>
 </div>
 
-<!-- Affichage des cards de navigation vers PARCOURS, REALISATION, VEILLE -->
- <div class="row text-center g-4">
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body">
-                <i class="bi bi-mortarboard display-5 mb-3 text-primary"></i>
-                <h5 class="card-title">Mon parcours</h5>
-                <p class="card-text">Découvrez mon parcours scolaire et professionnel.</p>
-                <a href="./pages/parcours" class="btn btn-outline-primary">Voir</a>
+<!-- VAGUE -->
+<div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="70">
+        <path d="M0,80 C360,0 1080,80 1440,20 L1440,80 Z" fill="#f8f7ff"/>
+    </svg>
+</div>
+
+<!-- SECTION CARDS -->
+<div class="cards-section">
+    <p class="section-label">✦ Explorer le portfolio</p>
+    <div id="cards" class="portfolio-cards">
+        <div class="portfolio-card">
+            <div class="card-glow card-glow-purple"></div>
+            <div class="card-top-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
+            <div class="card-icon-wrap" style="background: linear-gradient(135deg, #EEEDFE, #d4d0f8);">
+                <i class="bi bi-mortarboard" style="font-size: 24px; color: #7F77DD;"></i>
             </div>
+            <h5>Mon parcours</h5>
+            <p>Découvrez mon parcours scolaire et professionnel.</p>
+            <a href="./pages/parcours" class="btn-card btn-outline-primary">Voir →</a>
         </div>
-    </div>    
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body">
-                <i class="bi bi-check2-square display-5 mb-3 text-success"></i>
-                <h5 class="card-title">Réalisations</h5>
-                <p class="card-text">Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels.</p>
-                <a href="./pages/realisations" class="btn btn-outline-success">Voir</a>
+        <div class="portfolio-card">
+            <div class="card-glow card-glow-pink"></div>
+            <div class="card-top-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
+            <div class="card-icon-wrap" style="background: linear-gradient(135deg, #FBEAF0, #f4c0d1);">
+                <i class="bi bi-check2-square" style="font-size: 24px; color: #D4537E;"></i>
             </div>
+            <h5>Réalisations</h5>
+            <p>Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels.</p>
+            <a href="./pages/realisations" class="btn-card btn-outline-success">Voir →</a>
         </div>
-    </div>    
-    <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-            <div class="card-body">
-                <i class="bi bi-broadcast-pin display-5 mb-3 text-warning"></i>
-                <h5 class="card-title">Veille techno.</h5>
-                <p class="card-text">Consultez les articles de veille technologique que j’ai suivis durant cette année.</p>
-                <a href="./ma-veille" class="btn btn-outline-warning">Voir</a>
+        <div class="portfolio-card">
+            <div class="card-glow card-glow-amber"></div>
+            <div class="card-top-bar" style="background: linear-gradient(90deg, #BA7517, #EF9F27);"></div>
+            <div class="card-icon-wrap" style="background: linear-gradient(135deg, #FAEEDA, #fac775);">
+                <i class="bi bi-broadcast-pin" style="font-size: 24px; color: #BA7517;"></i>
             </div>
+            <h5>Veille techno.</h5>
+            <p>Consultez les articles de veille technologique que j’ai suivis durant cette année.</p>
+            <a href="./ma-veille" class="btn-card btn-outline-warning">Voir →</a>
         </div>
-    </div>    
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-section">
+    <div class="hero-stat">
+        <div class="stat-number c-purple">2</div>
+        <div class="stat-label">Années de formation</div>
+    </div>
+    <div class="hero-stat">
+        <div class="stat-number c-pink">12+</div>
+        <div class="stat-label">Projets réalisés</div>
+    </div>
+    <div class="hero-stat">
+        <div class="stat-number c-amber">6+</div>
+        <div class="stat-label">Articles de veille</div>
+    </div>
 </div>
 
     </main>
@@ -217,7 +238,7 @@
 
 
 <footer class="text-center mt-4 mb-0 bg-dark text-light">
-    <small>&copy; 2025 - Portfolio BTS SIO</small>
+    <small>&copy; 2026 - Portfolio BTS SIO</small>
 </footer>
     <script src="./theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./theme/js/custom.js"></script>
