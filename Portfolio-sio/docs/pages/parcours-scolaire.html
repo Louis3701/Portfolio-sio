@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parcours scolaire</title>
     
-    <!-- Favicons :-->
     <link rel="icon" type="image/png" sizes="16x16" href="../theme/logo/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../theme/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../theme/logo/favicon-48x48.png">
@@ -15,177 +13,244 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../theme/logo/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../theme/logo/favicon-512x512.png">
     <link rel="shortcut icon" href="../theme/logo/favicon.ico">
-
-    <!-- IMPORTS DES BIBLIOTHEQUES (CSS, FONTS, ICONS) : -->
-    
-    <!-- Bootstrap CSS : --> 
     <link rel="stylesheet" href="../theme/vendor/bootstrap/css/bootstrap.min.css">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="../theme/vendor/bootstrap-icons/bootstrap-icons.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="../theme/vendor/fontawesome/css/all.min.css">
-
-    
-    <!-- STYLES CSS PERSONNEL : -->   
     <link rel="stylesheet" href="../theme/css/custom.css">
 
+
+
+    <style>
+
+        body::before {
+            animation: none !important;
+            background: #1a0a2e !important;
+        }
+
+        /* HEADER */
+        .background-header {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            padding: 1.2rem 0;
+        }
+        .background-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .background-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            margin: 0;
+        }
+
+        /* NAVBAR */
+        .navbar-wrapper {
+            background: rgba(40,10,80,0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(127,119,221,0.3);
+            border-bottom: 2px solid rgba(127,119,221,0.5);
+        }
+        .navbar { font-size: 0.82em; }
+        .nav-link {
+            color: rgba(255,255,255,0.75) !important;
+            transition: color 0.2s;
+            padding: 0.5rem 0.8rem !important;
+        }
+        .nav-link:hover { color: #ffffff !important; }
+        .nav-link-icon { font-size: 1.3em; }
+        .dropdown-menu {
+            background: rgba(30,10,60,0.95) !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .dropdown-item { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
+        .dropdown-item:hover { background: rgba(127,119,221,0.2) !important; color: #fff !important; }
+
+        /* CONTENU */
+        .page-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .page-subtitle {
+            color: rgba(255,255,255,0.4);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #7F77DD, #D4537E, #EF9F27);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            padding: 1.4rem 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 1.4rem;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: #7F77DD;
+            border: 2px solid #1a0a2e;
+        }
+        .timeline-date {
+            font-size: 20px;
+            font-weight: 600;
+            color: #AFA9EC;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-text {
+            font-size: 20px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+
+    </style>
 </head>
 
-<body class="m-0 p-0 ">
-    <!-- INCLUSION DU HEADER : -->
+<body class="m-0 p-0">
 
-<!-- -------- -->
-<!-- HEADER : -->
-<!-- -------- -->
-
-
-<header class="container-fluid py-2 background-header">
-
-<div class="container">
-    <div class="row">
-        <!-- Logo : -->
-        <div class="col-md-4 m-0 p-0 align-content-center text-center">
-            <a href="../" title="Page d'accueil" class="navbar-brand">
-                <img src="../theme/logo/logo.png" alt="logo du portfolio" style="height: 80px;">
-            </a>
+    <!-- HEADER -->
+    <header class="container-fluid background-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start">
+                    <a href="../" class="navbar-brand">
+                        <img src="../theme/logo/logo.png" alt="logo" style="height: 65px;">
+                    </a>
+                </div>
+                <div class="col-md-9 text-center d-none d-md-block">
+                    <h1>Portfolio BTS SIO SLAM</h1>
+                    <p>Mon parcours de formation</p>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <div class="col-8 m-0 p-0 align-content-center text-center d-none d-md-block">
-            <!-- Titre principal : -->
-            <h1 class="m-0 p-0 ">Portfolio BTS SIO SLAM</h1>
-
-
-            <!-- Titre secondaire : -->
-            <p class="m-0 p-0">
-                <i>Mon parcours de formation</i>
-            </p>
-
-        </div>
-    </div>
-
-</div>
-    
-</header>
-
-
-<!-- NAVBAR : -->
-<div class="container-fluid m-0 p-0 sticky-top bg-dark shadow">
-
-
-    <nav class="navbar navbar-expand-md sticky-top">
-        <div class="container ms-2 ps-1 mx-lg-auto px-lg-0">            
-..
-            <!-- Bouton dévellopement menu en mode collapsé : -->
-            <div class="me-2">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper sticky-top">
+        <nav class="navbar navbar-expand-md">
+            <div class="container mx-auto px-3">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-underline mx-auto mb-md-0 mt-3 mt-md-0 fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="../">
+                                <i class="bi bi-house d-md-block text-md-center nav-link-icon"></i>Accueil
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="../pages/parcours" data-bs-toggle="dropdown">
+                                <i class="bi bi-mortarboard d-md-block text-md-center nav-link-icon"></i>Mon parcours
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../pages/parcours-scolaire">Parcours scolaire</a></li>
+                                <li><a class="dropdown-item" href="../pages/bts-sio">Le BTS SIO</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="../pages/realisations" data-bs-toggle="dropdown">
+                                <i class="bi bi-check2-square d-md-block text-md-center nav-link-icon"></i>Réalisations
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../pages/tp-majeurs">TP majeurs</a></li>
+                                <li><a class="dropdown-item" href="../pages/stage-sio1">Stage de 1ère année</a></li>
+                                <li><a class="dropdown-item" href="../pages/stage-sio2">Stage de 2e année</a></li>
+                                <li><a class="dropdown-item" href="../pages/projets-scolaires">Projets scolaires</a></li>
+                                <li><a class="dropdown-item" href="../pages/projets-personnels">Projets personnels</a></li>
+                                <li><a class="dropdown-item" href="../pages/certifications-complementaires">Certifications complémentaires</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="../ma-veille" data-bs-toggle="dropdown">
+                                <i class="bi bi-broadcast-pin d-md-block text-md-center nav-link-icon"></i>Veille techno.
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../ma-veille">Ma veille technologique</a></li>
+                                <li><a class="dropdown-item" href="../archives">Archive des articles</a></li>
+                                <li><a class="dropdown-item" href="../categories">Liste des catégories</a></li>
+                                <li><a class="dropdown-item" href="../authors">Liste des auteurs</a></li>
+                                <li><a class="dropdown-item" href="../tags">Liste des mots clés</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="../pages/engagement-etudiant">
+                                <i class="bi bi-people-fill d-md-block text-md-center nav-link-icon"></i>Engagement
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+    </div>
 
-            <!-- Eléments de navigation : -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- CONTENU -->
+    <main class="min-vh-100">
+        <div class="page-content">
+            <h1 class="page-title">Parcours scolaire</h1>
+            <p class="page-subtitle">✦ Mon parcours de formation ✦</p>
 
-                <ul class="navbar-nav nav-underline ms-4 ms-md-0  mb-md-0 mt-4 mt-md-0 fw-bold">
-                        <li class="nav-item ">
-                            <a  class="nav-link py-0  "
-                                title="Page d'accueil du portefolio"
-                                href="../"
-                            >
-                            <i  class="bi bi-house d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Accueil
-                            </a>
-                            
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Découvrez mon parcours scolaire et professionnel."
-                                href="../pages/parcours"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-mortarboard d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Mon parcours
-                            </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="../pages/parcours-scolaire">Parcours scolaire</a></li>
-                                        <li><a class="dropdown-item" href="../pages/bts-sio">Le BTS SIO</a></li>
-                                </ul> 
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels."
-                                href="../pages/realisations"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-check2-square d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Réalisations
-                            </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="../pages/tp-majeurs">TP majeurs</a></li>
-                                        <li><a class="dropdown-item" href="../pages/stage-sio1">Stage de 1ère année</a></li>
-                                        <li><a class="dropdown-item" href="../pages/stage-sio2">Stage de 2e année</a></li>
-                                        <li><a class="dropdown-item" href="../pages/projets-scolaires">Projets scolaires</a></li>
-                                        <li><a class="dropdown-item" href="../pages/projets-personnels">Projets personnels</a></li>
-                                        <li><a class="dropdown-item" href="../pages/certifications-complementaires">Certifications complémentaires</a></li>
-                                </ul> 
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Consultez les articles de veille technologique que j’ai suivis durant cette année."
-                                href="../ma-veille"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-broadcast-pin d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Veille techno.
-                            </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="../ma-veille">Ma veille technologique</a></li>
-                                        <li><a class="dropdown-item" href="../archives">Archive des articles</a></li>
-                                        <li><a class="dropdown-item" href="../categories">Liste des catégories</a></li>
-                                        <li><a class="dropdown-item" href="../authors">Liste des auteurs</a></li>
-                                        <li><a class="dropdown-item" href="../tags">Liste des mots clés</a></li>
-                                </ul> 
-                        </li>
-                        <li class="nav-item ">
-                            <a  class="nav-link py-0  "
-                                title="Présention de mon engagement étudiant."
-                                href="../pages/engagement-etudiant"
-                            >
-                            <i  class="bi bi-people-fill d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Engagement
-                            </a>
-                            
-                        </li>
-                </ul>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 — 2021</div>
+                    <p class="timeline-text">J'ai commencé ma scolarité au Collège René Barthélemy qui se situe à Nangis, j'ai fait toutes mes classes de la 6ème à la 3ème générale.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 — 2022</div>
+                    <p class="timeline-text">Ensuite j'ai fait ma poursuite d'étude au lycée Henry Becquerel qui se situe aussi à Nangis, j'y ai donc fait ma seconde générale.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 — 2024</div>
+                    <p class="timeline-text">Puis ensuite je suis passé en 1ère et en terminale avec l'option SIG aussi au lycée de Nangis mais en STMG et j'ai donc mon bac STMG.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 — 2026</div>
+                    <p class="timeline-text">Puis pour finir je suis passé en BTS SIO au Lycée Melun Léonard de Vinci.</p>
+                </div>
             </div>
-
-            
         </div>
-
-    </nav>       </div>
-    <main class="container mt-5 p-0 min-vh-100">
-        <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
-
-  <!-- <h1>Parcours scolaire</h1> -->
-  <h1>Présentation de mon parcours scolaire</h1>
-<p><strong>2017 -- 2021</strong>
-J'ai commencé ma scolarité au Collège René Barthélemy qui se situe a Nangis j'ai fait toutes mes classes de la 6ème a la 3ème générale.</p>
-<p><strong>2021 -- 2022</strong>
-Ensuite j'ai fait ma poursuite d'étude au lycée Henrry Becquerel qui se situe aussi a Nangis j'y est donc fait ma seconde général.</p>
-<p><strong>2022 -- 2024</strong>
-Puis ensuite je suis passer en 1er et en terminal avec l'option sig aussi au lycée de Nangis mais en STMG et j'ai donc mon bac STMG.</p>
-<p><strong>2024 --2026</strong>
-Puis pour finir je suis passer en BTS SIO au Lycée Melun Léonard de Vinci.</p>
-    
     </main>
 
-    <!-- INCLUSION DU FOOTER : -->
+    <footer class="text-center py-3 bg-dark text-light">
+        <small>&copy; 2026 - Portfolio BTS SIO</small>
+    </footer>
 
-
-<footer class="text-center mt-4 mb-0 bg-dark text-light">
-    <small>&copy; 2026 - Portfolio BTS SIO</small>
-</footer>
     <script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../theme/js/custom.js"></script>
 </body>

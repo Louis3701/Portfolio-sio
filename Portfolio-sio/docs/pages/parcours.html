@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parcours</title>
     
-    <!-- Favicons :-->
     <link rel="icon" type="image/png" sizes="16x16" href="../theme/logo/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../theme/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../theme/logo/favicon-48x48.png">
@@ -15,173 +13,177 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../theme/logo/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../theme/logo/favicon-512x512.png">
     <link rel="shortcut icon" href="../theme/logo/favicon.ico">
-
-    <!-- IMPORTS DES BIBLIOTHEQUES (CSS, FONTS, ICONS) : -->
-    
-    <!-- Bootstrap CSS : --> 
     <link rel="stylesheet" href="../theme/vendor/bootstrap/css/bootstrap.min.css">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="../theme/vendor/bootstrap-icons/bootstrap-icons.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="../theme/vendor/fontawesome/css/all.min.css">
-
-    
-    <!-- STYLES CSS PERSONNEL : -->   
     <link rel="stylesheet" href="../theme/css/custom.css">
 
+    <style>
+        body::before { animation: none !important; background: #1a0a2e !important; }
+
+        .background-header {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            padding: 1.2rem 0;
+        }
+        .background-header h1 { font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0; }
+        .background-header p { color: rgba(255,255,255,0.6); font-size: 13px; margin: 0; }
+
+        .navbar-wrapper {
+            background: rgba(40,10,80,0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(127,119,221,0.3);
+            border-bottom: 2px solid rgba(127,119,221,0.5);
+        }
+        .navbar { font-size: 0.82em; }
+        .nav-link { color: rgba(255,255,255,0.75) !important; transition: color 0.2s; padding: 0.5rem 0.8rem !important; }
+        .nav-link:hover { color: #ffffff !important; }
+        .nav-link-icon { font-size: 1.3em; }
+        .dropdown-menu { background: rgba(30,10,60,0.95) !important; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
+        .dropdown-item { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
+        .dropdown-item:hover { background: rgba(127,119,221,0.2) !important; color: #fff !important; }
+
+        .page-content { max-width: 800px; margin: 3rem auto; padding: 0 1.5rem; }
+        .page-title { font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem; }
+        .page-subtitle { color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2.5rem; }
+
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+        }
+        .nav-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            transition: transform 0.25s, background 0.25s;
+            display: block;
+        }
+        .nav-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+        .nav-card-icon {
+            width: 50px; height: 50px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .nav-card h5 { font-size: 16px; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
+        .nav-card p { font-size: 13px; color: rgba(255,255,255,0.5); margin: 0; }
+        .nav-card-arrow { font-size: 18px; margin-top: 1rem; display: block; }
+    </style>
 </head>
 
-<body class="m-0 p-0 ">
-    <!-- INCLUSION DU HEADER : -->
+<body class="m-0 p-0">
 
-<!-- -------- -->
-<!-- HEADER : -->
-<!-- -------- -->
-
-
-<header class="container-fluid py-2 background-header">
-
-<div class="container">
-    <div class="row">
-        <!-- Logo : -->
-        <div class="col-md-4 m-0 p-0 align-content-center text-center">
-            <a href="../" title="Page d'accueil" class="navbar-brand">
-                <img src="../theme/logo/logo.png" alt="logo du portfolio" style="height: 80px;">
-            </a>
+    <!-- HEADER -->
+    <header class="container-fluid background-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start">
+                    <a href="../" class="navbar-brand">
+                        <img src="../theme/logo/logo.png" alt="logo" style="height: 65px;">
+                    </a>
+                </div>
+                <div class="col-md-9 text-center d-none d-md-block">
+                    <h1>Portfolio BTS SIO SLAM</h1>
+                    <p>Mon parcours de formation</p>
+                </div>
+            </div>
         </div>
+    </header>
 
-        <div class="col-8 m-0 p-0 align-content-center text-center d-none d-md-block">
-            <!-- Titre principal : -->
-            <h1 class="m-0 p-0 ">Portfolio BTS SIO SLAM</h1>
-
-
-            <!-- Titre secondaire : -->
-            <p class="m-0 p-0">
-                <i>Mon parcours de formation</i>
-            </p>
-
-        </div>
-    </div>
-
-</div>
-    
-</header>
-
-
-<!-- NAVBAR : -->
-<div class="container-fluid m-0 p-0 sticky-top bg-dark shadow">
-
-
-    <nav class="navbar navbar-expand-md sticky-top">
-        <div class="container ms-2 ps-1 mx-lg-auto px-lg-0">            
-..
-            <!-- Bouton dévellopement menu en mode collapsé : -->
-            <div class="me-2">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper sticky-top">
+        <nav class="navbar navbar-expand-md">
+            <div class="container mx-auto px-3">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-underline mx-auto mb-md-0 mt-3 mt-md-0 fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="../">
+                                <i class="bi bi-house d-md-block text-md-center nav-link-icon"></i>Accueil
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="../pages/parcours" data-bs-toggle="dropdown">
+                                <i class="bi bi-mortarboard d-md-block text-md-center nav-link-icon"></i>Mon parcours
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../pages/parcours-scolaire">Parcours scolaire</a></li>
+                                <li><a class="dropdown-item" href="../pages/bts-sio">Le BTS SIO</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="../pages/realisations" data-bs-toggle="dropdown">
+                                <i class="bi bi-check2-square d-md-block text-md-center nav-link-icon"></i>Réalisations
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../pages/tp-majeurs">TP majeurs</a></li>
+                                <li><a class="dropdown-item" href="../pages/stage-sio1">Stage de 1ère année</a></li>
+                                <li><a class="dropdown-item" href="../pages/stage-sio2">Stage de 2e année</a></li>
+                                <li><a class="dropdown-item" href="../pages/projets-scolaires">Projets scolaires</a></li>
+                                <li><a class="dropdown-item" href="../pages/projets-personnels">Projets personnels</a></li>
+                                <li><a class="dropdown-item" href="../pages/certifications-complementaires">Certifications complémentaires</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="../ma-veille" data-bs-toggle="dropdown">
+                                <i class="bi bi-broadcast-pin d-md-block text-md-center nav-link-icon"></i>Veille techno.
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../ma-veille">Ma veille technologique</a></li>
+                                <li><a class="dropdown-item" href="../archives">Archive des articles</a></li>
+                                <li><a class="dropdown-item" href="../categories">Liste des catégories</a></li>
+                                <li><a class="dropdown-item" href="../authors">Liste des auteurs</a></li>
+                                <li><a class="dropdown-item" href="../tags">Liste des mots clés</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="../pages/engagement-etudiant">
+                                <i class="bi bi-people-fill d-md-block text-md-center nav-link-icon"></i>Engagement
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+    </div>
 
-            <!-- Eléments de navigation : -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- CONTENU -->
+    <main class="min-vh-100">
+        <div class="page-content">
+            <h1 class="page-title">Mon parcours</h1>
+            <p class="page-subtitle">✦ Découvrez mon parcours scolaire ✦</p>
 
-                <ul class="navbar-nav nav-underline ms-4 ms-md-0  mb-md-0 mt-4 mt-md-0 fw-bold">
-                        <li class="nav-item ">
-                            <a  class="nav-link py-0  "
-                                title="Page d'accueil du portefolio"
-                                href="../"
-                            >
-                            <i  class="bi bi-house d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Accueil
-                            </a>
-                            
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Découvrez mon parcours scolaire et professionnel."
-                                href="../pages/parcours"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-mortarboard d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Mon parcours
-                            </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="../pages/parcours-scolaire">Parcours scolaire</a></li>
-                                        <li><a class="dropdown-item" href="../pages/bts-sio">Le BTS SIO</a></li>
-                                </ul> 
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels."
-                                href="../pages/realisations"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-check2-square d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Réalisations
-                            </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="../pages/tp-majeurs">TP majeurs</a></li>
-                                        <li><a class="dropdown-item" href="../pages/stage-sio1">Stage de 1ère année</a></li>
-                                        <li><a class="dropdown-item" href="../pages/stage-sio2">Stage de 2e année</a></li>
-                                        <li><a class="dropdown-item" href="../pages/projets-scolaires">Projets scolaires</a></li>
-                                        <li><a class="dropdown-item" href="../pages/projets-personnels">Projets personnels</a></li>
-                                        <li><a class="dropdown-item" href="../pages/certifications-complementaires">Certifications complémentaires</a></li>
-                                </ul> 
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Consultez les articles de veille technologique que j’ai suivis durant cette année."
-                                href="../ma-veille"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-broadcast-pin d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Veille techno.
-                            </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="../ma-veille">Ma veille technologique</a></li>
-                                        <li><a class="dropdown-item" href="../archives">Archive des articles</a></li>
-                                        <li><a class="dropdown-item" href="../categories">Liste des catégories</a></li>
-                                        <li><a class="dropdown-item" href="../authors">Liste des auteurs</a></li>
-                                        <li><a class="dropdown-item" href="../tags">Liste des mots clés</a></li>
-                                </ul> 
-                        </li>
-                        <li class="nav-item ">
-                            <a  class="nav-link py-0  "
-                                title="Présention de mon engagement étudiant."
-                                href="../pages/engagement-etudiant"
-                            >
-                            <i  class="bi bi-people-fill d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Engagement
-                            </a>
-                            
-                        </li>
-                </ul>
+            <div class="nav-cards">
+                <a href="/pages/parcours-scolaire" class="nav-card">
+                    <div class="nav-card-icon" style="background: rgba(127,119,221,0.2);">
+                        <i class="bi bi-mortarboard" style="font-size: 24px; color: #AFA9EC;"></i>
+                    </div>
+                    <h5>Ma scolarité avant BTS SIO</h5>
+                    <p>Présentation de mon parcours scolaire avant le BTS SIO.</p>
+                    <span class="nav-card-arrow" style="color: #AFA9EC;">→</span>
+                </a>
+                <a href="/pages/bts-sio" class="nav-card">
+                    <div class="nav-card-icon" style="background: rgba(212,83,126,0.2);">
+                        <i class="bi bi-book" style="font-size: 24px; color: #ED93B1;"></i>
+                    </div>
+                    <h5>Le BTS SIO</h5>
+                    <p>Présentation du BTS SIO et de la formation.</p>
+                    <span class="nav-card-arrow" style="color: #ED93B1;">→</span>
+                </a>
             </div>
-
-            
         </div>
-
-    </nav>       </div>
-    <main class="container mt-5 p-0 min-vh-100">
-        <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
-
-  <!-- <h1>Parcours</h1> -->
-  <h1>Mon parcours scolaire :</h1>
-<ul>
-<li><a href="/pages/parcours-scolaire">Présentation de ma scolarité avant BTS SIO</a></li>
-<li><a href="/pages/bts-sio">Présentation du BTS SIO</a></li>
-</ul>
-    
     </main>
 
-    <!-- INCLUSION DU FOOTER : -->
+    <footer class="text-center py-3 bg-dark text-light">
+        <small>&copy; 2026 - Portfolio BTS SIO</small>
+    </footer>
 
-
-<footer class="text-center mt-4 mb-0 bg-dark text-light">
-    <small>&copy; 2026 - Portfolio BTS SIO</small>
-</footer>
     <script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../theme/js/custom.js"></script>
 </body>
