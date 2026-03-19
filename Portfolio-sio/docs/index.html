@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil</title>
     
-    <!-- Favicons :-->
     <link rel="icon" type="image/png" sizes="16x16" href="./theme/logo/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./theme/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="./theme/logo/favicon-48x48.png">
@@ -16,230 +13,306 @@
     <link rel="icon" type="image/png" sizes="192x192" href="./theme/logo/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="./theme/logo/favicon-512x512.png">
     <link rel="shortcut icon" href="./theme/logo/favicon.ico">
-
-    <!-- IMPORTS DES BIBLIOTHEQUES (CSS, FONTS, ICONS) : -->
-    
-    <!-- Bootstrap CSS : --> 
     <link rel="stylesheet" href="./theme/vendor/bootstrap/css/bootstrap.min.css">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="./theme/vendor/bootstrap-icons/bootstrap-icons.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="./theme/vendor/fontawesome/css/all.min.css">
-
-    
-    <!-- STYLES CSS PERSONNEL : -->   
     <link rel="stylesheet" href="./theme/css/custom.css">
 
+    <style>
+        /* HEADER */
+        .background-header {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            padding: 1.2rem 0;
+        }
+        .background-header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+        .background-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            margin: 0;
+        }
+
+        /* NAVBAR */
+        .navbar-wrapper {
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .navbar { font-size: 0.82em; }
+        .nav-link {
+            color: rgba(255,255,255,0.75) !important;
+            transition: color 0.2s;
+            padding: 0.5rem 0.8rem !important;
+        }
+        .nav-link:hover { color: #ffffff !important; }
+        .nav-link-icon { font-size: 1.3em; }
+        .dropdown-menu {
+            background: rgba(30,10,60,0.95) !important;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .dropdown-item { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
+        .dropdown-item:hover { background: rgba(127,119,221,0.2) !important; color: #fff !important; }
+
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 3rem 1.5rem 4rem;
+        }
+        .welcome-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .welcome-sub {
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        /* CARDS */
+        .portfolio-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 18px;
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.25s, background-color 0.25s;}
+
+       .portfolio-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+            
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.13);
+        }
+        .card-top-bar {
+            height: 3px;
+            border-radius: 3px;
+            margin-bottom: 1.5rem;
+        }
+        .card-icon-wrap {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .portfolio-card h5 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+        }
+        .portfolio-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+            margin-bottom: 1.8rem;
+    }
+        .btn-card {
+            font-size: 12px;
+            padding: 8px 22px;
+            border-radius: 20px;
+            border: 1.5px solid;
+            background: transparent;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        .btn-card-purple { color: #AFA9EC; border-color: rgba(127,119,221,0.6); }
+        .btn-card-purple:hover { background: rgba(127,119,221,0.25); color: #fff; }
+        .btn-card-pink { color: #ED93B1; border-color: rgba(212,83,126,0.6); }
+        .btn-card-pink:hover { background: rgba(212,83,126,0.25); color: #fff; }
+        .btn-card-amber { color: #FAC775; border-color: rgba(239,159,39,0.6); }
+        .btn-card-amber:hover { background: rgba(239,159,39,0.2); color: #fff; }
+
+        /* STATS */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            max-width: 1000px;
+            margin: 2rem auto 0;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .stat-number { font-size: 26px; font-weight: 700; }
+        .stat-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; }
+        .c-purple { color: #AFA9EC; }
+        .c-pink   { color: #ED93B1; }
+        .c-amber  { color: #FAC775; }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #1a0a2e !important;
+            animation: none !important;
+            z-index: -1;
+        }
+    </style>
 </head>
 
-<body class="m-0 p-0 home">
-    <!-- INCLUSION DU HEADER : -->
-<div class="container-fluid m-0 p-0 sticky-top bg-dark shadow">
+<body class="m-0 p-0">
 
+    <!-- HEADER -->
+    <header class="container-fluid background-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-3 text-center text-md-start">
+                    <a href="./" class="navbar-brand">
+                        <img src="./theme/logo/logo.png" alt="logo" style="height: 65px;">
+                    </a>
+                </div>
+                <div class="col-md-9 text-center d-none d-md-block">
+                    <h1>Portfolio BTS SIO SLAM</h1>
+                    <p>Mon parcours de formation</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <nav class="navbar navbar-expand-md sticky-top">
-        <div class="container ms-2 ps-1 mx-lg-auto px-lg-0">            
-.
-            <!-- Bouton dévellopement menu en mode collapsé : -->
-            <div class="me-2">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper sticky-top">
+        <nav class="navbar navbar-expand-md">
+            <div class="container mx-auto px-3">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-            </div>
-
-            <!-- Eléments de navigation : -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-
-                <ul class="navbar-nav nav-underline ms-4 ms-md-0  mb-md-0 mt-4 mt-md-0 fw-bold">
-                        <li class="nav-item ">
-                            <a  class="nav-link py-0  "
-                                title="Page d'accueil du portefolio"
-                                href="./"
-                            >
-                            <i  class="bi bi-house d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Accueil
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-underline mx-auto mb-md-0 mt-3 mt-md-0 fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="./">
+                                <i class="bi bi-house d-md-block text-md-center nav-link-icon"></i>Accueil
                             </a>
-                            
                         </li>
                         <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Découvrez mon parcours scolaire et professionnel."
-                                href="./pages/parcours"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-mortarboard d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Mon parcours
+                            <a class="nav-link py-2 dropdown-toggle" href="./pages/parcours" data-bs-toggle="dropdown">
+                                <i class="bi bi-mortarboard d-md-block text-md-center nav-link-icon"></i>Mon parcours
                             </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="./pages/parcours-scolaire">Parcours scolaire</a></li>
-                                        <li><a class="dropdown-item" href="./pages/bts-sio">Le BTS SIO</a></li>
-                                </ul> 
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./pages/parcours-scolaire">Parcours scolaire</a></li>
+                                <li><a class="dropdown-item" href="./pages/bts-sio">Le BTS SIO</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels."
-                                href="./pages/realisations"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-check2-square d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Réalisations
+                            <a class="nav-link py-2 dropdown-toggle" href="./pages/realisations" data-bs-toggle="dropdown">
+                                <i class="bi bi-check2-square d-md-block text-md-center nav-link-icon"></i>Réalisations
                             </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="./pages/tp-majeurs">TP majeurs</a></li>
-                                        <li><a class="dropdown-item" href="./pages/stage-sio1">Stage de 1ère année</a></li>
-                                        <li><a class="dropdown-item" href="./pages/stage-sio2">Stage de 2e année</a></li>
-                                        <li><a class="dropdown-item" href="./pages/projets-scolaires">Projets scolaires</a></li>
-                                        <li><a class="dropdown-item" href="./pages/projets-personnels">Projets personnels</a></li>
-                                        <li><a class="dropdown-item" href="./pages/certifications-complementaires">Certifications complémentaires</a></li>
-                                </ul> 
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./pages/tp-majeurs">TP majeurs</a></li>
+                                <li><a class="dropdown-item" href="./pages/stage-sio1">Stage de 1ère année</a></li>
+                                <li><a class="dropdown-item" href="./pages/stage-sio2">Stage de 2e année</a></li>
+                                <li><a class="dropdown-item" href="./pages/projets-scolaires">Projets scolaires</a></li>
+                                <li><a class="dropdown-item" href="./pages/projets-personnels">Projets personnels</a></li>
+                                <li><a class="dropdown-item" href="./pages/certifications-complementaires">Certifications complémentaires</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a  class="nav-link py-0  dropdown-toggle"
-                                title="Consultez les articles de veille technologique que j’ai suivis durant cette année."
-                                href="./ma-veille"
- data-bs-toggle="dropdown"  aria-expanded="false"                             >
-                            <i  class="bi bi-broadcast-pin d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Veille techno.
+                            <a class="nav-link py-2 dropdown-toggle" href="./ma-veille" data-bs-toggle="dropdown">
+                                <i class="bi bi-broadcast-pin d-md-block text-md-center nav-link-icon"></i>Veille techno.
                             </a>
-                            
-                                <ul class="dropdown-menu bg-dark-subtle">
-                                        <li><a class="dropdown-item" href="./ma-veille">Ma veille technologique</a></li>
-                                        <li><a class="dropdown-item" href="./archives">Archive des articles</a></li>
-                                        <li><a class="dropdown-item" href="./categories">Liste des catégories</a></li>
-                                        <li><a class="dropdown-item" href="./authors">Liste des auteurs</a></li>
-                                        <li><a class="dropdown-item" href="./tags">Liste des mots clés</a></li>
-                                </ul> 
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./ma-veille">Ma veille technologique</a></li>
+                                <li><a class="dropdown-item" href="./archives">Archive des articles</a></li>
+                                <li><a class="dropdown-item" href="./categories">Liste des catégories</a></li>
+                                <li><a class="dropdown-item" href="./authors">Liste des auteurs</a></li>
+                                <li><a class="dropdown-item" href="./tags">Liste des mots clés</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item ">
-                            <a  class="nav-link py-0  "
-                                title="Présention de mon engagement étudiant."
-                                href="./pages/engagement-etudiant"
-                            >
-                            <i  class="bi bi-people-fill d-md-block text-md-center me-md-0 me-2 nav-link-icon"></i>
-                                Engagement
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="./pages/engagement-etudiant">
+                                <i class="bi bi-people-fill d-md-block text-md-center nav-link-icon"></i>Engagement
                             </a>
-                            
                         </li>
-                </ul>
+                    </ul>
+                </div>
             </div>
-
-            
-        </div>
-
-    </nav>       </div>
-
-    <main class="container mt-5 p-0 min-vh-100">
-        <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
-
-<!-- HERO -->
-<div class="hero-section">
-    <svg class="hero-geo" viewBox="0 0 1400 500" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="1200" cy="80"  r="200" fill="#7F77DD"/>
-        <circle cx="100"  cy="400" r="150" fill="#D4537E"/>
-        <circle cx="700"  cy="450" r="120" fill="#EF9F27"/>
-        <circle cx="400"  cy="100" r="80"  fill="#5DCAA5"/>
-        <circle cx="900"  cy="200" r="60"  fill="#ED93B1"/>
-        <polygon points="1000,10 1080,160 920,160" fill="#AFA9EC"/>
-        <polygon points="200,20 270,140 130,140" fill="#FAC775"/>
-        <rect x="50"  y="150" width="70" height="70" rx="12" fill="#7F77DD" transform="rotate(20,85,185)"/>
-        <rect x="1250" y="300" width="60" height="60" rx="10" fill="#D4537E" transform="rotate(15,1280,330)"/>
-        <rect x="600"  y="30"  width="50" height="50" rx="8"  fill="#EF9F27" transform="rotate(35,625,55)"/>
-    </svg>
-
-    <div class="hero-inner">
-        <span class="hero-badge">✦ BTS SIO — option SLAM ✦</span>
-        <div class="hero-avatar-ring">
-            <div class="hero-avatar-inner">LN</div>
-        </div>
-        <h1 class="hero-title">Portfolio BTS SIO SLAM</h1>
-        <p class="hero-subtitle">Mon parcours de formation</p>
-        <div class="hero-pills">
-            <span class="hero-pill pill-purple">Développement</span>
-            <span class="hero-pill pill-pink">Réseaux &amp; SI</span>
-            <span class="hero-pill pill-amber">Veille techno.</span>
-            <span class="hero-pill pill-teal">BTS SIO</span>
-        </div>
-        <div class="hero-btns">
-            <a href="#cards" class="btn-hero-main">Découvrir mon parcours</a>
-            <a href="#cards" class="btn-hero-sec">Mes réalisations</a>
-        </div>
+        </nav>
     </div>
 
-    <div class="hero-scroll">
-        <span>↓</span>
-    </div>
-</div>
+    <!-- CONTENU PRINCIPAL -->
+    <main class="main-content min-vh-100">
+        <h1 class="welcome-title">Bienvenue sur mon Portfolio</h1>
+        <p class="welcome-sub">✦ BTS SIO — option SLAM ✦</p>
 
-<!-- VAGUE -->
-<div class="hero-wave">
-    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="70">
-        <path d="M0,80 C360,0 1080,80 1440,20 L1440,80 Z" fill="#f8f7ff"/>
-    </svg>
-</div>
-
-<!-- SECTION CARDS -->
-<div class="cards-section">
-    <p class="section-label">✦ Explorer le portfolio</p>
-    <div id="cards" class="portfolio-cards">
-        <div class="portfolio-card">
-            <div class="card-glow card-glow-purple"></div>
-            <div class="card-top-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
-            <div class="card-icon-wrap" style="background: linear-gradient(135deg, #EEEDFE, #d4d0f8);">
-                <i class="bi bi-mortarboard" style="font-size: 24px; color: #7F77DD;"></i>
+        <!-- CARDS -->
+        <div class="portfolio-cards">
+            <div class="portfolio-card">
+                <div class="card-top-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
+                <div class="card-icon-wrap" style="background: rgba(127,119,221,0.2);">
+                    <i class="bi bi-mortarboard" style="font-size: 26px; color: #AFA9EC;"></i>
+                </div>
+                <h5>Mon parcours</h5>
+                <p>Découvrez mon parcours scolaire et professionnel.</p>
+                <a href="./pages/parcours" class="btn-card btn-card-purple">Voir →</a>
             </div>
-            <h5>Mon parcours</h5>
-            <p>Découvrez mon parcours scolaire et professionnel.</p>
-            <a href="./pages/parcours" class="btn-card btn-outline-primary">Voir →</a>
-        </div>
-        <div class="portfolio-card">
-            <div class="card-glow card-glow-pink"></div>
-            <div class="card-top-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
-            <div class="card-icon-wrap" style="background: linear-gradient(135deg, #FBEAF0, #f4c0d1);">
-                <i class="bi bi-check2-square" style="font-size: 24px; color: #D4537E;"></i>
+            <div class="portfolio-card">
+                <div class="card-top-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
+                <div class="card-icon-wrap" style="background: rgba(212,83,126,0.2);">
+                    <i class="bi bi-check2-square" style="font-size: 26px; color: #ED93B1;"></i>
+                </div>
+                <h5>Réalisations</h5>
+                <p>Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels.</p>
+                <a href="./pages/realisations" class="btn-card btn-card-pink">Voir →</a>
             </div>
-            <h5>Réalisations</h5>
-            <p>Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels.</p>
-            <a href="./pages/realisations" class="btn-card btn-outline-success">Voir →</a>
-        </div>
-        <div class="portfolio-card">
-            <div class="card-glow card-glow-amber"></div>
-            <div class="card-top-bar" style="background: linear-gradient(90deg, #BA7517, #EF9F27);"></div>
-            <div class="card-icon-wrap" style="background: linear-gradient(135deg, #FAEEDA, #fac775);">
-                <i class="bi bi-broadcast-pin" style="font-size: 24px; color: #BA7517;"></i>
+            <div class="portfolio-card">
+                <div class="card-top-bar" style="background: linear-gradient(90deg, #BA7517, #EF9F27);"></div>
+                <div class="card-icon-wrap" style="background: rgba(239,159,39,0.2);">
+                    <i class="bi bi-broadcast-pin" style="font-size: 26px; color: #FAC775;"></i>
+                </div>
+                <h5>Veille techno.</h5>
+                <p>Consultez les articles de veille technologique que j'ai suivis durant cette année.</p>
+                <a href="./ma-veille" class="btn-card btn-card-amber">Voir →</a>
             </div>
-            <h5>Veille techno.</h5>
-            <p>Consultez les articles de veille technologique que j’ai suivis durant cette année.</p>
-            <a href="./ma-veille" class="btn-card btn-outline-warning">Voir →</a>
         </div>
-    </div>
-</div>
 
-<!-- STATS -->
-<div class="stats-section">
-    <div class="hero-stat">
-        <div class="stat-number c-purple">2</div>
-        <div class="stat-label">Années de formation</div>
-    </div>
-    <div class="hero-stat">
-        <div class="stat-number c-pink">12+</div>
-        <div class="stat-label">Projets réalisés</div>
-    </div>
-    <div class="hero-stat">
-        <div class="stat-number c-amber">6+</div>
-        <div class="stat-label">Articles de veille</div>
-    </div>
-</div>
-
+        <!-- STATS -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number c-purple">2</div>
+                <div class="stat-label">Années de formation</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number c-pink">12+</div>
+                <div class="stat-label">Projets réalisés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number c-amber">6+</div>
+                <div class="stat-label">Articles de veille</div>
+            </div>
+        </div>
     </main>
 
-    <!-- INCLUSION DU FOOTER : -->
+    <footer class="text-center py-3 bg-dark text-light">
+        <small>&copy; 2026 - Portfolio BTS SIO</small>
+    </footer>
 
-
-<footer class="text-center mt-4 mb-0 bg-dark text-light">
-    <small>&copy; 2026 - Portfolio BTS SIO</small>
-</footer>
     <script src="./theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./theme/js/custom.js"></script>
 </body>
