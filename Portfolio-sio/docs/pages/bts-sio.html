@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,129 +18,31 @@
     <link rel="stylesheet" href="../theme/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="../theme/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../theme/css/custom.css">
-
-    <style>
-        body::before { animation: none !important; background: #1a0a2e !important; }
-
-        .background-header {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            padding: 1.2rem 0;
-        }
-        .background-header h1 { font-size: 1.8rem; font-weight: 700; color: #ffffff; margin: 0; }
-        .background-header p { color: rgba(255,255,255,0.6); font-size: 13px; margin: 0; }
-
-        .navbar-wrapper {
-            background: rgba(40,10,80,0.85);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(127,119,221,0.3);
-            border-bottom: 2px solid rgba(127,119,221,0.5);
-        }
-        .navbar { font-size: 0.82em; }
-        .nav-link { color: rgba(255,255,255,0.75) !important; transition: color 0.2s; padding: 0.5rem 0.8rem !important; }
-        .nav-link:hover { color: #ffffff !important; }
-        .nav-link-icon { font-size: 1.3em; }
-        .dropdown-menu { background: rgba(30,10,60,0.95) !important; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px); }
-        .dropdown-item { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
-        .dropdown-item:hover { background: rgba(127,119,221,0.2) !important; color: #fff !important; }
-
-        .page-content { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem 4rem; }
-        .page-title { font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem; }
-        .page-subtitle { color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2.5rem; }
-
-        .content-block {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px;
-            padding: 1.8rem;
-            margin-bottom: 1.2rem;
-        }
-        .content-block h2 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #AFA9EC;
-            margin-bottom: 1rem;
-        }
-        .content-block h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #ED93B1;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
-        .content-block p, .content-block li {
-            font-size: 20px;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.8;
-        }
-        .content-block ul {
-            padding-left: 1.2rem;
-        }
-        .content-block strong { color: rgba(255,255,255,0.9); }
-        .content-block hr {
-            border-color: rgba(255,255,255,0.1);
-            margin: 1rem 0;
-        }
-        .badge-option {
-            display: inline-block;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-        .badge-sisr { background: rgba(127,119,221,0.2); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.3); }
-        .badge-slam { background: rgba(212,83,126,0.2); color: #ED93B1; border: 1px solid rgba(212,83,126,0.3); }
-    </style>
 </head>
 
-<body class="m-0 p-0">
-
-    <!-- HEADER -->
-    <header class="container-fluid background-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 text-center text-md-start">
-                    <a href="../" class="navbar-brand">
-                        <img src="../theme/logo/logo.png" alt="logo" style="height: 65px;">
-                    </a>
-                </div>
-                <div class="col-md-9 text-center d-none d-md-block">
-                    <h1>Portfolio BTS SIO SLAM</h1>
-                    <p>Mon parcours de formation</p>
-                </div>
-            </div>
-        </div>
-    </header>
+<body class="m-0 p-0 ">
 
     <!-- NAVBAR -->
-    <div class="navbar-wrapper sticky-top">
+    <div class="navbar-wrapper">
         <nav class="navbar navbar-expand-md">
             <div class="container mx-auto px-3">
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav nav-underline mx-auto mb-md-0 mt-3 mt-md-0 fw-bold">
+                    <ul class="navbar-nav mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
                         <li class="nav-item">
-                            <a class="nav-link py-2" href="../">
-                                <i class="bi bi-house d-md-block text-md-center nav-link-icon"></i>Accueil
-                            </a>
+                            <a class="nav-link py-2" href="../">Accueil</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="../pages/parcours" data-bs-toggle="dropdown">
-                                <i class="bi bi-mortarboard d-md-block text-md-center nav-link-icon"></i>Mon parcours
-                            </a>
+                            <a class="nav-link py-2 dropdown-toggle" href="../pages/parcours" data-bs-toggle="dropdown">Mon parcours</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../pages/parcours-scolaire">Parcours scolaire</a></li>
                                 <li><a class="dropdown-item" href="../pages/bts-sio">Le BTS SIO</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="../pages/realisations" data-bs-toggle="dropdown">
-                                <i class="bi bi-check2-square d-md-block text-md-center nav-link-icon"></i>Réalisations
-                            </a>
+                            <a class="nav-link py-2 dropdown-toggle" href="../pages/realisations" data-bs-toggle="dropdown">Réalisations</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../pages/tp-majeurs">TP majeurs</a></li>
                                 <li><a class="dropdown-item" href="../pages/stage-sio1">Stage de 1ère année</a></li>
@@ -150,9 +53,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="../ma-veille" data-bs-toggle="dropdown">
-                                <i class="bi bi-broadcast-pin d-md-block text-md-center nav-link-icon"></i>Veille techno.
-                            </a>
+                            <a class="nav-link py-2 dropdown-toggle" href="../ma-veille" data-bs-toggle="dropdown">Veille techno.</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../ma-veille">Ma veille technologique</a></li>
                                 <li><a class="dropdown-item" href="../archives">Archive des articles</a></li>
@@ -162,102 +63,139 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link py-2" href="../pages/engagement-etudiant">
-                                <i class="bi bi-people-fill d-md-block text-md-center nav-link-icon"></i>Engagement
-                            </a>
+                            <a class="nav-link py-2" href="../pages/engagement-etudiant">Engagement</a>
                         </li>
                     </ul>
+                    <button id="theme-toggle">🌙 Sombre</button>
                 </div>
             </div>
         </nav>
     </div>
 
-    <!-- CONTENU -->
-    <main class="min-vh-100">
-        <div class="page-content">
-            <h1 class="page-title">BTS SIO</h1>
-            <p class="page-subtitle">✦ Services Informatiques aux Organisations ✦</p>
+    <main class="page-wrapper min-vh-100">
 
-            <div class="content-block">
-                <p>Le <strong>BTS SIO</strong> est un diplôme national de niveau <strong>BAC +2</strong> orienté vers les métiers de l'informatique. Il forme des techniciens capables d'installer, de configurer, de maintenir des infrastructures informatiques ou de développer des applications répondant aux besoins des organisations.</p>
-            </div>
-
-            <div class="content-block">
-                <h2>📌 Présentation générale</h2>
-                <ul>
-                    <li><strong>Durée</strong> : 2 ans</li>
-                    <li><strong>Niveau d'accès</strong> : après un baccalauréat (général, STI2D, STMG, pro SN, etc.)</li>
-                    <li><strong>Statut</strong> : formation initiale ou alternance</li>
-                    <li><strong>Diplôme</strong> : BTS (Brevet de Technicien Supérieur), diplôme d'État</li>
-                </ul>
-            </div>
-
-            <div class="content-block">
-                <h2>🔀 Les deux options</h2>
-                <span class="badge-option badge-sisr">Option SISR</span>
-                <h3>Solutions d'Infrastructure, Systèmes et Réseaux</h3>
-                <p>Cette option forme à la gestion des systèmes informatiques et des réseaux.</p>
-                <ul>
-                    <li>Installation et configuration de serveurs (Linux, Windows Server)</li>
-                    <li>Gestion des réseaux (routage, VLAN, DHCP, DNS, etc.)</li>
-                    <li>Sécurité des infrastructures (pare-feu, VPN, sauvegardes)</li>
-                    <li>Virtualisation et cloud (VMware, Hyper-V, conteneurs)</li>
-                </ul>
-                <hr>
-                <span class="badge-option badge-slam">Option SLAM</span>
-                <h3>Solutions Logicielles et Applications Métiers</h3>
-                <p>Cette option est orientée vers le <strong>développement logiciel et web</strong>.</p>
-                <ul>
-                    <li>Programmation (Java, C#, Python, PHP, Kotlin…)</li>
-                    <li>Développement web (HTML, CSS, JavaScript, frameworks)</li>
-                    <li>Développement d'applications mobiles</li>
-                    <li>Gestion de bases de données (SQL, MySQL, PostgreSQL)</li>
-                </ul>
-            </div>
-
-            <div class="content-block">
-                <h2>📚 Organisation de la formation</h2>
-                <h3>Matières générales</h3>
-                <ul>
-                    <li>Culture générale et expression</li>
-                    <li>Anglais technique</li>
-                    <li>Mathématiques appliquées à l'informatique</li>
-                    <li>Économie, management et droit</li>
-                </ul>
-                <h3>Stage</h3>
-                <ul>
-                    <li><strong>10 à 12 semaines</strong> de stage en entreprise réparties sur les 2 années</li>
-                    <li>Permet de mettre en pratique les compétences acquises</li>
-                </ul>
-            </div>
-
-            <div class="content-block">
-                <h2>🚀 Poursuites d'études</h2>
-                <ul>
-                    <li>Licences professionnelles (bac +3) : développement web, cybersécurité, data & cloud</li>
-                    <li>BUT Informatique (entrée en 2e ou 3e année possible)</li>
-                    <li>Écoles d'ingénieurs en informatique</li>
-                    <li>Formations spécialisées (Bachelor, certifications)</li>
-                </ul>
-            </div>
-
-            <div class="content-block">
-                <h2>✅ Points forts du BTS SIO</h2>
-                <ul>
-                    <li>Formation <strong>polyvalente et professionnalisante</strong></li>
-                    <li>Très bon taux d'insertion professionnelle</li>
-                    <li>Adaptée à la poursuite d'études ou à l'entrée rapide dans le monde du travail</li>
-                    <li>Deux options permettant une spécialisation claire</li>
-                </ul>
-            </div>
-        </div>
+  <!-- <h1>BTS SIO</h1> -->
+  <h1>🎓 BTS SIO – Services Informatiques aux Organisations</h1>
+<p>Le <strong>BTS SIO</strong> est un diplôme national de niveau <strong>BAC +2</strong> orienté vers les métiers de l’informatique.<br>
+Il forme des techniciens capables d’installer, de configurer, de maintenir des infrastructures informatiques ou de développer des applications répondant aux besoins des organisations.</p>
+<hr>
+<h2>📌 Présentation générale</h2>
+<ul>
+<li><strong>Durée</strong> : 2 ans  </li>
+<li><strong>Niveau d’accès</strong> : après un baccalauréat (général, technologique STI2D, STMG, pro SN, etc.)  </li>
+<li><strong>Statut</strong> : formation initiale ou alternance  </li>
+<li><strong>Diplôme</strong> : BTS (Brevet de Technicien Supérieur), diplôme d’État  </li>
+</ul>
+<hr>
+<h2>🔀 Les deux options du BTS SIO</h2>
+<h3>1. Option <strong>SISR</strong> (Solutions d’Infrastructure, Systèmes et Réseaux)</h3>
+<p>Cette option forme à la gestion des systèmes informatiques et des réseaux.<br>
+Les étudiants apprennent à mettre en place, administrer et sécuriser des infrastructures.</p>
+<p><strong>Compétences développées :</strong>
+- Installation et configuration de serveurs (Linux, Windows Server)<br>
+- Gestion des réseaux (routage, VLAN, DHCP, DNS, etc.)<br>
+- Sécurité des infrastructures (pare-feu, VPN, sauvegardes, supervision)<br>
+- Virtualisation et cloud (VMware, Hyper-V, conteneurs)<br>
+- Support et assistance technique  </p>
+<p><strong>Débouchés métiers :</strong>
+- Technicien systèmes et réseaux<br>
+- Administrateur systèmes junior<br>
+- Technicien support / helpdesk<br>
+- Assistant sécurité informatique  </p>
+<hr>
+<h3>2. Option <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers)</h3>
+<p>Cette option est orientée vers le <strong>développement logiciel et web</strong>.<br>
+Les étudiants apprennent à concevoir, développer et maintenir des applications.</p>
+<p><strong>Compétences développées :</strong>
+- Programmation (Java, C#, Python, PHP, Kotlin…)<br>
+- Développement web (HTML, CSS, JavaScript, frameworks)<br>
+- Développement d’applications mobiles<br>
+- Gestion de bases de données (SQL, MySQL, PostgreSQL, Oracle)<br>
+- Méthodes de gestion de projets (cycle en V, Agile)<br>
+- Documentation technique et travail en équipe  </p>
+<p><strong>Débouchés métiers :</strong>
+- Développeur d’applications (web, mobile, logiciel)<br>
+- Analyste programmeur<br>
+- Intégrateur d’applications<br>
+- Testeur / chargé de validation  </p>
+<hr>
+<h2>📚 Organisation de la formation</h2>
+<h3>Matières générales (tronc commun) :</h3>
+<ul>
+<li>Culture générale et expression  </li>
+<li>Anglais technique  </li>
+<li>Mathématiques appliquées à l’informatique  </li>
+<li>Économie, management et droit  </li>
+</ul>
+<h3>Matières professionnelles :</h3>
+<ul>
+<li>Analyse économique, managériale et juridique des services informatiques  </li>
+<li>Enseignements techniques spécifiques à l’option choisie (SISR ou SLAM)  </li>
+<li>Projets tutorés et ateliers professionnels  </li>
+</ul>
+<h3>Stage :</h3>
+<ul>
+<li><strong>10 à 12 semaines</strong> de stage en entreprise réparties sur les 2 années  </li>
+<li>Permet de mettre en pratique les compétences acquises et de réaliser un projet professionnel  </li>
+</ul>
+<hr>
+<h2>🚀 Poursuites d’études</h2>
+<p>Après un BTS SIO, plusieurs choix sont possibles :  </p>
+<ul>
+<li><strong>Licences professionnelles</strong> (bac +3) :  </li>
+<li>Développement web et mobile  </li>
+<li>Cybersécurité  </li>
+<li>Administration systèmes et réseaux  </li>
+<li>
+<p>Data &amp; cloud computing  </p>
+</li>
+<li>
+<p><strong>BUT Informatique (entrée en 2e ou 3e année possible)</strong>  </p>
+</li>
+<li>
+<p><strong>Écoles d’ingénieurs en informatique</strong> (via admissions parallèles)  </p>
+</li>
+<li>
+<p><strong>Formations spécialisées</strong> (Bachelor, certification cybersécurité, cloud, développement, etc.)  </p>
+</li>
+</ul>
+<hr>
+<h2>💼 Insertion professionnelle</h2>
+<p>Le BTS SIO permet également une <strong>insertion directe sur le marché du travail</strong> :<br>
+- En <strong>SISR</strong> : technicien réseaux, administrateur systèmes junior, assistant cybersécurité<br>
+- En <strong>SLAM</strong> : développeur web, développeur d’applications, intégrateur logiciel  </p>
+<p>Ce diplôme est reconnu et recherché par les entreprises (PME, SSII/ESN, collectivités publiques).  </p>
+<hr>
+<h2>✅ Points forts du BTS SIO</h2>
+<ul>
+<li>Formation <strong>polyvalente et professionnalisante</strong>  </li>
+<li>Très bon taux d’insertion professionnelle  </li>
+<li>Adaptée aussi bien à la poursuite d’études qu’à l’entrée rapide dans le monde du travail  </li>
+<li>Deux options permettant une spécialisation claire (réseaux/systèmes ou développement)  </li>
+</ul>
+    
     </main>
 
-    <footer class="text-center py-3 bg-dark text-light">
-        <small>&copy; 2026 - Portfolio BTS SIO</small>
-    </footer>
 
+
+<footer class="text-center mt-4 mb-0 bg-dark text-light">
+    <small>&copy; 2026 - Portfolio BTS SIO</small>
+</footer>
     <script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../theme/js/custom.js"></script>
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light') {
+            document.body.classList.add('light-mode');
+            btn.textContent = '☀️ Clair';
+        }
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            btn.textContent = isLight ? '☀️ Clair' : '🌙 Sombre';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    </script>
 </body>
-</html>
+</html

@@ -4,316 +4,531 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accueil</title>
+    <title>Portfolio — Louis</title>
     
     <link rel="icon" type="image/png" sizes="16x16" href="./theme/logo/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./theme/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="./theme/logo/favicon-48x48.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./theme/logo/favicon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./theme/logo/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="./theme/logo/favicon-512x512.png">
-    <link rel="shortcut icon" href="./theme/logo/favicon.ico">
     <link rel="stylesheet" href="./theme/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./theme/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./theme/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./theme/css/custom.css">
 
     <style>
-        /* HEADER */
-        .background-header {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            padding: 1.2rem 0;
-        }
-        .background-header h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-            margin: 0;
-        }
-        .background-header p {
-            color: rgba(255,255,255,0.6);
-            font-size: 13px;
-            letter-spacing: 0.08em;
-            margin: 0;
-        }
+        * { scroll-behavior: smooth; }
 
         /* NAVBAR */
-        .navbar-wrapper {
-            background: rgba(0,0,0,0.25);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
+        .navbar-wrapper { background: rgba(40,10,80,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
         .navbar { font-size: 0.82em; }
-        .nav-link {
-            color: rgba(255,255,255,0.75) !important;
-            transition: color 0.2s;
-            padding: 0.5rem 0.8rem !important;
-        }
+        .nav-link { color: rgba(255,255,255,0.75) !important; transition: color 0.2s; padding: 0.5rem 0.8rem !important; }
         .nav-link:hover { color: #ffffff !important; }
-        .nav-link-icon { font-size: 1.3em; }
-        .dropdown-menu {
-            background: rgba(30,10,60,0.95) !important;
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-        }
+        .dropdown-menu { background: rgba(30,10,60,0.95) !important; border: 1px solid rgba(255,255,255,0.1); }
         .dropdown-item { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
         .dropdown-item:hover { background: rgba(127,119,221,0.2) !important; color: #fff !important; }
+        #theme-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; margin-left: 1rem; transition: background 0.2s; }
+        #theme-toggle:hover { background: rgba(255,255,255,0.2); }
 
-        /* MAIN CONTENT */
-        .main-content {
-            padding: 3rem 1.5rem 4rem;
-        }
-        .welcome-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        .welcome-sub {
-            text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 13px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 3rem;
-        }
+        /* LAYOUT */
+        .section { padding: 2.5rem 1.5rem; max-width: 960px; margin: 0 auto; }
+        .section-sep { border: none; border-top: 1px solid rgba(255,255,255,0.06); max-width: 960px; margin: 0 auto; }
+        .section-label { font-size: 11px; color: #7F77DD; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.4rem; }
+        .section-title { font-size: 1.8rem; font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; }
+        .section-divider { width: 50px; height: 3px; border-radius: 3px; margin-bottom: 1.5rem; }
 
-        /* CARDS */
-        .portfolio-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 18px;
-            padding: 2rem 1.5rem 1.5rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.25s, background-color 0.25s;}
+        /* HERO */
+        .hero-section { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; padding: 4rem 1.5rem 3rem; max-width: 960px; margin: 0 auto; }
+        .hero-badge { display: inline-block; background: rgba(127,119,221,0.15); border: 1px solid rgba(127,119,221,0.4); color: #AFA9EC; font-size: 11px; padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; letter-spacing: 0.1em; }
+        .hero-name { font-size: 3rem; font-weight: 700; color: #ffffff; line-height: 1.1; margin-bottom: 0.4rem; }
+        .hero-name span { background: linear-gradient(135deg, #7F77DD, #D4537E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-role { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+        .hero-desc { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1.5rem; }
+        .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .btn-main { background: linear-gradient(135deg, #7F77DD, #D4537E); color: #fff; border: none; padding: 10px 24px; border-radius: 30px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; }
+        .btn-main:hover { opacity: 0.85; color: #fff; }
+        .btn-sec { background: transparent; color: #AFA9EC; border: 1px solid rgba(127,119,221,0.4); padding: 10px 24px; border-radius: 30px; font-size: 13px; text-decoration: none; display: inline-block; }
+        .btn-sec:hover { background: rgba(127,119,221,0.15); color: #AFA9EC; }
+        .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .hero-tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+        .hero-avatar-ring { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, #7F77DD, #D4537E, #EF9F27); padding: 3px; flex-shrink: 0; }
+        .hero-avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: #1a0a2e; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 700; color: #AFA9EC; }
 
-       .portfolio-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-            
-        .portfolio-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255,255,255,0.13);
-        }
-        .card-top-bar {
-            height: 3px;
-            border-radius: 3px;
-            margin-bottom: 1.5rem;
-        }
-        .card-icon-wrap {
-            width: 56px; height: 56px;
-            border-radius: 14px;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        .portfolio-card h5 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-        }
-        .portfolio-card p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-            margin-bottom: 1.8rem;
-    }
-        .btn-card {
-            font-size: 12px;
-            padding: 8px 22px;
-            border-radius: 20px;
-            border: 1.5px solid;
-            background: transparent;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-        .btn-card-purple { color: #AFA9EC; border-color: rgba(127,119,221,0.6); }
-        .btn-card-purple:hover { background: rgba(127,119,221,0.25); color: #fff; }
-        .btn-card-pink { color: #ED93B1; border-color: rgba(212,83,126,0.6); }
-        .btn-card-pink:hover { background: rgba(212,83,126,0.25); color: #fff; }
-        .btn-card-amber { color: #FAC775; border-color: rgba(239,159,39,0.6); }
-        .btn-card-amber:hover { background: rgba(239,159,39,0.2); color: #fff; }
+        /* À PROPOS */
+        .about-text { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.2rem; }
+        .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+        .about-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.2rem; }
+        .about-card h5 { font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 0.3rem; }
+        .about-card p { font-size: 12px; color: rgba(255,255,255,0.55); margin: 0; line-height: 1.5; }
 
-        /* STATS */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            max-width: 1000px;
-            margin: 2rem auto 0;
-        }
-        .stat-card {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 1rem;
-            text-align: center;
-        }
-        .stat-number { font-size: 26px; font-weight: 700; }
-        .stat-label { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 3px; }
-        .c-purple { color: #AFA9EC; }
-        .c-pink   { color: #ED93B1; }
-        .c-amber  { color: #FAC775; }
+        /* OPTION SLAM */
+        .slam-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .slam-desc { background: rgba(127,119,221,0.08); border: 1px solid rgba(127,119,221,0.2); border-radius: 14px; padding: 1.6rem; }
+        .slam-badge { display: inline-block; background: rgba(127,119,221,0.2); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.3); font-size: 10px; padding: 3px 12px; border-radius: 20px; margin-bottom: 0.8rem; font-weight: 600; }
+        .slam-desc h3 { font-size: 1.1rem; font-weight: 600; color: #ffffff; margin-bottom: 0.6rem; }
+        .slam-desc p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1rem; }
+        .slam-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+        .slam-skill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 11px; padding: 3px 10px; border-radius: 20px; }
+        .slam-info { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.8rem; }
+        .slam-info-row { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 0.9rem 1rem; }
+        .slam-info-row .label { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+        .slam-info-row .value { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500; }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: #1a0a2e !important;
-            animation: none !important;
-            z-index: -1;
+        /* TIMELINE */
+        .timeline { position: relative; padding-left: 1.8rem; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #7F77DD, #D4537E, #EF9F27); border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.2rem; display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center; }
+        .timeline-item::before { content: ''; position: absolute; left: -2.4rem; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #7F77DD; border: 2px solid #1a0a2e; }
+        .timeline-date { font-size: 11px; font-weight: 600; color: #AFA9EC; }
+        .timeline-text { font-size: 14px; color: rgba(255,255,255,0.7); margin: 0; }
+        .timeline-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+
+        /* COMPÉTENCES */
+        .skills-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.8rem; }
+        .skill-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 0.5rem; text-align: center; transition: transform 0.2s; }
+        .skill-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.09); }
+        .skill-name { font-size: 12px; font-weight: 600; color: #ffffff; margin-bottom: 0.2rem; }
+        .skill-level { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 0.4rem; }
+        .skill-bar { height: 3px; border-radius: 3px; }
+        .skills-other { margin-top: 1rem; }
+        .skills-other-title { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; }
+        .skills-other-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .skill-tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
+
+        /* PROJETS */
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .project-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.4rem; transition: transform 0.2s; }
+        .project-card:hover { transform: translateY(-3px); }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
+        .project-tag { font-size: 10px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+        .tag-scolaire { background: rgba(127,119,221,0.2); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.3); }
+        .tag-stage { background: rgba(29,158,117,0.2); color: #5DCAA5; border: 1px solid rgba(29,158,117,0.3); }
+        .tag-perso { background: rgba(239,159,39,0.2); color: #FAC775; border: 1px solid rgba(239,159,39,0.3); }
+        .tag-certif { background: rgba(212,83,126,0.2); color: #ED93B1; border: 1px solid rgba(212,83,126,0.3); }
+        .project-card h5 { font-size: 14px; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
+        .project-card p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 0.8rem; }
+        .project-techs { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 0.6rem; }
+        .project-tech { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
+        .project-link { font-size: 12px; color: #5DCAA5; text-decoration: none; }
+        .project-link:hover { color: #9FE1CB; }
+
+        /* VEILLE */
+        .veille-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .veille-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.4rem; text-decoration: none; display: block; transition: transform 0.2s; }
+        .veille-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); }
+        .veille-cat { font-size: 10px; color: #FAC775; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 600; }
+        .veille-card h5 { font-size: 14px; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
+        .veille-card p { font-size: 12px; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.5; margin-bottom: 0.8rem; }
+        .veille-arrow { font-size: 12px; color: #AFA9EC; font-weight: 500; }
+
+        /* MODE CLAIR */
+        body.light-mode .section-title { color: #1a0a2e; }
+        body.light-mode .about-text { color: #333; }
+        body.light-mode .about-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
+        body.light-mode .about-card h5 { color: #1a0a2e; }
+        body.light-mode .about-card p { color: #555; }
+        body.light-mode .slam-desc { background: rgba(127,119,221,0.1); }
+        body.light-mode .slam-info { background: #ffffff; border-color: rgba(127,119,221,0.2); }
+        body.light-mode .slam-info-row { background: #f5f3ff; }
+        body.light-mode .slam-info-row .value { color: #1a0a2e; }
+        body.light-mode .slam-info-row .label { color: #888; }
+        body.light-mode .project-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
+        body.light-mode .project-card h5 { color: #1a0a2e; }
+        body.light-mode .project-card p { color: #555; }
+        body.light-mode .veille-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
+        body.light-mode .veille-card h5 { color: #1a0a2e; }
+        body.light-mode .veille-card p { color: #555; }
+        body.light-mode .hero-name { color: #1a0a2e; }
+        body.light-mode .hero-role { color: #666; }
+        body.light-mode .hero-desc { color: #444; }
+        body.light-mode .hero-avatar-inner { background: #f0eeff; }
+        body.light-mode .skill-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
+        body.light-mode .skill-name { color: #1a0a2e; }
+        body.light-mode .skill-tag { background: #f0eeff; border-color: rgba(127,119,221,0.3); color: #534AB7; }
+        body.light-mode .section-sep { border-color: rgba(127,119,221,0.15); }
+        body.light-mode .hero-tag { background: rgba(127,119,221,0.1); border-color: rgba(127,119,221,0.2); color: #534AB7; }
+
+        @media (max-width: 768px) {
+            .hero-section { grid-template-columns: 1fr; }
+            .hero-avatar-ring { display: none; }
+            .about-grid { grid-template-columns: 1fr 1fr; }
+            .slam-wrap, .veille-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: repeat(3, 1fr); }
+            .projects-grid { grid-template-columns: 1fr; }
+            .timeline-item { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 
 <body class="m-0 p-0">
 
-    <!-- HEADER -->
-    <header class="container-fluid background-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3 text-center text-md-start">
-                    <a href="./" class="navbar-brand">
-                        <img src="./theme/logo/logo.png" alt="logo" style="height: 65px;">
-                    </a>
-                </div>
-                <div class="col-md-9 text-center d-none d-md-block">
-                    <h1>Portfolio BTS SIO SLAM</h1>
-                    <p>Mon parcours de formation</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <!-- NAVBAR -->
-    <div class="navbar-wrapper sticky-top">
+    <div class="navbar-wrapper">
         <nav class="navbar navbar-expand-md">
             <div class="container mx-auto px-3">
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav nav-underline mx-auto mb-md-0 mt-3 mt-md-0 fw-bold">
-                        <li class="nav-item">
-                            <a class="nav-link py-2" href="./">
-                                <i class="bi bi-house d-md-block text-md-center nav-link-icon"></i>Accueil
-                            </a>
-                        </li>
+                    <ul class="navbar-nav mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
+                        <li class="nav-item"><a class="nav-link py-2" href="#presentation">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link py-2" href="#option">SLAM</a></li>
+                        <li class="nav-item"><a class="nav-link py-2" href="#parcours">Parcours</a></li>
+                        <li class="nav-item"><a class="nav-link py-2" href="#competences">Compétences</a></li>
+                        <li class="nav-item"><a class="nav-link py-2" href="#projets">Projets</a></li>
+                        <li class="nav-item"><a class="nav-link py-2" href="#veille">Veille</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="./pages/parcours" data-bs-toggle="dropdown">
-                                <i class="bi bi-mortarboard d-md-block text-md-center nav-link-icon"></i>Mon parcours
-                            </a>
+                            <a class="nav-link py-2 dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./pages/parcours-scolaire">Parcours scolaire</a></li>
-                                <li><a class="dropdown-item" href="./pages/bts-sio">Le BTS SIO</a></li>
+                                <li><a class="dropdown-item" href="./pages/parcours">Mon parcours</a></li>
+                                <li><a class="dropdown-item" href="./pages/realisations">Réalisations</a></li>
+                                <li><a class="dropdown-item" href="./ma-veille">Veille techno.</a></li>
+                                <li><a class="dropdown-item" href="./pages/engagement-etudiant">Engagement</a></li>
                             </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="./pages/realisations" data-bs-toggle="dropdown">
-                                <i class="bi bi-check2-square d-md-block text-md-center nav-link-icon"></i>Réalisations
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./pages/tp-majeurs">TP majeurs</a></li>
-                                <li><a class="dropdown-item" href="./pages/stage-sio1">Stage de 1ère année</a></li>
-                                <li><a class="dropdown-item" href="./pages/stage-sio2">Stage de 2e année</a></li>
-                                <li><a class="dropdown-item" href="./pages/projets-scolaires">Projets scolaires</a></li>
-                                <li><a class="dropdown-item" href="./pages/projets-personnels">Projets personnels</a></li>
-                                <li><a class="dropdown-item" href="./pages/certifications-complementaires">Certifications complémentaires</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="./ma-veille" data-bs-toggle="dropdown">
-                                <i class="bi bi-broadcast-pin d-md-block text-md-center nav-link-icon"></i>Veille techno.
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./ma-veille">Ma veille technologique</a></li>
-                                <li><a class="dropdown-item" href="./archives">Archive des articles</a></li>
-                                <li><a class="dropdown-item" href="./categories">Liste des catégories</a></li>
-                                <li><a class="dropdown-item" href="./authors">Liste des auteurs</a></li>
-                                <li><a class="dropdown-item" href="./tags">Liste des mots clés</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link py-2" href="./pages/engagement-etudiant">
-                                <i class="bi bi-people-fill d-md-block text-md-center nav-link-icon"></i>Engagement
-                            </a>
                         </li>
                     </ul>
+                    <button id="theme-toggle">🌙 Sombre</button>
                 </div>
             </div>
         </nav>
     </div>
 
-    <!-- CONTENU PRINCIPAL -->
-    <main class="main-content min-vh-100">
-        <h1 class="welcome-title">Bienvenue sur mon Portfolio</h1>
-        <p class="welcome-sub">✦ BTS SIO — option SLAM ✦</p>
-
-        <!-- CARDS -->
-        <div class="portfolio-cards">
-            <div class="portfolio-card">
-                <div class="card-top-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
-                <div class="card-icon-wrap" style="background: rgba(127,119,221,0.2);">
-                    <i class="bi bi-mortarboard" style="font-size: 26px; color: #AFA9EC;"></i>
+    <main>
+        <!-- HERO -->
+        <div class="hero-section">
+            <div class="hero-left">
+                <span class="hero-badge">✦ BTS SIO — option SLAM ✦</span>
+                <h1 class="hero-name">Bonjour, je suis<br><span>Louis</span></h1>
+                <p class="hero-role">Étudiant en BTS SIO SLAM · Développeur en formation</p>
+                <p class="hero-desc">Passionné par le développement logiciel et web, je suis actuellement en 2ème année de BTS SIO option SLAM au Lycée Léonard de Vinci de Melun. Ce portfolio retrace mon parcours, mes compétences et mes réalisations.</p>
+                <div class="hero-btns">
+                    <a href="#parcours" class="btn-main">Mon parcours</a>
+                    <a href="#projets" class="btn-sec">Mes projets</a>
                 </div>
-                <h5>Mon parcours</h5>
-                <p>Découvrez mon parcours scolaire et professionnel.</p>
-                <a href="./pages/parcours" class="btn-card btn-card-purple">Voir →</a>
+                <div class="hero-tags">
+                    <span class="hero-tag">Python</span>
+                    <span class="hero-tag">HTML/CSS</span>
+                    <span class="hero-tag">SQL</span>
+                    <span class="hero-tag">Java</span>
+                    <span class="hero-tag">PHP</span>
+                    <span class="hero-tag">Kotlin</span>
+                </div>
             </div>
-            <div class="portfolio-card">
-                <div class="card-top-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
-                <div class="card-icon-wrap" style="background: rgba(212,83,126,0.2);">
-                    <i class="bi bi-check2-square" style="font-size: 26px; color: #ED93B1;"></i>
-                </div>
-                <h5>Réalisations</h5>
-                <p>Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels.</p>
-                <a href="./pages/realisations" class="btn-card btn-card-pink">Voir →</a>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-top-bar" style="background: linear-gradient(90deg, #BA7517, #EF9F27);"></div>
-                <div class="card-icon-wrap" style="background: rgba(239,159,39,0.2);">
-                    <i class="bi bi-broadcast-pin" style="font-size: 26px; color: #FAC775;"></i>
-                </div>
-                <h5>Veille techno.</h5>
-                <p>Consultez les articles de veille technologique que j'ai suivis durant cette année.</p>
-                <a href="./ma-veille" class="btn-card btn-card-amber">Voir →</a>
+            <div class="hero-avatar-ring">
+                <div class="hero-avatar-inner">L</div>
             </div>
         </div>
 
-        <!-- STATS -->
-        <div class="stats-row">
-            <div class="stat-card">
-                <div class="stat-number c-purple">2</div>
-                <div class="stat-label">Années de formation</div>
+        <hr class="section-sep">
+
+        <!-- À PROPOS -->
+        <div class="section" id="presentation">
+            <p class="section-label">✦ Qui suis-je</p>
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="section-divider" style="background: linear-gradient(90deg, #7F77DD, #D4537E);"></div>
+            <p class="about-text">Je m'appelle <strong style="color:#AFA9EC;">Louis</strong>, étudiant en BTS SIO option SLAM au Lycée Léonard de Vinci de Melun. Après un bac STMG obtenu au lycée de Nangis, j'ai choisi de me spécialiser dans le développement logiciel et web. Je suis curieux, motivé et toujours prêt à apprendre de nouvelles technologies.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h5>🎓 Formation</h5>
+                    <p>BTS SIO SLAM — Lycée Léonard de Vinci, Melun (2024-2026)</p>
+                </div>
+                <div class="about-card">
+                    <h5>📍 Localisation</h5>
+                    <p>Région Île-de-France, Seine-et-Marne</p>
+                </div>
+                <div class="about-card">
+                    <h5>💡 Passion</h5>
+                    <p>Développement web, nouvelles technologies</p>
+                </div>
+                <div class="about-card">
+                    <h5>🎯 Objectif</h5>
+                    <p>Devenir développeur web / logiciel après le BTS</p>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number c-pink">12+</div>
-                <div class="stat-label">Projets réalisés</div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- OPTION SLAM -->
+        <div class="section" id="option">
+            <p class="section-label">✦ Ma formation</p>
+            <h2 class="section-title">Option SLAM</h2>
+            <div class="section-divider" style="background: linear-gradient(90deg, #D4537E, #EF9F27);"></div>
+            <div class="slam-wrap">
+                <div class="slam-desc">
+                    <span class="slam-badge">SLAM — Solutions Logicielles et Applications Métiers</span>
+                    <h3>Développement logiciel & web</h3>
+                    <p>L'option SLAM forme des développeurs capables de concevoir, développer et maintenir des applications logicielles et web. Elle couvre le front-end, le back-end, les bases de données et les méthodes de gestion de projets.</p>
+                    <div class="slam-skills">
+                        <span class="slam-skill">Développement web</span>
+                        <span class="slam-skill">Applications mobiles</span>
+                        <span class="slam-skill">Bases de données</span>
+                        <span class="slam-skill">Gestion de projets</span>
+                        <span class="slam-skill">POO</span>
+                        <span class="slam-skill">Méthodes Agile</span>
+                        <span class="slam-skill">API REST</span>
+                        <span class="slam-skill">UML</span>
+                    </div>
+                </div>
+                <div class="slam-info">
+                    <div class="slam-info-row">
+                        <div class="label">Diplôme</div>
+                        <div class="value">BTS — Bac +2 national</div>
+                    </div>
+                    <div class="slam-info-row">
+                        <div class="label">Durée</div>
+                        <div class="value">2 ans (2024 — 2026)</div>
+                    </div>
+                    <div class="slam-info-row">
+                        <div class="label">Établissement</div>
+                        <div class="value">Lycée Léonard de Vinci, Melun</div>
+                    </div>
+                    <div class="slam-info-row">
+                        <div class="label">Option</div>
+                        <div class="value">SLAM — Développement logiciel</div>
+                    </div>
+                    <div class="slam-info-row">
+                        <div class="label">Stage</div>
+                        <div class="value">10 à 12 semaines en entreprise</div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number c-amber">6+</div>
-                <div class="stat-label">Articles de veille</div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- PARCOURS -->
+        <div class="section" id="parcours">
+            <p class="section-label">✦ Mon histoire</p>
+            <h2 class="section-title">Mon parcours</h2>
+            <div class="section-divider" style="background: linear-gradient(90deg, #7F77DD, #5DCAA5);"></div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 — 2021</div>
+                    <div>
+                        <p class="timeline-text">Collège René Barthélemy — Nangis</p>
+                        <p class="timeline-sub">De la 6ème à la 3ème générale</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 — 2022</div>
+                    <div>
+                        <p class="timeline-text">Lycée Henry Becquerel — Nangis</p>
+                        <p class="timeline-sub">Seconde générale</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 — 2024</div>
+                    <div>
+                        <p class="timeline-text">Lycée de Nangis — 1ère & Terminale STMG</p>
+                        <p class="timeline-sub">Option SIG · Obtention du Bac STMG</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 — 2026</div>
+                    <div>
+                        <p class="timeline-text">Lycée Léonard de Vinci — Melun</p>
+                        <p class="timeline-sub">BTS SIO option SLAM · En cours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- COMPÉTENCES -->
+        <div class="section" id="competences">
+            <p class="section-label">✦ Ce que je sais faire</p>
+            <h2 class="section-title">Mes compétences</h2>
+            <div class="section-divider" style="background: linear-gradient(90deg, #EF9F27, #D4537E);"></div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="skill-level">Intermédiaire</div>
+                    <div class="skill-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level">Intermédiaire</div>
+                    <div class="skill-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">PHP</div>
+                    <div class="skill-level">Débutant</div>
+                    <div class="skill-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-level">Intermédiaire</div>
+                    <div class="skill-bar" style="background: linear-gradient(90deg, #EF9F27, #FAC775);"></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Java</div>
+                    <div class="skill-level">Débutant</div>
+                    <div class="skill-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Kotlin</div>
+                    <div class="skill-level">Débutant</div>
+                    <div class="skill-bar" style="background: linear-gradient(90deg, #5DCAA5, #9FE1CB);"></div>
+                </div>
+            </div>
+            <div class="skills-other">
+                <p class="skills-other-title">Outils & environnements</p>
+                <div class="skills-other-tags">
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Pelican</span>
+                    <span class="skill-tag">Android Studio</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- PROJETS -->
+        <div class="section" id="projets">
+            <p class="section-label">✦ Ce que j'ai réalisé</p>
+            <h2 class="section-title">Mes projets</h2>
+            <div class="section-divider" style="background: linear-gradient(90deg, #5DCAA5, #7F77DD);"></div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-scolaire">Scolaire</span>
+                    </div>
+                    <h5>Portfolio BTS SIO</h5>
+                    <p>Création de ce portfolio avec Pelican. Design personnalisé avec thème sombre et mode clair/sombre.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">Python</span>
+                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">HTML/CSS</span>
+                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">Pelican</span>
+                    </div>
+                    <a href="./pages/realisations" class="project-link">📄 Voir les détails →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-scolaire">Scolaire</span>
+                    </div>
+                    <h5>TP Majeurs</h5>
+                    <p>Travaux pratiques majeurs réalisés dans le cadre du BTS SIO SLAM. À compléter prochainement.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">À venir</span>
+                    </div>
+                    <a href="./pages/tp-majeurs.html" class="project-link">📄 Voir les TP →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-stage">Stage</span>
+                    </div>
+                    <h5>Stage de 1ère année</h5>
+                    <p>Stage en entreprise réalisé en 1ère année de BTS SIO. Rapport disponible prochainement.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(29,158,117,0.2);color:#5DCAA5;">À compléter</span>
+                    </div>
+                    <a href="./pages/stage-sio1.html" class="project-link">📄 Voir le rapport →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-stage">Stage</span>
+                    </div>
+                    <h5>Stage de 2ème année</h5>
+                    <p>Stage en entreprise réalisé en 2ème année de BTS SIO. Rapport disponible prochainement.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(29,158,117,0.2);color:#5DCAA5;">À compléter</span>
+                    </div>
+                    <a href="./pages/stage-sio2.html" class="project-link">📄 Voir le rapport →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-scolaire">Scolaire</span>
+                    </div>
+                    <h5>Projets scolaires</h5>
+                    <p>Projets réalisés dans le cadre de la formation BTS SIO SLAM. À compléter prochainement.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">À venir</span>
+                    </div>
+                    <a href="./pages/projets-scolaires.html" class="project-link">📄 Voir les projets →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-perso">Personnel</span>
+                    </div>
+                    <h5>Projets personnels</h5>
+                    <p>Mes projets personnels en dehors de la formation. À compléter prochainement.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(239,159,39,0.2);color:#FAC775;">À venir</span>
+                    </div>
+                    <a href="./pages/projets-personnels.html" class="project-link">📄 Voir les projets →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-tag tag-certif">Certification</span>
+                    </div>
+                    <h5>Certifications complémentaires</h5>
+                    <p>Certifications obtenues en complément de la formation BTS SIO. À compléter prochainement.</p>
+                    <div class="project-techs">
+                        <span class="project-tech" style="background:rgba(212,83,126,0.2);color:#ED93B1;">À venir</span>
+                    </div>
+                    <a href="./pages/certifications-complementaires.html" class="project-link">📄 Voir les certifications →</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 1.2rem;">
+                <a href="./pages/realisations" class="btn-sec">Voir toutes mes réalisations →</a>
+            </div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- VEILLE -->
+        <div class="section" id="veille">
+            <p class="section-label">✦ Ma curiosité tech</p>
+            <h2 class="section-title">Veille technologique</h2>
+            <div class="section-divider" style="background: linear-gradient(90deg, #FAC775, #EF9F27);"></div>
+            <div class="veille-grid">
+                <a href="./ma-veille" class="veille-card">
+                    <p class="veille-cat">Intelligence Artificielle</p>
+                    <h5>Avancées en IA</h5>
+                    <p>Suivi des évolutions dans le domaine de l'IA et du machine learning. ChatGPT, Gemini, modèles open-source et leurs impacts.</p>
+                    <span class="veille-arrow">Lire les articles →</span>
+                </a>
+                <a href="./ma-veille" class="veille-card">
+                    <p class="veille-cat">Développement Web</p>
+                    <h5>Nouvelles technos web</h5>
+                    <p>Frameworks, outils et bonnes pratiques du développement moderne. React, Vue, Tailwind, API REST et les dernières évolutions.</p>
+                    <span class="veille-arrow">Lire les articles →</span>
+                </a>
+                <a href="./ma-veille" class="veille-card">
+                    <p class="veille-cat">Cybersécurité</p>
+                    <h5>Sécurité informatique</h5>
+                    <p>Actualités et menaces dans le domaine de la cybersécurité. Failles, bonnes pratiques et outils de protection.</p>
+                    <span class="veille-arrow">Lire les articles →</span>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 1.2rem;">
+                <a href="./ma-veille" class="btn-sec">Voir tous mes articles →</a>
             </div>
         </div>
     </main>
 
-    <footer class="text-center py-3 bg-dark text-light">
-        <small>&copy; 2026 - Portfolio BTS SIO</small>
+    <footer class="text-center py-3 bg-dark text-light" style="margin-top: 2rem;">
+        <small>&copy; 2026 - Portfolio BTS SIO — Louis</small>
     </footer>
 
     <script src="./theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./theme/js/custom.js"></script>
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light') {
+            document.body.classList.add('light-mode');
+            btn.textContent = '☀️ Clair';
+        }
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            btn.textContent = isLight ? '☀️ Clair' : '🌙 Sombre';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    </script>
 </body>
 </html>

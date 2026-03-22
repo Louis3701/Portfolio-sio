@@ -3,11 +3,6 @@ _______________________________________________________________________________
 
                                     PAGE DE BASE
 _______________________________________________________________________________
-
-Description :
--------------
-Cette page du template reçoit le contenu des autres pages.
-Il permet ainsi de définir l'entête et le pied de page de toutes les pages du site.
 #}
 
 <!DOCTYPE html>
@@ -18,7 +13,6 @@ Il permet ainsi de définir l'entête et le pied de page de toutes les pages du 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Portfolio BTS SIO{% endblock %}</title>
     
-    <!-- Favicons :-->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ SITEURL }}/theme/logo/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ SITEURL }}/theme/logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="48x48" href="{{ SITEURL }}/theme/logo/favicon-48x48.png">
@@ -26,37 +20,67 @@ Il permet ainsi de définir l'entête et le pied de page de toutes les pages du 
     <link rel="icon" type="image/png" sizes="192x192" href="{{ SITEURL }}/theme/logo/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="{{ SITEURL }}/theme/logo/favicon-512x512.png">
     <link rel="shortcut icon" href="{{ SITEURL }}/theme/logo/favicon.ico">
-
-    <!-- IMPORTS DES BIBLIOTHEQUES (CSS, FONTS, ICONS) : -->
-    
-    <!-- Bootstrap CSS : --> 
     <link rel="stylesheet" href="{{ SITEURL }}/theme/vendor/bootstrap/css/bootstrap.min.css">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="{{ SITEURL }}/theme/vendor/bootstrap-icons/bootstrap-icons.css">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ SITEURL }}/theme/vendor/fontawesome/css/all.min.css">
-
-    
-    <!-- STYLES CSS PERSONNEL : -->   
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/custom.css">
-
 </head>
 
 <body class="m-0 p-0 {% block body_class %}{% endblock %}">
-    <!-- INCLUSION DU HEADER : -->
-    {% block header %}{% include 'includes/header.html' %}{% endblock %}
 
-    <main class="{% block main_class %}container mt-5 p-0{% endblock %} min-vh-100">
-        <!-- BLOCK POUR L'INSERTION DU CONTENU : -->
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-expand-md">
+            <div class="container mx-auto px-3">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
+                        {% for nom, url, icone, sousNav, description, couleur in MENUITEMS %}
+                        {% if sousNav %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="{{ SITEURL }}{{ url }}" data-bs-toggle="dropdown">{{ nom }}</a>
+                            <ul class="dropdown-menu">
+                                {% for subnom, suburl in sousNav %}
+                                <li><a class="dropdown-item" href="{{ SITEURL }}{{ suburl }}">{{ subnom }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="{{ SITEURL }}{{ url }}">{{ nom }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <button id="theme-toggle">🌙 Sombre</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="{% block main_class %}page-wrapper{% endblock %} min-vh-100">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- INCLUSION DU FOOTER : -->
     {% include 'includes/footer.html' %}
 
     <script src="{{ SITEURL }}/theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="{{ SITEURL }}/theme/js/custom.js"></script>
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light') {
+            document.body.classList.add('light-mode');
+            btn.textContent = '☀️ Clair';
+        }
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            btn.textContent = isLight ? '☀️ Clair' : '🌙 Sombre';
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    </script>
 </body>
-</html>
+</html
