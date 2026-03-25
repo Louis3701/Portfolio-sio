@@ -13,7 +13,6 @@ body::before {
     animation: none;
     z-index: -1;
 }
-
 /* HEADER */
 header.background-header { display: none !important; }
 

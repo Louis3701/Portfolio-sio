@@ -1,20 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stage SIO1 — OLEVIA</title>
+    <title>Stage SIO1</title>
     
     <link rel="icon" type="image/png" sizes="16x16" href="../theme/logo/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../theme/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../theme/logo/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../theme/logo/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../theme/logo/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../theme/logo/favicon-512x512.png">
+    <link rel="shortcut icon" href="../theme/logo/favicon.ico">
     <link rel="stylesheet" href="../theme/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../theme/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="../theme/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../theme/css/custom.css">
 </head>
 
-<body class="m-0 p-0">
+<body class="m-0 p-0 ">
 
     <!-- NAVBAR -->
     <div class="navbar-wrapper">
@@ -25,7 +31,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
-                        <li class="nav-item"><a class="nav-link py-2" href="../">Accueil</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="../">Accueil</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link py-2 dropdown-toggle" href="../pages/parcours" data-bs-toggle="dropdown">Mon parcours</a>
                             <ul class="dropdown-menu">
@@ -54,7 +62,9 @@
                                 <li><a class="dropdown-item" href="../tags">Liste des mots clés</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link py-2" href="../pages/engagement-etudiant">Engagement</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="../pages/engagement-etudiant">Engagement</a>
+                        </li>
                     </ul>
                     <button id="theme-toggle">🌙 Sombre</button>
                 </div>
@@ -62,164 +72,88 @@
         </nav>
     </div>
 
-    <main class="min-vh-100">
-        <div class="page-content">
+    <main class="page-wrapper min-vh-100">
+<section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container">
+        <h1 class="page-title">Stage SIO1</h1>
+        <p class="page-subtitle">Description de ma page personnelle et du contenu métier</p>
+    </div>
+</section>
 
-            <!-- EN-TÊTE -->
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:2rem;">
-                <div>
-                    <p style="font-size:11px; color:#7F77DD; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; margin-bottom:0.4rem;">✦ Stage de 1ère année</p>
-                    <h1 class="page-title">Stage chez OLEVIA</h1>
-                    <p class="page-subtitle">✦ Développement web · Juin — Juillet 2025 ✦</p>
-                </div>
-                <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                    <span style="background:rgba(29,158,117,0.2);color:#5DCAA5;border:1px solid rgba(29,158,117,0.3);font-size:11px;padding:5px 14px;border-radius:20px;font-weight:600;">Stage terminé ✓</span>
-                    <span style="background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);font-size:11px;padding:5px 14px;border-radius:20px;">WordPress · WooCommerce</span>
-                </div>
-            </div>
+<section class="page-content">
+    <div class="container markdown-content">
+        <blockquote>
+<p><strong><u>FICHE DESCRIPTIVE :</u></strong></p>
+<p><u><strong>Dates du stage :</strong></u></p>
+<ul>
+<li><strong>Date début :</strong> 19/06/2025</li>
+<li><strong>Date fin :</strong> 29/07/2025</li>
+</ul>
+<p><strong>Entreprise :</strong> OLEVIA</p>
+</blockquote>
+<h1>Présentation de l'entreprise/société :</h1>
+<p>Olevia est une entreprise toute recente qui est d'origine francaise.  </p>
+<h1>Missions &amp; tâches réalisés :</h1>
+<p>🔧 Problèmes techniques rencontrés et résolus
+1. Panier / Validation de commande</p>
+<p>Le bouton « Passer au paiement » redirigeait vers une page inexistante malgré des réglages corrects dans les paramètres.</p>
+<p>Résolution : Le problème venait du fait qu’aucune page WooCommerce n’avait été générée. En créant une page avec le shortcode [woocommerce_checkout], la redirection a enfin fonctionné (5 juin).</p>
+<p>Des ajustements ont également été faits sur la page panier pour l'affichage et la mise en page.</p>
+<ol>
+<li>Header/Footer liés</li>
+</ol>
+<p>Longtemps, toute modification du texte dans le footer apparaissait aussi dans le header, ce qui causait des bugs d’affichage et supprimait des éléments clés comme les onglets de navigation.</p>
+<p>Résolution : Le bug venait du fait que les deux sections étaient liées ou partaient du même bloc. Ce problème a été résolu le 25 juin.</p>
+<ol>
+<li>Header – Problèmes d’affichage et alignement</li>
+</ol>
+<p>Le design du header posait problème : bande bleue trop large, mauvaise disposition des éléments (liens non alignés à droite).</p>
+<p>Plusieurs tentatives ont échoué jusqu’au 25 juin, date à laquelle le bug a été définitivement corrigé. La mise en page a été entièrement refaite.</p>
+<p>🖼️ Travail de mise en page
+Pages principales concernées :</p>
+<p>Page Accueil : alignement des boutons, textes, intégration d’une vidéo en fond (non encore terminée), Google Maps repositionnée correctement.</p>
+<p>Page Ambassadeur : formulaire finalisé, design presque terminé, mais difficulté à trouver un bon fond avec le logo Instagram (image toujours provisoire).</p>
+<p>Footer : liens TikTok/Instagram à intégrer, remasterisé vers la fin (26 juin).</p>
+<p>Header : couleur, alignement, largeur — retouches multiples.</p>
+<p>📱💻 Responsive design (téléphone/tablette)</p>
+<p>Tu as passé plusieurs jours à te documenter (YouTube, ChatGPT…) pour adapter le site au format mobile et tablette.</p>
+<p>Avancées : Longue phase d’essais, mais finalement résolu vers le 23 juin, après avoir découvert qu’il fallait ajouter un bloc spécifique pour gérer l’affichage responsive.</p>
+<p>Quelques ajustements ont encore été faits dans les jours suivants.</p>
+<p>📸 Médias à intégrer</p>
+<p>Tu as attendu la réception de photos et vidéos à plusieurs reprises pour finaliser la présentation (pages Accueil et Ambassadeur notamment).</p>
+<p>Certaines images ont été intégrées (10 juin), mais certaines vidéos sont encore attendues à ce moment-là.</p>
+<p>📝 Autres tâches et ajustements</p>
+<p>Revue régulière des pages pour corriger les bugs d’alignement, d’affichage, ou refaire certains paragraphes/mises en forme.</p>
+<p>Système d’avis intégré sur les produits.</p>
+<p>Refonte et ajustement des descriptifs produits.</p>
+<p>Travail de recherche sur les méthodes et tutoriels pour résoudre certains blocages techniques.</p>
+<p>✅ État final (26 juin)</p>
+<p>À la date du 26 juin, tu as :</p>
+<p>Corrigé tous les bugs principaux (notamment le Header),</p>
+<p>Finalisé l’adaptation du site aux formats mobile et tablette,</p>
+<p>Optimisé la mise en page globale du site (pages, panier, footer),</p>
+<p>Préparé le terrain pour une intégration complète des médias (photos/vidéos restantes).</p>
+<p>🔜 Reste à faire (fin juin)</p>
+<p>Quelques ajustements mineurs sur certaines pages.</p>
+<p>Finaliser l’intégration des photos/vidéos une fois reçues.</p>
+<p>💡 En résumé global</p>
+<p>En un mois, tu as :</p>
+<p>Résolu des bugs techniques complexes,</p>
+<p>Fait une mise en page cohérente et responsive,</p>
+<p>Personnalisé les pages clés du site,</p>
+<p>Géré des intégrations WooCommerce essentielles,</p>
+<p>Acquis de nouvelles compétences (responsive, shortcode, debug visuel).</p>
+    </div>
+</section>
 
-            <!-- FICHE DESCRIPTIVE -->
-            <div class="content-block" style="border-left: 3px solid #5DCAA5;">
-                <h2>📋 Fiche descriptive</h2>
-                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:0.8rem; margin-top:0.8rem;">
-                    <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:0.8rem 1rem;">
-                        <div style="font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.2rem;">Date de début</div>
-                        <div style="font-size:14px;color:rgba(255,255,255,0.85);font-weight:500;">19 juin 2025</div>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:0.8rem 1rem;">
-                        <div style="font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.2rem;">Date de fin</div>
-                        <div style="font-size:14px;color:rgba(255,255,255,0.85);font-weight:500;">29 juillet 2025</div>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:0.8rem 1rem;">
-                        <div style="font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.2rem;">Durée</div>
-                        <div style="font-size:14px;color:rgba(255,255,255,0.85);font-weight:500;">6 semaines</div>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.04);border-radius:10px;padding:0.8rem 1rem;">
-                        <div style="font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.2rem;">Entreprise</div>
-                        <div style="font-size:14px;color:rgba(255,255,255,0.85);font-weight:500;">OLEVIA</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRÉSENTATION ENTREPRISE -->
-            <div class="content-block" style="border-left: 3px solid #7F77DD;">
-                <h2>🏢 Présentation de l'entreprise</h2>
-                <p>OLEVIA est une entreprise française récente, spécialisée dans la vente en ligne. Durant ce stage, j'ai travaillé sur le développement et l'amélioration de leur site e-commerce basé sur WordPress et WooCommerce.</p>
-                <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:0.8rem;">
-                    <span style="background:rgba(127,119,221,0.15);color:#AFA9EC;border:1px solid rgba(127,119,221,0.25);font-size:11px;padding:3px 10px;border-radius:20px;">Entreprise française</span>
-                    <span style="background:rgba(127,119,221,0.15);color:#AFA9EC;border:1px solid rgba(127,119,221,0.25);font-size:11px;padding:3px 10px;border-radius:20px;">E-commerce</span>
-                    <span style="background:rgba(127,119,221,0.15);color:#AFA9EC;border:1px solid rgba(127,119,221,0.25);font-size:11px;padding:3px 10px;border-radius:20px;">WordPress</span>
-                    <span style="background:rgba(127,119,221,0.15);color:#AFA9EC;border:1px solid rgba(127,119,221,0.25);font-size:11px;padding:3px 10px;border-radius:20px;">WooCommerce</span>
-                </div>
-            </div>
-
-            <!-- PROBLÈMES TECHNIQUES -->
-            <div class="content-block" style="border-left: 3px solid #D4537E;">
-                <h2>🔧 Problèmes techniques rencontrés et résolus</h2>
-
-                <h3>1. Panier / Validation de commande</h3>
-                <p>Le bouton <strong>« Passer au paiement »</strong> redirigeait vers une page inexistante malgré des réglages corrects dans les paramètres.</p>
-                <p><strong>Résolution :</strong> Le problème venait du fait qu'aucune page WooCommerce n'avait été générée. En créant une page avec le shortcode <code style="background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;font-size:13px;">[woocommerce_checkout]</code>, la redirection a fonctionné. Des ajustements ont également été faits sur la page panier pour l'affichage et la mise en page.</p>
-
-                <h3>2. Header/Footer liés</h3>
-                <p>Toute modification du texte dans le footer apparaissait aussi dans le header, causant des bugs d'affichage et supprimant des éléments clés comme les onglets de navigation.</p>
-                <p><strong>Résolution :</strong> Le bug venait du fait que les deux sections étaient liées et partaient du même bloc. Problème résolu le <strong>25 juin</strong>.</p>
-
-                <h3>3. Header – Problèmes d'affichage et alignement</h3>
-                <p>Le design du header posait problème : bande bleue trop large, mauvaise disposition des éléments, liens non alignés à droite.</p>
-                <p><strong>Résolution :</strong> Plusieurs tentatives ont échoué jusqu'au <strong>25 juin</strong>, date à laquelle le bug a été définitivement corrigé. La mise en page a été entièrement refaite.</p>
-            </div>
-
-            <!-- MISE EN PAGE -->
-            <div class="content-block" style="border-left: 3px solid #EF9F27;">
-                <h2>🖼️ Travail de mise en page</h2>
-                <ul>
-                    <li><strong>Page Accueil :</strong> alignement des boutons et textes, intégration d'une vidéo en fond, Google Maps repositionnée correctement.</li>
-                    <li><strong>Page Ambassadeur :</strong> formulaire finalisé, design presque terminé, difficulté à trouver un bon fond avec le logo Instagram.</li>
-                    <li><strong>Footer :</strong> liens TikTok/Instagram intégrés, remasterisé vers le 26 juin.</li>
-                    <li><strong>Header :</strong> couleur, alignement, largeur — retouches multiples effectuées.</li>
-                </ul>
-            </div>
-
-            <!-- RESPONSIVE -->
-            <div class="content-block" style="border-left: 3px solid #5DCAA5;">
-                <h2>📱💻 Responsive design</h2>
-                <p>Plusieurs jours ont été consacrés à adapter le site au format mobile et tablette, en se documentant via YouTube et ChatGPT.</p>
-                <p><strong>Résolution :</strong> Après une longue phase d'essais, le responsive a été finalement résolu vers le <strong>23 juin</strong>, après avoir découvert qu'il fallait ajouter un bloc spécifique pour gérer l'affichage responsive. Des ajustements ont encore été faits dans les jours suivants.</p>
-            </div>
-
-            <!-- MÉDIAS -->
-            <div class="content-block" style="border-left: 3px solid #AFA9EC;">
-                <h2>📸 Médias intégrés</h2>
-                <p>Plusieurs phases d'attente de réception de photos et vidéos ont ralenti la finalisation des pages Accueil et Ambassadeur. Certaines images ont été intégrées dès le <strong>10 juin</strong>, mais certaines vidéos étaient encore attendues.</p>
-            </div>
-
-            <!-- AUTRES TÂCHES -->
-            <div class="content-block" style="border-left: 3px solid #ED93B1;">
-                <h2>📝 Autres tâches réalisées</h2>
-                <ul>
-                    <li>Revue régulière des pages pour corriger les bugs d'alignement et d'affichage.</li>
-                    <li>Système d'avis intégré sur les produits.</li>
-                    <li>Refonte et ajustement des descriptifs produits.</li>
-                    <li>Recherche de méthodes et tutoriels pour résoudre certains blocages techniques.</li>
-                </ul>
-            </div>
-
-            <!-- BILAN -->
-            <div class="content-block" style="border-left: 3px solid #5DCAA5; background: rgba(29,158,117,0.06);">
-                <h2>✅ État final au 26 juin</h2>
-                <ul>
-                    <li>Correction de tous les bugs principaux (notamment le Header)</li>
-                    <li>Finalisation de l'adaptation mobile et tablette</li>
-                    <li>Optimisation de la mise en page globale (pages, panier, footer)</li>
-                    <li>Préparation pour l'intégration complète des médias restants</li>
-                </ul>
-            </div>
-
-            <!-- RAPPORT DE STAGE -->
-            <div class="content-block" style="border-left: 3px solid #7F77DD;">
-                <h2>📄 Rapport de stage</h2>
-                <p>Vous pouvez consulter mon rapport de stage directement ci-dessous ou le télécharger.</p>
-                <a href="../theme/docs/Rapport-de-stage.pdf" download
-                    style="display:inline-flex;align-items:center;gap:8px;background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;margin-bottom:1rem;">
-                    📥 Télécharger le rapport de stage
-                </a>
-                <iframe
-                    src="../theme/docs/Rapport-de-stage.pdf"
-                    width="100%"
-                    height="800px"
-                    style="border:1px solid rgba(255,255,255,0.1);border-radius:10px;margin-top:0.5rem;">
-                    <a href="../theme/docs/Rapport-de-stage.pdf">Télécharger le PDF</a>
-                </iframe>
-            </div>
-
-            <!-- CE QUE J'AI APPRIS -->
-            <div class="content-block" style="border-left: 3px solid #7F77DD; background: rgba(127,119,221,0.06);">
-                <h2>💡 Ce que j'ai appris</h2>
-                <p>En un mois de stage chez OLEVIA, j'ai :</p>
-                <ul>
-                    <li>Résolu des <strong>bugs techniques complexes</strong> sur WordPress/WooCommerce</li>
-                    <li>Réalisé une <strong>mise en page cohérente et responsive</strong></li>
-                    <li>Personnalisé les pages clés d'un site e-commerce</li>
-                    <li>Géré des <strong>intégrations WooCommerce</strong> essentielles (panier, checkout)</li>
-                    <li>Acquis de nouvelles compétences en <strong>responsive design, shortcode et debug visuel</strong></li>
-                </ul>
-                <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:1rem;">
-                    <span style="background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);font-size:11px;padding:3px 10px;border-radius:20px;">WordPress</span>
-                    <span style="background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);font-size:11px;padding:3px 10px;border-radius:20px;">WooCommerce</span>
-                    <span style="background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);font-size:11px;padding:3px 10px;border-radius:20px;">Responsive design</span>
-                    <span style="background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);font-size:11px;padding:3px 10px;border-radius:20px;">Debug CSS</span>
-                    <span style="background:rgba(127,119,221,0.2);color:#AFA9EC;border:1px solid rgba(127,119,221,0.3);font-size:11px;padding:3px 10px;border-radius:20px;">HTML/CSS</span>
-                </div>
-            </div>
-
-        </div>
     </main>
 
-    <footer class="text-center py-3 bg-dark text-light" style="margin-top: 2rem;">
-        <small>&copy; 2026 - Portfolio BTS SIO — Louis</small>
-    </footer>
 
+
+<footer class="text-center mt-4 mb-0 bg-dark text-light">
+    <small>&copy; 2026 - Portfolio BTS SIO</small>
+</footer>
     <script src="../theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../theme/js/custom.js"></script>
     <script>
@@ -237,4 +171,4 @@
         });
     </script>
 </body>
-</html>
+</html

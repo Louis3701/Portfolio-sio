@@ -1,187 +1,551 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio — Louis</title>
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="./theme/logo/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./theme/logo/favicon-32x32.png">
-    <link rel="stylesheet" href="./theme/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./theme/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="./theme/vendor/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./theme/css/custom.css">
-
-    <style>
-        * { scroll-behavior: smooth; }
-
-        /* NAVBAR */
-        .navbar-wrapper { background: rgba(40,10,80,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
-        .navbar { font-size: 0.82em; }
-        .nav-link { color: rgba(255,255,255,0.75) !important; transition: color 0.2s; padding: 0.5rem 0.8rem !important; }
-        .nav-link:hover { color: #ffffff !important; }
-        .dropdown-menu { background: rgba(30,10,60,0.95) !important; border: 1px solid rgba(255,255,255,0.1); }
-        .dropdown-item { color: rgba(255,255,255,0.8) !important; font-weight: 500; }
-        .dropdown-item:hover { background: rgba(127,119,221,0.2) !important; color: #fff !important; }
-        #theme-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; margin-left: 1rem; transition: background 0.2s; }
-        #theme-toggle:hover { background: rgba(255,255,255,0.2); }
-
-        /* LAYOUT */
-        .section { padding: 2.5rem 1.5rem; max-width: 960px; margin: 0 auto; }
-        .section-sep { border: none; border-top: 1px solid rgba(255,255,255,0.06); max-width: 960px; margin: 0 auto; }
-        .section-label { font-size: 11px; color: #7F77DD; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.4rem; }
-        .section-title { font-size: 1.8rem; font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; }
-        .section-divider { width: 50px; height: 3px; border-radius: 3px; margin-bottom: 1.5rem; }
-
-        /* HERO */
-        .hero-section { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; padding: 4rem 1.5rem 3rem; max-width: 960px; margin: 0 auto; }
-        .hero-badge { display: inline-block; background: rgba(127,119,221,0.15); border: 1px solid rgba(127,119,221,0.4); color: #AFA9EC; font-size: 11px; padding: 5px 14px; border-radius: 20px; margin-bottom: 1rem; letter-spacing: 0.1em; }
-        .hero-name { font-size: 3rem; font-weight: 700; color: #ffffff; line-height: 1.1; margin-bottom: 0.4rem; }
-        .hero-name span { background: linear-gradient(135deg, #7F77DD, #D4537E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-role { font-size: 14px; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
-        .hero-desc { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1.5rem; }
-        .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-        .btn-main { background: linear-gradient(135deg, #7F77DD, #D4537E); color: #fff; border: none; padding: 10px 24px; border-radius: 30px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; }
-        .btn-main:hover { opacity: 0.85; color: #fff; }
-        .btn-sec { background: transparent; color: #AFA9EC; border: 1px solid rgba(127,119,221,0.4); padding: 10px 24px; border-radius: 30px; font-size: 13px; text-decoration: none; display: inline-block; }
-        .btn-sec:hover { background: rgba(127,119,221,0.15); color: #AFA9EC; }
-        .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .hero-tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
-        .hero-avatar-ring { width: 200px; height: 200px; border-radius: 50%; background: linear-gradient(135deg, #7F77DD, #D4537E, #EF9F27); padding: 3px; flex-shrink: 0; }
-        .hero-avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: #1a0a2e; display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 700; color: #AFA9EC; }
-
-        /* À PROPOS */
-        .about-text { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.2rem; }
-        .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
-        .about-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.2rem; }
-        .about-card h5 { font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 0.3rem; }
-        .about-card p { font-size: 12px; color: rgba(255,255,255,0.55); margin: 0; line-height: 1.5; }
-
-        /* OPTION SLAM */
-        .slam-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .slam-desc { background: rgba(127,119,221,0.08); border: 1px solid rgba(127,119,221,0.2); border-radius: 14px; padding: 1.6rem; }
-        .slam-badge { display: inline-block; background: rgba(127,119,221,0.2); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.3); font-size: 10px; padding: 3px 12px; border-radius: 20px; margin-bottom: 0.8rem; font-weight: 600; }
-        .slam-desc h3 { font-size: 1.1rem; font-weight: 600; color: #ffffff; margin-bottom: 0.6rem; }
-        .slam-desc p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1rem; }
-        .slam-skills { display: flex; flex-wrap: wrap; gap: 6px; }
-        .slam-skill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 11px; padding: 3px 10px; border-radius: 20px; }
-        .slam-info { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.8rem; }
-        .slam-info-row { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 0.9rem 1rem; }
-        .slam-info-row .label { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
-        .slam-info-row .value { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500; }
-
-        /* TIMELINE */
-        .timeline { position: relative; padding-left: 1.8rem; }
-        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #7F77DD, #D4537E, #EF9F27); border-radius: 2px; }
-        .timeline-item { position: relative; margin-bottom: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.2rem; display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: center; }
-        .timeline-item::before { content: ''; position: absolute; left: -2.4rem; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: #7F77DD; border: 2px solid #1a0a2e; }
-        .timeline-date { font-size: 11px; font-weight: 600; color: #AFA9EC; }
-        .timeline-text { font-size: 14px; color: rgba(255,255,255,0.7); margin: 0; }
-        .timeline-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
-
-        /* COMPÉTENCES */
-        .skills-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.8rem; }
-        .skill-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 0.5rem; text-align: center; transition: transform 0.2s; }
-        .skill-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.09); }
-        .skill-name { font-size: 12px; font-weight: 600; color: #ffffff; margin-bottom: 0.2rem; }
-        .skill-level { font-size: 10px; color: rgba(255,255,255,0.4); margin-bottom: 0.4rem; }
-        .skill-bar { height: 3px; border-radius: 3px; }
-        .skills-other { margin-top: 1rem; }
-        .skills-other-title { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; }
-        .skills-other-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-        .skill-tag { font-size: 11px; padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); }
-
-        /* PROJETS */
-        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-        .project-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.4rem; transition: transform 0.2s; }
-        .project-card:hover { transform: translateY(-3px); }
-        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
-        .project-tag { font-size: 10px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
-        .tag-scolaire { background: rgba(127,119,221,0.2); color: #AFA9EC; border: 1px solid rgba(127,119,221,0.3); }
-        .tag-stage { background: rgba(29,158,117,0.2); color: #5DCAA5; border: 1px solid rgba(29,158,117,0.3); }
-        .tag-perso { background: rgba(239,159,39,0.2); color: #FAC775; border: 1px solid rgba(239,159,39,0.3); }
-        .tag-certif { background: rgba(212,83,126,0.2); color: #ED93B1; border: 1px solid rgba(212,83,126,0.3); }
-        .project-card h5 { font-size: 14px; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
-        .project-card p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 0.8rem; }
-        .project-techs { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 0.6rem; }
-        .project-tech { font-size: 10px; padding: 2px 8px; border-radius: 10px; }
-        .project-link { font-size: 12px; color: #5DCAA5; text-decoration: none; }
-        .project-link:hover { color: #9FE1CB; }
-
-        /* VEILLE */
-        .veille-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-        .veille-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.4rem; text-decoration: none; display: block; transition: transform 0.2s; }
-        .veille-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.08); }
-        .veille-cat { font-size: 10px; color: #FAC775; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 600; }
-        .veille-card h5 { font-size: 14px; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
-        .veille-card p { font-size: 12px; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.5; margin-bottom: 0.8rem; }
-        .veille-arrow { font-size: 12px; color: #AFA9EC; font-weight: 500; }
-
-        /* MODE CLAIR */
-        body.light-mode .section-title { color: #1a0a2e; }
-        body.light-mode .about-text { color: #333; }
-        body.light-mode .about-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
-        body.light-mode .about-card h5 { color: #1a0a2e; }
-        body.light-mode .about-card p { color: #555; }
-        body.light-mode .slam-desc { background: rgba(127,119,221,0.1); }
-        body.light-mode .slam-info { background: #ffffff; border-color: rgba(127,119,221,0.2); }
-        body.light-mode .slam-info-row { background: #f5f3ff; }
-        body.light-mode .slam-info-row .value { color: #1a0a2e; }
-        body.light-mode .slam-info-row .label { color: #888; }
-        body.light-mode .project-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
-        body.light-mode .project-card h5 { color: #1a0a2e; }
-        body.light-mode .project-card p { color: #555; }
-        body.light-mode .veille-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
-        body.light-mode .veille-card h5 { color: #1a0a2e; }
-        body.light-mode .veille-card p { color: #555; }
-        body.light-mode .hero-name { color: #1a0a2e; }
-        body.light-mode .hero-role { color: #666; }
-        body.light-mode .hero-desc { color: #444; }
-        body.light-mode .hero-avatar-inner { background: #f0eeff; }
-        body.light-mode .skill-card { background: #ffffff; border-color: rgba(127,119,221,0.2); }
-        body.light-mode .skill-name { color: #1a0a2e; }
-        body.light-mode .skill-tag { background: #f0eeff; border-color: rgba(127,119,221,0.3); color: #534AB7; }
-        body.light-mode .section-sep { border-color: rgba(127,119,221,0.15); }
-        body.light-mode .hero-tag { background: rgba(127,119,221,0.1); border-color: rgba(127,119,221,0.2); color: #534AB7; }
-
-        @media (max-width: 768px) {
-            .hero-section { grid-template-columns: 1fr; }
-            .hero-avatar-ring { display: none; }
-            .about-grid { grid-template-columns: 1fr 1fr; }
-            .slam-wrap, .veille-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: repeat(3, 1fr); }
-            .projects-grid { grid-template-columns: 1fr; }
-            .timeline-item { grid-template-columns: 1fr; }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis 3701 - Développeur BTS SIO</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">L3701</div>
+            <button class="burger" id="burger">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#timeline">Parcours</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<body class="m-0 p-0">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <span class="hero-label">Développeur Fullstack</span>
+            <h1 class="hero-title">LOUIS</h1>
+            <p class="hero-subtitle">Étudiant BTS SIO SLAM | Développement Web & Mobile | 2024-2026</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+                <a href="#contact" class="btn btn-outline">Me contacter</a>
+            </div>
+        </div>
+        <div class="hero-scroll">↓ Scroll</div>
+    </section>
 
-    <!-- NAVBAR -->
-    <div class="navbar-wrapper">
-        <nav class="navbar navbar-expand-md">
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Je suis étudiant en BTS Systèmes Informatiques aux Organisations (SIO) spécialisation SLAM (développement logiciel). Passionné par le développement web et mobile, j'accumule expérience pratique via des stages en entreprise et des projets scolaires ambitieux.</p>
+                    <p><strong>Formation actuelle :</strong> BTS SIO SLAM (2024-2026)</p>
+                    <p><strong>Stack technique :</strong> HTML/CSS, JavaScript, Python, Kotlin, PHP, MySQL, React, Docker, Git</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-value">2</span>
+                        <span class="stat-label">Stages réalisés</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">5+</span>
+                        <span class="stat-label">Projets</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">6</span>
+                        <span class="stat-label">Langages de prog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline - Parcours -->
+    <section id="timeline" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Parcours scolaire</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Lycée Henri Becquerel</h3>
+                        <span class="timeline-date">2021-2022</span>
+                        <p>Seconde générale</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Baccalauréat STMG SIG</h3>
+                        <span class="timeline-date">2022-2024</span>
+                        <p>Systèmes d'Information et Gestion - Données et systèmes informatiques</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>BTS SIO SLAM</h3>
+                        <span class="timeline-date">2024-2026</span>
+                        <p>Développement logiciel, API, bases de données, fullstack web</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title mt-5">Stages en entreprise</h2>
+            <div class="stages-grid">
+                <div class="stage-card">
+                    <h3>Stage 1 - Olevia</h3>
+                    <span class="stage-date">19/06/2025 - 29/07/2025</span>
+                    <p><strong>Optimisation WooCommerce</strong></p>
+                    <ul>
+                        <li>Correction panier d'achat</li>
+                        <li>Restructuration header/footer</li>
+                        <li>Tests fonctionnels et reporting</li>
+                    </ul>
+                    <p class="skills-used"><strong>Stack :</strong> PHP, WordPress, Git, Agile</p>
+                    <a href="#" class="btn btn-sm btn-outline" onclick="openModal('stage1')">Voir rapport</a>
+                </div>
+                <div class="stage-card">
+                    <h3>Stage 2 - Olevia</h3>
+                    <span class="stage-date">01/02/2026 - 31/07/2026</span>
+                    <p><strong>App gestion de planning</strong></p>
+                    <ul>
+                        <li>Développement fullstack</li>
+                        <li>API REST et bases de données MySQL</li>
+                        <li>CI/CD et Docker</li>
+                    </ul>
+                    <p class="skills-used"><strong>Stack :</strong> React, Kotlin, MySQL, Docker</p>
+                    <a href="#" class="btn btn-sm btn-outline" onclick="openModal('stage2')">Voir rapport</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projets</h2>
+            
+            <h3 class="subsection-title">Projets scolaires</h3>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openModal('project1')">
+                    <div class="project-header">
+                        <h4>GeoWorld</h4>
+                        <span class="project-type">Plateforme SIG</span>
+                    </div>
+                    <p>Plateforme de suivi géographique de territoire avec Leaflet.js. Gestion de couches cartographiques et annotation spatiale.</p>
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>Leaflet</span>
+                        <span>GIS</span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project2')">
+                    <div class="project-header">
+                        <h4>E-commerce Cartes</h4>
+                        <span class="project-type">Site de vente</span>
+                    </div>
+                    <p>Boutique de cartes à collectionner avec catalogue dynamique, panier et système de paiement. Focus sur UX et design.</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Projets personnels & travaux majeurs</h3>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openModal('project3')">
+                    <div class="project-header">
+                        <h4>Optimisation Olevia</h4>
+                        <span class="project-type">e-shop WordPress</span>
+                    </div>
+                    <p>Refonte frontend et backend du site e-commerce client stage. Performance, UX, intégration paiement.</p>
+                    <div class="project-tags">
+                        <span>WordPress</span>
+                        <span>WooCommerce</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('project4')">
+                    <div class="project-header">
+                        <h4>Ce Portfolio</h4>
+                        <span class="project-type">Portfolio web</span>
+                    </div>
+                    <p>Portfolio dynamique personnalisé. Design one-page, responsive, dark mode, animations scroll et interactions fluides.</p>
+                    <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <span>HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Backend & Bases de données</h4>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <span>PHP</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>MySQL / SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Mobile & Autres</h4>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <span>Kotlin</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Git / GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <div class="contact-container">
+                <p>Intéressé par une collaboration ou un stage ? N'hésitez pas à me contacter !</p>
+                <div class="contact-links">
+                    <a href="mailto:louis.dev@example.com" class="contact-link">
+                        <span>📧</span> Email
+                    </a>
+                    <a href="https://github.com/louis3701" target="_blank" class="contact-link">
+                        <span>💻</span> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/louis3701" target="_blank" class="contact-link">
+                        <span>💼</span> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veille Technologique Section -->
+    <section id="veille" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Veille Technologique</h2>
+            
+            <div class="veille-intro">
+                <h3>Ma démarche de veille</h3>
+                <p>Pendant mon BTS SIO, j'ai développé une pratique active de <strong>veille technologique</strong> en suivant les tendances clés en intelligence artificielle, développement logiciel et cybersécurité. Cette veille me permet de rester à jour sur les innovations du secteur et d'identifier des opportunités d'apprentissage et de projet.</p>
+                
+                <p>Ma méthodologie repose sur:</p>
+                <ul class="veille-methodology">
+                    <li><strong>Suivi des actualités</strong> : Publications officielles des grands éditeurs (Google, OpenAI, Microsoft, etc.)</li>
+                    <li><strong>Analyse technologique</strong> : Évaluation de l'impact des nouveautés sur les métiers et l'industrie</li>
+                    <li><strong>Documentation personnelle</strong> : Synthèses écrites et ressources curatées pour référence future</li>
+                    <li><strong>Mise en pratique</strong> : Test et intégration des technologies pertinentes dans mes projets</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Tendances suivies en 2025-2026</h3>
+            
+            <div class="veille-grid">
+                <div class="veille-card">
+                    <div class="veille-header">
+                        <h4>🇫🇷 Choose France 2025</h4>
+                        <span class="veille-tag">Financement & Politique</span>
+                    </div>
+                    <p><strong>Programme gouvernemental français</strong> d'investissement massif dans la tecnhologie et l'IA.</p>
+                    <div class="veille-details">
+                        <p><strong>Montant :</strong> 20 milliards d'euros</p>
+                        <p><strong>Domaines :</strong> Projets IA, deeptech, innovation technologique</p>
+                        <p><strong>Impact :</strong> Création d'opportunités de stage et emploi dans les startups et entreprises tech françaises. Impulsion vers une souveraineté technologique européenne.</p>
+                        <p><strong>Mon intérêt :</strong> Identifier des entreprises et projets innovants en France où développer mes compétences.</p>
+                    </div>
+                </div>
+
+                <div class="veille-card">
+                    <div class="veille-header">
+                        <h4>🤖 Nano Banana (Google)</h4>
+                        <span class="veille-tag">IA Visuelle</span>
+                    </div>
+                    <p><strong>Nouveau model d'IA génératif</strong> spécialisé dans la retouche et création d'images.</p>
+                    <div class="veille-details">
+                        <p><strong>Fonctionnalités :</strong> Intégration à Gemini, retouche instantanée, création d'images haute qualité</p>
+                        <p><strong>Plateforme :</strong> APIs Google Cloud, accessibilité pour développeurs</p>
+                        <p><strong>Impact :</strong> Démocratisation de l'IA visuelle, nouvelles possibilités de création et automatisation d'images</p>
+                        <p><strong>Applications :</strong> Design automatisé, retouche batch, assistance créative</p>
+                    </div>
+                </div>
+
+                <div class="veille-card">
+                    <div class="veille-header">
+                        <h4>🎬 Veo 3 (Google)</h4>
+                        <span class="veille-tag">Génération Vidéo</span>
+                    </div>
+                    <p><strong>Model de génération vidéo avancé</strong> avec qualité cinéma et intégration d'audio.</p>
+                    <div class="veille-details">
+                        <p><strong>Capacités :</strong> Génération vidéo 4K, synthèse sonore, consistency temporelle</p>
+                        <p><strong>Disponibilité :</strong> Déploiement européen notamment en France</p>
+                        <p><strong>Impact :</strong> Révolution du contenu vidéo, réduction des coûts de production</p>
+                        <p><strong>Opportunités :</strong> Création d'outils automatisés de production vidéo, intégration dans workflows professionnels</p>
+                    </div>
+                </div>
+
+                <div class="veille-card">
+                    <div class="veille-header">
+                        <h4>🧠 GPT-5 (OpenAI)</h4>
+                        <span class="veille-tag">LLM & Langage</span>
+                    </div>
+                    <p><strong>Nouvelle version majeure</strong> du modèle de langage le plus populaire au monde.</p>
+                    <div class="veille-details">
+                        <p><strong>Améliorations :</strong> Meilleure compréhension, génération plus naturelle, moins d'hallucinations</p>
+                        <p><strong>Applications :</strong> Assistants IA, automatisation, codage assisté par IA</p>
+                        <p><strong>Impact :</strong> Accélération de l'IA générative dans les entreprises, nouveaux use-cases</p>
+                        <p><strong>Pertinence :</strong> Directement applicable à mes projets de chatbots et assistants</p>
+                    </div>
+                </div>
+
+                <div class="veille-card">
+                    <div class="veille-header">
+                        <h4>🔊 Flow + Veo 3 (Google)</h4>
+                        <span class="veille-tag">Multimodal</span>
+                    </div>
+                    <p><strong>Combinaison d'outils</strong> pour créer des workflows vidéo + audio complètement assistés.</p>
+                    <div class="veille-details">
+                        <p><strong>Fonctionnalités :</strong> Synthèse vocale avancée, synchronisation son/vidéo, génération de narration</p>
+                        <p><strong>Cas d'usage :</strong> Production de contenu marketing, tutoriels générés automatiquement, doublage multilingue</p>
+                        <p><strong>Impact :</strong> Simplification drastique de la création vidéo professionnelle</p>
+                        <p><strong>Apprentissage :</strong> APIs multimodales, orchestration de modèles IA en pipeline</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="veille-conclusion">
+                <h3>Synthèse et pistes de projet</h3>
+                <p>Ces tendances convergent vers <strong>une IA générative multimodale et plus accessible</strong>. Les domaines clés à explorer pour ma formation et mes projets :</p>
+                <ul>
+                    <li><strong>APIs et intégrations</strong> : Intégrer Gemini, GPT-5, Veo 3 dans des applications</li>
+                    <li><strong>Automatisation d'entreprise</strong> : Use-cases de productivité (vidéo, texte, images)</li>
+                    <li><strong>Développement fullstack</strong> : Backends pour orchestrer ces modèles</li>
+                    <li><strong>Entrepreneuriat tech</strong> : Opportunités du programme Choose France</li>
+                </ul>
+                <p>J'ai documenté ma veille complète dans le <a href="./theme/docs/veille_technologique.pdf" class="veille-pdf-link">rapport détaillé de veille technologique (PDF)</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Louis 3701. Développeur BTS SIO SLAM.</p>
+    </footer>
+
+    <!-- Modals -->
+    <div id="stage1Modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('stage1')">&times;</span>
+            <h3>Stage 1 - Olevia (Juin-Juillet 2025)</h3>
+            <p><strong>Dates :</strong> 19/06/2025 - 29/07/2025</p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Optimisation du panier d'achat WooCommerce</li>
+                <li>Restructuration du header et footer du site</li>
+                <li>Tests fonctionnels et correction de bugs</li>
+                <li>Reporting et documentation</li>
+            </ul>
+            <p><strong>Compétences développées :</strong> PHP, WordPress, WooCommerce, Git, AGILE, Tests</p>
+            <a href="./theme/docs/Rapport-de-stage.pdf" target="_blank" class="btn btn-primary">📄 Télécharger rapport PDF</a>
+        </div>
+    </div>
+
+    <div id="stage2Modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('stage2')">&times;</span>
+            <h3>Stage 2 - Olevia (Février-Juillet 2026)</h3>
+            <p><strong>Dates :</strong> 01/02/2026 - 31/07/2026</p>
+            <p><strong>Missions :</strong></p>
+            <ul>
+                <li>Développement d'une application de gestion de planning</li>
+                <li>Conception d'une API REST</li>
+                <li>Développement frontend React et mobile Kotlin</li>
+                <li>Configuration CI/CD avec Docker</li>
+        <li>Matching de commandes backoffice</li>
+            </ul>
+            <p><strong>Compétences développées :</strong> React, Kotlin, MySQL, API REST, Docker, CI/CD, UX</p>
+            <a href="./theme/docs/rapport-de-stage-2-année.pdf" target="_blank" class="btn btn-primary">📄 Télécharger rapport PDF</a>
+        </div>
+    </div>
+
+    <div id="project1Modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('project1')">&times;</span>
+            <h3>GeoWorld - Plateforme SIG</h3>
+            <p>Plateforme web de suivi géographique permettant la visualisation et l'annotation de territoires via une cartographie interactive.</p>
+            <p><strong>Technologies :</strong> JavaScript, Leaflet.js, OpenLayers, GIS</p>
+            <p><strong>Fonctionnalités :</strong></p>
+            <ul>
+                <li>Carte interactive avec plusieurs couches</li>
+                <li>Système de marqueurs et annotations</li>
+                <li>Export de données géographiques</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project2Modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('project2')">&times;</span>
+            <h3>E-commerce Cartes à collectionner</h3>
+            <p>Site de vente en ligne de cartes à collectionner avec catalogue complet, système de panier et processus de paiement intégré.</p>
+            <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript, PHP, MySQL</p>
+            <p><strong>Fonctionnalités :</strong></p>
+            <ul>
+                <li>Catalogue produits dynamique</li>
+                <li>Panier persistant</li>
+                <li>Système de paiement</li>
+                <li>Gestion des commandes</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project3Modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('project3')">&times;</span>
+            <h3>Olevia - Refonte e-shop</h3>
+            <p>Refonte complète du site e-commerce WordPress/WooCommerce du client stage avec amélioration UX, performance et conversion.</p>
+            <p><strong>Technologies :</strong> WordPress, WooCommerce, PHP, CSS</p>
+            <p><strong>Améliorations :</strong></p>
+            <ul>
+                <li>Design moderne et responsive</li>
+                <li>Optimisation performance (vitesse chargement)</li>
+                <li>Amélioration taux de conversion</li>
+                <li>Intégration plugins paiement</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="project4Modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('project4')">&times;</span>
+            <h3>Portfolio Personnel</h3>
+            <p>Portfolio dynamique et entièrement personnalisé pour présenter mon parcours, compétences et projets de manière professionnelle et engageante.</p>
+            <p><strong>Technologies :</strong> HTML5, CSS3, JavaScript Vanilla (pas de frameworks)</p>
+            <p><strong>Fonctionnalités :</strong></p>
+            <ul>
+                <li>Design one-page responsive</li>
+                <li>Animations scroll smooth</li>
+                <li>Dark mode</li>
+                <li>Modals pour détails projets</li>
+                <li>Performance optimisée</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
             <div class="container mx-auto px-3">
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
-                        <li class="nav-item"><a class="nav-link py-2" href="#presentation">À propos</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="#option">SLAM</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="#parcours">Parcours</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="#competences">Compétences</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="#projets">Projets</a></li>
-                        <li class="nav-item"><a class="nav-link py-2" href="#veille">Veille</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="./">Accueil</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                            <a class="nav-link py-2 dropdown-toggle" href="./pages/parcours" data-bs-toggle="dropdown">Mon parcours</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="./pages/parcours">Mon parcours</a></li>
-                                <li><a class="dropdown-item" href="./pages/realisations">Réalisations</a></li>
-                                <li><a class="dropdown-item" href="./ma-veille">Veille techno.</a></li>
-                                <li><a class="dropdown-item" href="./pages/engagement-etudiant">Engagement</a></li>
+                                <li><a class="dropdown-item" href="./pages/parcours-scolaire">Parcours scolaire</a></li>
+                                <li><a class="dropdown-item" href="./pages/bts-sio">Le BTS SIO</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="./pages/realisations" data-bs-toggle="dropdown">Réalisations</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./pages/tp-majeurs">TP majeurs</a></li>
+                                <li><a class="dropdown-item" href="./pages/stage-sio1">Stage de 1ère année</a></li>
+                                <li><a class="dropdown-item" href="./pages/stage-sio2">Stage de 2e année</a></li>
+                                <li><a class="dropdown-item" href="./pages/projets-scolaires">Projets scolaires</a></li>
+                                <li><a class="dropdown-item" href="./pages/projets-personnels">Projets personnels</a></li>
+                                <li><a class="dropdown-item" href="./pages/certifications-complementaires">Certifications complémentaires</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="./ma-veille" data-bs-toggle="dropdown">Veille techno.</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./ma-veille">Ma veille technologique</a></li>
+                                <li><a class="dropdown-item" href="./archives">Archive des articles</a></li>
+                                <li><a class="dropdown-item" href="./categories">Liste des catégories</a></li>
+                                <li><a class="dropdown-item" href="./authors">Liste des auteurs</a></li>
+                                <li><a class="dropdown-item" href="./tags">Liste des mots clés</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="./pages/engagement-etudiant">Engagement</a>
                         </li>
                     </ul>
                     <button id="theme-toggle">🌙 Sombre</button>
@@ -190,315 +554,137 @@
         </nav>
     </div>
 
-    <main>
-        <!-- HERO -->
-        <div class="hero-section">
-            <div class="hero-left">
-                <span class="hero-badge">✦ BTS SIO — option SLAM ✦</span>
-                <h1 class="hero-name">Bonjour, je suis<br><span>Louis</span></h1>
-                <p class="hero-role">Étudiant en BTS SIO SLAM · Développeur en formation</p>
-                <p class="hero-desc">Passionné par le développement logiciel et web, je suis actuellement en 2ème année de BTS SIO option SLAM au Lycée Léonard de Vinci de Melun. Ce portfolio retrace mon parcours, mes compétences et mes réalisations.</p>
+    <main class=" min-vh-100">
+        <!-- Hero -->
+        <section id="hero" class="hero">
+            <div class="hero-bg">
+                <div class="glow glow1"></div>
+                <div class="glow glow2"></div>
+                <div class="glow glow3"></div>
+            </div>
+            <div class="hero-content hero-anim">
+                <span class="hero-eyebrow">PortFolio BTS SIO</span>
+                <h1 class="hero-title">LOUIS <span class="hero-name-accent">3701</span></h1>
+                <p class="hero-subtitle">Étudiant BTS SIO / SLAM - Dév Web & Mobile en quête de stage + projets concrets.</p>
                 <div class="hero-btns">
-                    <a href="#parcours" class="btn-main">Mon parcours</a>
-                    <a href="#projets" class="btn-sec">Mes projets</a>
+                    <a class="btn btn-primary" href="#stages">Mes stages</a>
+                    <a class="btn btn-outline" href="#projects">Projets</a>
                 </div>
-                <div class="hero-tags">
-                    <span class="hero-tag">Python</span>
-                    <span class="hero-tag">HTML/CSS</span>
-                    <span class="hero-tag">SQL</span>
-                    <span class="hero-tag">Java</span>
-                    <span class="hero-tag">PHP</span>
-                    <span class="hero-tag">Kotlin</span>
+                <div class="hero-stack">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>SQL</span>
                 </div>
-            </div>
-            <div class="hero-avatar-ring">
-                <div class="hero-avatar-inner">L</div>
-            </div>
-        </div>
-
-        <hr class="section-sep">
-
-        <!-- À PROPOS -->
-        <div class="section" id="presentation">
-            <p class="section-label">✦ Qui suis-je</p>
-            <h2 class="section-title">À propos de moi</h2>
-            <div class="section-divider" style="background: linear-gradient(90deg, #7F77DD, #D4537E);"></div>
-            <p class="about-text">Je m'appelle <strong style="color:#AFA9EC;">Louis</strong>, étudiant en BTS SIO option SLAM au Lycée Léonard de Vinci de Melun. Après un bac STMG obtenu au lycée de Nangis, j'ai choisi de me spécialiser dans le développement logiciel et web. Je suis curieux, motivé et toujours prêt à apprendre de nouvelles technologies.</p>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h5>🎓 Formation</h5>
-                    <p>BTS SIO SLAM — Lycée Léonard de Vinci, Melun (2024-2026)</p>
-                </div>
-                <div class="about-card">
-                    <h5>📍 Localisation</h5>
-                    <p>Région Île-de-France, Seine-et-Marne</p>
-                </div>
-                <div class="about-card">
-                    <h5>💡 Passion</h5>
-                    <p>Développement web, nouvelles technologies</p>
-                </div>
-                <div class="about-card">
-                    <h5>🎯 Objectif</h5>
-                    <p>Devenir développeur web / logiciel après le BTS</p>
+                <div class="hero-scroll">
+                    <div class="scroll-line"></div>
+                    <small>Scroll</small>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <hr class="section-sep">
-
-        <!-- OPTION SLAM -->
-        <div class="section" id="option">
-            <p class="section-label">✦ Ma formation</p>
-            <h2 class="section-title">Option SLAM</h2>
-            <div class="section-divider" style="background: linear-gradient(90deg, #D4537E, #EF9F27);"></div>
-            <div class="slam-wrap">
-                <div class="slam-desc">
-                    <span class="slam-badge">SLAM — Solutions Logicielles et Applications Métiers</span>
-                    <h3>Développement logiciel & web</h3>
-                    <p>L'option SLAM forme des développeurs capables de concevoir, développer et maintenir des applications logicielles et web. Elle couvre le front-end, le back-end, les bases de données et les méthodes de gestion de projets.</p>
-                    <div class="slam-skills">
-                        <span class="slam-skill">Développement web</span>
-                        <span class="slam-skill">Applications mobiles</span>
-                        <span class="slam-skill">Bases de données</span>
-                        <span class="slam-skill">Gestion de projets</span>
-                        <span class="slam-skill">POO</span>
-                        <span class="slam-skill">Méthodes Agile</span>
-                        <span class="slam-skill">API REST</span>
-                        <span class="slam-skill">UML</span>
+        <section id="stages" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Stages</h2>
+                <div class="about-grid">
+                    <div class="about-card reveal">
+                        <h3>Stage BTS SIO1 - Olevia</h3>
+                        <p>19/06/2025 - 29/07/2025 : optimisation WooCommerce, correction panier, restructuration header/footer.</p>
+                        <p>Compétences : PHP, WordPress, Git, agile, tests fonctionnels et reporting.</p>
+                        <a href="./pages/stage-sio1.html" class="btn btn-outline">Voir rapport Stage 1</a>
                     </div>
-                </div>
-                <div class="slam-info">
-                    <div class="slam-info-row">
-                        <div class="label">Diplôme</div>
-                        <div class="value">BTS — Bac +2 national</div>
-                    </div>
-                    <div class="slam-info-row">
-                        <div class="label">Durée</div>
-                        <div class="value">2 ans (2024 — 2026)</div>
-                    </div>
-                    <div class="slam-info-row">
-                        <div class="label">Établissement</div>
-                        <div class="value">Lycée Léonard de Vinci, Melun</div>
-                    </div>
-                    <div class="slam-info-row">
-                        <div class="label">Option</div>
-                        <div class="value">SLAM — Développement logiciel</div>
-                    </div>
-                    <div class="slam-info-row">
-                        <div class="label">Stage</div>
-                        <div class="value">10 à 12 semaines en entreprise</div>
+                    <div class="about-card reveal">
+                        <h3>Stage BTS SIO2 - Olevia</h3>
+                        <p>01/02/2026 - 31/07/2026 : développement application de gestion de planning / matching commandes backoffice.</p>
+                        <p>Compétences : MySQL, API, React, Kotlin, CI/CD, Docker, UX.</p>
+                        <a href="./pages/stage-sio2.html" class="btn btn-outline">Voir rapport Stage 2</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <hr class="section-sep">
-
-        <!-- PARCOURS -->
-        <div class="section" id="parcours">
-            <p class="section-label">✦ Mon histoire</p>
-            <h2 class="section-title">Mon parcours</h2>
-            <div class="section-divider" style="background: linear-gradient(90deg, #7F77DD, #5DCAA5);"></div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2017 — 2021</div>
-                    <div>
-                        <p class="timeline-text">Collège René Barthélemy — Nangis</p>
-                        <p class="timeline-sub">De la 6ème à la 3ème générale</p>
+        <section id="bts" class="section">
+            <div class="container">
+                <h2 class="section-title">BTS SIO</h2>
+                <div class="bts-grid">
+                    <div class="bts-card reveal">
+                        <h3>SISR</h3>
+                        <p>Infrastructure / réseaux : serveurs, sécurité, virtualisation.</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 — 2022</div>
-                    <div>
-                        <p class="timeline-text">Lycée Henry Becquerel — Nangis</p>
-                        <p class="timeline-sub">Seconde générale</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 — 2024</div>
-                    <div>
-                        <p class="timeline-text">Lycée de Nangis — 1ère & Terminale STMG</p>
-                        <p class="timeline-sub">Option SIG · Obtention du Bac STMG</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2024 — 2026</div>
-                    <div>
-                        <p class="timeline-text">Lycée Léonard de Vinci — Melun</p>
-                        <p class="timeline-sub">BTS SIO option SLAM · En cours</p>
+                    <div class="bts-card reveal">
+                        <h3>SLAM</h3>
+                        <p>Développement logiciel : Web, Fullstack, API, bases de données.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <hr class="section-sep">
-
-        <!-- COMPÉTENCES -->
-        <div class="section" id="competences">
-            <p class="section-label">✦ Ce que je sais faire</p>
-            <h2 class="section-title">Mes compétences</h2>
-            <div class="section-divider" style="background: linear-gradient(90deg, #EF9F27, #D4537E);"></div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-name">HTML/CSS</div>
-                    <div class="skill-level">Intermédiaire</div>
-                    <div class="skill-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-name">Python</div>
-                    <div class="skill-level">Intermédiaire</div>
-                    <div class="skill-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-name">PHP</div>
-                    <div class="skill-level">Débutant</div>
-                    <div class="skill-bar" style="background: linear-gradient(90deg, #7F77DD, #AFA9EC);"></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-name">SQL</div>
-                    <div class="skill-level">Intermédiaire</div>
-                    <div class="skill-bar" style="background: linear-gradient(90deg, #EF9F27, #FAC775);"></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-name">Java</div>
-                    <div class="skill-level">Débutant</div>
-                    <div class="skill-bar" style="background: linear-gradient(90deg, #D4537E, #ED93B1);"></div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-name">Kotlin</div>
-                    <div class="skill-level">Débutant</div>
-                    <div class="skill-bar" style="background: linear-gradient(90deg, #5DCAA5, #9FE1CB);"></div>
+        <section id="parcours" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Parcours</h2>
+                <div class="parcours-timeline">
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2021-2022</h3><h4>Lycée Henri Becquerel</h4><p>Seconde générale</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2022-2024</h3><h4>STMG SIG</h4><p>Données, gestion, systèmes d'information.</p></div></div>
+                    <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2024-2026</h3><h4>BTS SIO</h4><p>Développement et admin réseau.</p></div></div>
                 </div>
             </div>
-            <div class="skills-other">
-                <p class="skills-other-title">Outils & environnements</p>
-                <div class="skills-other-tags">
-                    <span class="skill-tag">Git & GitHub</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Linux</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">Pelican</span>
-                    <span class="skill-tag">Android Studio</span>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projets</h2>
+                <h3 class="subsection-title">Scolaires</h3>
+                <div class="projects-grid">
+                    <div class="project-card reveal"><h3>GeoWorld</h3><p>Plateforme SIG pour suivi de territoire.</p><div class="project-tags"><span>JS</span><span>Leaflet</span><span>GIS</span></div></div>
+                    <div class="project-card reveal"><h3>E-commerce Cartes</h3><p>Site boutique cartes à collectionner (td de catégorie)</p><div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>PHP</span></div></div>
+                </div>
+                <h3 class="subsection-title">Persos</h3>
+                <div class="projects-grid">
+                    <div class="project-card reveal"><h3>Olevia</h3><p>Refonte front+back du e-shop stage.</p><div class="project-tags"><span>WordPress</span><span>WooCommerce</span></div></div>
+                    <div class="project-card reveal"><h3>Portfolio</h3><p>Portfolio actuel sur Pelican + CSS/JS.</p><div class="project-tags"><span>Python</span><span>Pelican</span></div></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <hr class="section-sep">
-
-        <!-- PROJETS -->
-        <div class="section" id="projets">
-            <p class="section-label">✦ Ce que j'ai réalisé</p>
-            <h2 class="section-title">Mes projets</h2>
-            <div class="section-divider" style="background: linear-gradient(90deg, #5DCAA5, #7F77DD);"></div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-scolaire">Scolaire</span>
-                    </div>
-                    <h5>Portfolio BTS SIO</h5>
-                    <p>Création de ce portfolio avec Pelican. Design personnalisé avec thème sombre et mode clair/sombre.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">Python</span>
-                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">HTML/CSS</span>
-                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">Pelican</span>
-                    </div>
-                    <a href="./pages/realisations" class="project-link">📄 Voir les détails →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-scolaire">Scolaire</span>
-                    </div>
-                    <h5>TP Majeurs</h5>
-                    <p>Travaux pratiques majeurs réalisés dans le cadre du BTS SIO SLAM. À compléter prochainement.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">À venir</span>
-                    </div>
-                    <a href="./pages/tp-majeurs.html" class="project-link">📄 Voir les TP →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-stage">Stage</span>
-                    </div>
-                    <h5>Stage de 1ère année</h5>
-                    <p>Stage en entreprise réalisé en 1ère année de BTS SIO. Rapport disponible prochainement.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(29,158,117,0.2);color:#5DCAA5;">À compléter</span>
-                    </div>
-                    <a href="./pages/stage-sio1.html" class="project-link">📄 Voir le rapport →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-stage">Stage</span>
-                    </div>
-                    <h5>Stage de 2ème année</h5>
-                    <p>Stage en entreprise réalisé en 2ème année de BTS SIO. Rapport disponible prochainement.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(29,158,117,0.2);color:#5DCAA5;">À compléter</span>
-                    </div>
-                    <a href="./pages/stage-sio2.html" class="project-link">📄 Voir le rapport →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-scolaire">Scolaire</span>
-                    </div>
-                    <h5>Projets scolaires</h5>
-                    <p>Projets réalisés dans le cadre de la formation BTS SIO SLAM. À compléter prochainement.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(127,119,221,0.2);color:#AFA9EC;">À venir</span>
-                    </div>
-                    <a href="./pages/projets-scolaires.html" class="project-link">📄 Voir les projets →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-perso">Personnel</span>
-                    </div>
-                    <h5>Projets personnels</h5>
-                    <p>Mes projets personnels en dehors de la formation. À compléter prochainement.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(239,159,39,0.2);color:#FAC775;">À venir</span>
-                    </div>
-                    <a href="./pages/projets-personnels.html" class="project-link">📄 Voir les projets →</a>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag tag-certif">Certification</span>
-                    </div>
-                    <h5>Certifications complémentaires</h5>
-                    <p>Certifications obtenues en complément de la formation BTS SIO. À compléter prochainement.</p>
-                    <div class="project-techs">
-                        <span class="project-tech" style="background:rgba(212,83,126,0.2);color:#ED93B1;">À venir</span>
-                    </div>
-                    <a href="./pages/certifications-complementaires.html" class="project-link">📄 Voir les certifications →</a>
+        <section id="skills" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-card reveal"><h3>HTML/CSS</h3><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div><span class="skill-percent">95%</span></div>
+                    <div class="skill-card reveal"><h3>JavaScript</h3><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div><span class="skill-percent">80%</span></div>
+                    <div class="skill-card reveal"><h3>Python</h3><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div><span class="skill-percent">85%</span></div>
+                    <div class="skill-card reveal"><h3>Kotlin</h3><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div><span class="skill-percent">70%</span></div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 1.2rem;">
-                <a href="./pages/realisations" class="btn-sec">Voir toutes mes réalisations →</a>
-            </div>
-        </div>
+        </section>
 
-        <hr class="section-sep">
-
-        <!-- VEILLE -->
-        <div class="section" id="veille">
-            <p class="section-label">✦ Ma curiosité tech</p>
-            <h2 class="section-title">Veille technologique</h2>
-            <div class="section-divider" style="background: linear-gradient(90deg, #FAC775, #EF9F27);"></div>
-            <div style="display: flex; justify-content: center;">
-                <a href="./ma-veille" class="veille-card" style="max-width: 500px;">
-                    <p class="veille-cat">📰 Suivi technologique</p>
-                    <h5>Ma veille technologique</h5>
-                    <p>Découvrez mes articles et mes ressources en veille technologique, ainsi que le PDF complet de ma veille sur les avancées technologiques actuelles.</p>
-                    <span class="veille-arrow">Consulter ma veille →</span>
-                </a>
+        <section id="veille" class="section">
+            <div class="container">
+                <h2 class="section-title">Veille</h2>
+                <div class="veille-grid">
+                    <div class="veille-block reveal"><h3>Google Nano Banana</h3><p>Suivi IA mobile.</p><a href="./veille/nouvelle-ia-de-google-nano-banana.html" class="veille-link">Lire</a></div>
+                    <div class="veille-block reveal"><h3>ChatGPT-5</h3><p>Sortie OpenAI.</p><a href="./veille/sortie-gpt5.html" class="veille-link">Lire</a></div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Restons en contact</h3>
+                        <p>Envie d’un stage ou d’un projet ? Discutons.</p>
+                        <a href="mailto:louis@example.com" class="contact-link">Email</a>
+                        <a href="https://github.com/louis3701" class="contact-link">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="text-center py-3 bg-dark text-light" style="margin-top: 2rem;">
-        <small>&copy; 2026 - Portfolio BTS SIO — Louis</small>
-    </footer>
 
+
+<footer class="text-center mt-4 mb-0 bg-dark text-light">
+    <small>&copy; 2026 - Portfolio BTS SIO</small>
+</footer>
     <script src="./theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./theme/js/custom.js"></script>
     <script>
@@ -516,4 +702,4 @@
         });
     </script>
 </body>
-</html>
+</html

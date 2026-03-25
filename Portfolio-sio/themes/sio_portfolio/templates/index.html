@@ -1,5 +1,128 @@
 {% extends "base.html" %}
 {% block title %}Accueil{% endblock %}
 {% block body_class %}home{% endblock %}
-{% block main_class %}{% endblock %}
-{% block content %}{% endblock %}
+{% block content %}
+<!-- Hero -->
+<section id="hero" class="hero">
+    <div class="hero-bg">
+        <div class="glow glow1"></div>
+        <div class="glow glow2"></div>
+        <div class="glow glow3"></div>
+    </div>
+    <div class="hero-content hero-anim">
+        <span class="hero-eyebrow">PortFolio BTS SIO</span>
+        <h1 class="hero-title">LOUIS <span class="hero-name-accent">3701</span></h1>
+        <p class="hero-subtitle">Étudiant BTS SIO / SLAM - Dév Web & Mobile en quête de stage + projets concrets.</p>
+        <div class="hero-btns">
+            <a class="btn btn-primary" href="#stages">Mes stages</a>
+            <a class="btn btn-outline" href="#projects">Projets</a>
+        </div>
+        <div class="hero-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>SQL</span>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <small>Scroll</small>
+        </div>
+    </div>
+</section>
+
+<section id="stages" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Stages</h2>
+        <div class="about-grid">
+            <div class="about-card reveal">
+                <h3>Stage BTS SIO1 - Olevia</h3>
+                <p>19/06/2025 - 29/07/2025 : optimisation WooCommerce, correction panier, restructuration header/footer.</p>
+                <p>Compétences : PHP, WordPress, Git, agile, tests fonctionnels et reporting.</p>
+                <a href="/pages/stage-sio1.html" class="btn btn-outline">Voir rapport Stage 1</a>
+            </div>
+            <div class="about-card reveal">
+                <h3>Stage BTS SIO2 - Olevia</h3>
+                <p>01/02/2026 - 31/07/2026 : développement application de gestion de planning / matching commandes backoffice.</p>
+                <p>Compétences : MySQL, API, React, Kotlin, CI/CD, Docker, UX.</p>
+                <a href="/pages/stage-sio2.html" class="btn btn-outline">Voir rapport Stage 2</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="bts" class="section">
+    <div class="container">
+        <h2 class="section-title">BTS SIO</h2>
+        <div class="bts-grid">
+            <div class="bts-card reveal">
+                <h3>SISR</h3>
+                <p>Infrastructure / réseaux : serveurs, sécurité, virtualisation.</p>
+            </div>
+            <div class="bts-card reveal">
+                <h3>SLAM</h3>
+                <p>Développement logiciel : Web, Fullstack, API, bases de données.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="parcours" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Parcours</h2>
+        <div class="parcours-timeline">
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2021-2022</h3><h4>Lycée Henri Becquerel</h4><p>Seconde générale</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2022-2024</h3><h4>STMG SIG</h4><p>Données, gestion, systèmes d'information.</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2024-2026</h3><h4>BTS SIO</h4><p>Développement et admin réseau.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projets</h2>
+        <h3 class="subsection-title">Scolaires</h3>
+        <div class="projects-grid">
+            <div class="project-card reveal"><h3>GeoWorld</h3><p>Plateforme SIG pour suivi de territoire.</p><div class="project-tags"><span>JS</span><span>Leaflet</span><span>GIS</span></div></div>
+            <div class="project-card reveal"><h3>E-commerce Cartes</h3><p>Site boutique cartes à collectionner (td de catégorie)</p><div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>PHP</span></div></div>
+        </div>
+        <h3 class="subsection-title">Persos</h3>
+        <div class="projects-grid">
+            <div class="project-card reveal"><h3>Olevia</h3><p>Refonte front+back du e-shop stage.</p><div class="project-tags"><span>WordPress</span><span>WooCommerce</span></div></div>
+            <div class="project-card reveal"><h3>Portfolio</h3><p>Portfolio actuel sur Pelican + CSS/JS.</p><div class="project-tags"><span>Python</span><span>Pelican</span></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Compétences</h2>
+        <div class="skills-grid">
+            <div class="skill-card reveal"><h3>HTML/CSS</h3><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div><span class="skill-percent">95%</span></div>
+            <div class="skill-card reveal"><h3>JavaScript</h3><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div><span class="skill-percent">80%</span></div>
+            <div class="skill-card reveal"><h3>Python</h3><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-card reveal"><h3>Kotlin</h3><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div><span class="skill-percent">70%</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="veille" class="section">
+    <div class="container">
+        <h2 class="section-title">Veille</h2>
+        <div class="veille-grid">
+            <div class="veille-block reveal"><h3>Google Nano Banana</h3><p>Suivi IA mobile.</p><a href="/veille/nouvelle-ia-de-google-nano-banana.html" class="veille-link">Lire</a></div>
+            <div class="veille-block reveal"><h3>ChatGPT-5</h3><p>Sortie OpenAI.</p><a href="/veille/sortie-gpt5.html" class="veille-link">Lire</a></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Restons en contact</h3>
+                <p>Envie d’un stage ou d’un projet ? Discutons.</p>
+                <a href="mailto:louis@example.com" class="contact-link">Email</a>
+                <a href="https://github.com/louis3701" class="contact-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

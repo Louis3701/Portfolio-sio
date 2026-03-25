@@ -54,6 +54,9 @@ ARTICLE_SAVE_AS = 'veille/{slug}.html'
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = 'pages/{slug}.html'
 
+# Index homepage config
+INDEX_URL = 'index.html'
+INDEX_SAVE_AS = 'index.html'
 
 
 # STRUCTURE DU MENU DE NAVIGATION:
