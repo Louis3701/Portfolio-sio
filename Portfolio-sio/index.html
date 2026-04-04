@@ -1,266 +1,210 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCN - Portfolio BTS SIO</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="./theme/logo/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./theme/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="./theme/logo/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./theme/logo/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./theme/logo/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./theme/logo/favicon-512x512.png">
+    <link rel="shortcut icon" href="./theme/logo/favicon.ico">
+    <link rel="stylesheet" href="./theme/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./theme/vendor/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="./theme/vendor/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./theme/css/custom.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">LCN</div>
-            <button id="theme-toggle">🌙 Sombre</button>
-            <button class="burger" id="burger" aria-label="Ouvrir le menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#stages">Stages</a></li>
-                <li><a href="#bts">BTS SIO</a></li>
-                <li><a href="#parcours">Parcours</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#veille">Veille</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+
+<body class="m-0 p-0 home">
+
+    <!-- NAVBAR -->
+    <div class="navbar-wrapper">
+        <nav id="navbar" class="navbar navbar-expand-md">
+            <div class="container mx-auto px-3">
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-links mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="./">Accueil</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="./pages/parcours" data-bs-toggle="dropdown">Mon parcours</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./pages/parcours-scolaire">Parcours scolaire</a></li>
+                                <li><a class="dropdown-item" href="./pages/bts-sio">Le BTS SIO</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="./pages/realisations" data-bs-toggle="dropdown">Réalisations</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./pages/tp-majeurs">TP majeurs</a></li>
+                                <li><a class="dropdown-item" href="./pages/stage-sio1">Stage de 1ère année</a></li>
+                                <li><a class="dropdown-item" href="./pages/stage-sio2">Stage de 2e année</a></li>
+                                <li><a class="dropdown-item" href="./pages/projets-scolaires">Projets scolaires</a></li>
+                                <li><a class="dropdown-item" href="./pages/projets-personnels">Projets personnels</a></li>
+                                <li><a class="dropdown-item" href="./pages/certifications-complementaires">Certifications complémentaires</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link py-2 dropdown-toggle" href="./ma-veille" data-bs-toggle="dropdown">Veille techno.</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./ma-veille">Ma veille technologique</a></li>
+                                <li><a class="dropdown-item" href="./archives">Archive des articles</a></li>
+                                <li><a class="dropdown-item" href="./categories">Liste des catégories</a></li>
+                                <li><a class="dropdown-item" href="./authors">Liste des auteurs</a></li>
+                                <li><a class="dropdown-item" href="./tags">Liste des mots clés</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link py-2" href="./pages/engagement-etudiant">Engagement</a>
+                        </li>
+                    </ul>
+                    <button id="theme-toggle">🌙 Sombre</button>
+                </div>
+            </div>
+        </nav>
+    </div>
 
     <main class="page-wrapper min-vh-100">
-        <section id="hero" class="hero">
-            <div class="hero-bg">
-                <div class="glow glow1"></div>
-                <div class="glow glow2"></div>
-                <div class="glow glow3"></div>
-            </div>
-            <div class="hero-content hero-anim">
-                <span class="hero-eyebrow">PortFolio BTS SIO</span>
-                <h1 class="hero-title">LOUIS <span class="hero-name-accent">3701</span></h1>
-                <p class="hero-subtitle">Étudiant BTS SIO / SLAM - Dév Web & Mobile en quête de stage + projets concrets.</p>
-                <div class="hero-btns">
-                    <a class="btn btn-primary" href="#stages">Mes stages</a>
-                    <a class="btn btn-outline" href="#projects">Projets</a>
-                </div>
-                <div class="hero-stack">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>SQL</span>
-                </div>
-                <div class="hero-scroll">
-                    <div class="scroll-line"></div>
-                    <small>Scroll</small>
-                </div>
-            </div>
-        </section>
+<!-- Hero -->
+<section id="hero" class="hero">
+    <div class="hero-bg">
+        <div class="glow glow1"></div>
+        <div class="glow glow2"></div>
+        <div class="glow glow3"></div>
+    </div>
+    <div class="hero-content hero-anim">
+        <span class="hero-eyebrow">PortFolio BTS SIO</span>
+        <h1 class="hero-title">LOUIS <span class="hero-name-accent">3701</span></h1>
+        <p class="hero-subtitle">Étudiant BTS SIO / SLAM - Dév Web & Mobile en quête de stage + projets concrets.</p>
+        <div class="hero-btns">
+            <a class="btn btn-primary" href="#stages">Mes stages</a>
+            <a class="btn btn-outline" href="#projects">Projets</a>
+        </div>
+        <div class="hero-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>SQL</span>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <small>Scroll</small>
+        </div>
+    </div>
+</section>
 
-        <section id="stages" class="section section-dark">
-            <div class="container">
-                <h2 class="section-title">Stages</h2>
-                <div class="stages-grid">
-                    <div class="stage-card reveal">
-                        <h3>Stage BTS SIO1 - Olevia</h3>
-                        <span class="stage-date">19/06/2025 - 29/07/2025</span>
-                        <p>Durant ce premier stage, j'ai travaillé sur la refonte du panier WooCommerce et l'optimisation du site. J'ai amélioré la navigation, corrigé les dysfonctionnements et renforcé l'expérience utilisateur.</p>
-                        <ul>
-                            <li>Optimisation du tunnel d'achat WooCommerce</li>
-                            <li>Correction des erreurs de panier et du calcul des frais</li>
-                            <li>Amélioration du header/footer pour plus de cohérence</li>
-                            <li>Tests fonctionnels et débogage avec Git</li>
-                        </ul>
-                        <p class="skills-used">Tech : PHP, WordPress, HTML/CSS, JavaScript, Git</p>
-                        <a href="./pages/stage-sio1.html" class="btn btn-outline">Voir le rapport Stage 1</a>
-                    </div>
-                    <div class="stage-card reveal">
-                        <h3>Stage BTS SIO2 - Olevia</h3>
-                        <span class="stage-date">01/02/2026 - 31/07/2026</span>
-                        <p>Ce deuxième stage m'a permis de développer une application de planning et de matching pour les commandes backoffice, avec une logique métier sur mesure et un déploiement moderne.</p>
-                        <ul>
-                            <li>Conception d'une API REST pour la gestion des commandes</li>
-                            <li>Création d'une interface React pour le backoffice</li>
-                            <li>Gestion de base de données MySQL et optimisation des requêtes</li>
-                            <li>Déploiement Docker et intégration CI/CD</li>
-                        </ul>
-                        <p class="skills-used">Tech : React, Kotlin, MySQL, Docker, API, CI/CD</p>
-                        <a href="./pages/stage-sio2.html" class="btn btn-outline">Voir le rapport Stage 2</a>
-                    </div>
-                </div>
+<section id="stages" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Stages</h2>
+        <div class="about-grid">
+            <div class="about-card reveal">
+                <h3>Stage BTS SIO1 - Olevia</h3>
+                <p>19/06/2025 - 29/07/2025 : optimisation WooCommerce, correction panier, restructuration header/footer.</p>
+                <p>Compétences : PHP, WordPress, Git, agile, tests fonctionnels et reporting.</p>
+                <a href="/pages/stage-sio1.html" class="btn btn-outline">Voir rapport Stage 1</a>
             </div>
-        </section>
+            <div class="about-card reveal">
+                <h3>Stage BTS SIO2 - Olevia</h3>
+                <p>01/02/2026 - 31/07/2026 : développement application de gestion de planning / matching commandes backoffice.</p>
+                <p>Compétences : MySQL, API, React, Kotlin, CI/CD, Docker, UX.</p>
+                <a href="/pages/stage-sio2.html" class="btn btn-outline">Voir rapport Stage 2</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section id="bts" class="section">
-            <div class="container">
-                <h2 class="section-title">BTS SIO</h2>
-                <div class="bts-grid">
-                    <div class="bts-card reveal">
-                        <h3>SLAM</h3>
-                        <p>Ma spécialité SLAM me place au cœur du développement logiciel et des applications métiers. J'apprends à concevoir, coder et maintenir des solutions Web et mobiles professionnelles.</p>
-                        <ul>
-                            <li>Applications web dynamique</li>
-                            <li>Développement d'API et microservices</li>
-                            <li>Gestion de bases de données</li>
-                        </ul>
-                    </div>
-                    <div class="bts-card reveal">
-                        <h3>SISR</h3>
-                        <p>Je connais aussi les fondamentaux de SISR pour comprendre l'infrastructure et la sécurité des systèmes, ce qui me permet de livrer des projets fiables et stables.</p>
-                        <ul>
-                            <li>Réseaux et administration système</li>
-                            <li>Sécurité et virtualisation</li>
-                            <li>Support et déploiement</li>
-                        </ul>
-                    </div>
-                </div>
+<section id="bts" class="section">
+    <div class="container">
+        <h2 class="section-title">BTS SIO</h2>
+        <div class="bts-grid">
+            <div class="bts-card reveal">
+                <h3>SISR</h3>
+                <p>Infrastructure / réseaux : serveurs, sécurité, virtualisation.</p>
             </div>
-        </section>
+            <div class="bts-card reveal">
+                <h3>SLAM</h3>
+                <p>Développement logiciel : Web, Fullstack, API, bases de données.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section id="parcours" class="section section-dark">
-            <div class="container">
-                <h2 class="section-title">Parcours</h2>
-                <div class="parcours-timeline">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>2021-2022</h3>
-                            <h4>Lycée Henri Becquerel</h4>
-                            <p>Seconde générale : découverte des bases scientifiques et du raisonnement structuré, première étape vers l'informatique.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>2022-2024</h3>
-                            <h4>STMG SIG</h4>
-                            <p>Spécialisation Gestion de l'Information et du Numérique, avec des compétences en systèmes d'information, données et pilotage de projet.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>2024-2026</h3>
-                            <h4>BTS SIO</h4>
-                            <p>Formation orientée développement et infrastructure : projet tutoré, stages en entreprise, et expertise technique sur le terrain.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="parcours" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Parcours</h2>
+        <div class="parcours-timeline">
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2021-2022</h3><h4>Lycée Henri Becquerel</h4><p>Seconde générale</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2022-2024</h3><h4>STMG SIG</h4><p>Données, gestion, systèmes d'information.</p></div></div>
+            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2024-2026</h3><h4>BTS SIO</h4><p>Développement et admin réseau.</p></div></div>
+        </div>
+    </div>
+</section>
 
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projets</h2>
-                <h3 class="subsection-title">Scolaires</h3>
-                <div class="projects-grid">
-                    <div class="project-card reveal"><h3>GeoWorld</h3><p>Plateforme SIG pour suivi de territoire.</p><div class="project-tags"><span>JS</span><span>Leaflet</span><span>GIS</span></div></div>
-                    <div class="project-card reveal"><h3>E-commerce Cartes</h3><p>Site boutique cartes à collectionner (td de catégorie)</p><div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>PHP</span></div></div>
-                </div>
-                <h3 class="subsection-title">Persos</h3>
-                <div class="projects-grid">
-                    <div class="project-card reveal"><h3>Olevia</h3><p>Refonte front+back du e-shop stage.</p><div class="project-tags"><span>WordPress</span><span>WooCommerce</span></div></div>
-                    <div class="project-card reveal"><h3>Portfolio</h3><p>Portfolio actuel sur Pelican + CSS/JS.</p><div class="project-tags"><span>Python</span><span>Pelican</span></div></div>
-                </div>
-            </div>
-        </section>
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projets</h2>
+        <h3 class="subsection-title">Scolaires</h3>
+        <div class="projects-grid">
+            <div class="project-card reveal"><h3>GeoWorld</h3><p>Plateforme SIG pour suivi de territoire.</p><div class="project-tags"><span>JS</span><span>Leaflet</span><span>GIS</span></div></div>
+            <div class="project-card reveal"><h3>E-commerce Cartes</h3><p>Site boutique cartes à collectionner (td de catégorie)</p><div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>PHP</span></div></div>
+        </div>
+        <h3 class="subsection-title">Persos</h3>
+        <div class="projects-grid">
+            <div class="project-card reveal"><h3>Olevia</h3><p>Refonte front+back du e-shop stage.</p><div class="project-tags"><span>WordPress</span><span>WooCommerce</span></div></div>
+            <div class="project-card reveal"><h3>Portfolio</h3><p>Portfolio actuel sur Pelican + CSS/JS.</p><div class="project-tags"><span>Python</span><span>Pelican</span></div></div>
+        </div>
+    </div>
+</section>
 
-        <section id="skills" class="section section-dark">
-            <div class="container">
-                <h2 class="section-title">Compétences</h2>
-                <div class="skills-grid">
-                    <div class="skill-category reveal">
-                        <h4>Développement</h4>
-                        <div class="skill-bars">
-                            <div class="skill-item"><span>HTML/CSS</span><div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div></div>
-                            <div class="skill-item"><span>JavaScript</span><div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div></div>
-                            <div class="skill-item"><span>React</span><div class="skill-bar"><div class="skill-fill" style="width: 75%"></div></div></div>
-                        </div>
-                    </div>
-                    <div class="skill-category reveal">
-                        <h4>Outils & backend</h4>
-                        <div class="skill-bars">
-                            <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div></div>
-                            <div class="skill-item"><span>Kotlin</span><div class="skill-bar"><div class="skill-fill" style="width: 70%"></div></div></div>
-                            <div class="skill-item"><span>Docker / CI</span><div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="skills" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Compétences</h2>
+        <div class="skills-grid">
+            <div class="skill-card reveal"><h3>HTML/CSS</h3><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div><span class="skill-percent">95%</span></div>
+            <div class="skill-card reveal"><h3>JavaScript</h3><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div><span class="skill-percent">80%</span></div>
+            <div class="skill-card reveal"><h3>Python</h3><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-card reveal"><h3>Kotlin</h3><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div><span class="skill-percent">70%</span></div>
+        </div>
+    </div>
+</section>
 
-        <section id="veille" class="section">
-            <div class="container">
-                <h2 class="section-title">Veille technologique</h2>
-                <p>Cette veille est centrée sur l’informatique embarquée et le logiciel automobile, dans le cadre de mon BTS SIO option SLAM (mars 2026). Elle analyse les grandes tendances 2025-2026 du secteur automobile numérique, avec un focus sur les compétences SLAM mobilisables.</p>
-                <p>Le véhicule moderne devient un système logiciel à part entière : architecture zonale, mises à jour OTA, cybersécurité et intelligence artificielle embarquée. Ce rapport met en lumière les enjeux techniques et les applications concrètes pour les développeurs SLAM.</p>
-                <div class="veille-grid">
-                    <div class="veille-block reveal">
-                        <h3>SDV – Software-Defined Vehicle</h3>
-                        <p>Le concept de véhicule défini par logiciel transforme l’automobile : architectures centralisées, fonctionnalités activables à la demande, mises à jour OTA et intégration native de l’IA.</p>
-                        <ul>
-                            <li>Architecture zonale</li>
-                            <li>Features on Demand</li>
-                            <li>Firmware et software update</li>
-                            <li>IA embarquée et machine learning</li>
-                        </ul>
-                    </div>
-                    <div class="veille-block reveal">
-                        <h3>OTA – Over-The-Air</h3>
-                        <p>Les mises à jour OTA permettent d’envoyer directement des correctifs et des améliorations vers les véhicules, sans passage en concession.</p>
-                        <ul>
-                            <li>FOTA : firmware, couches basses, OS embarqué</li>
-                            <li>SOTA : applications, interface utilisateur, services connectés</li>
-                            <li>Architecture : cloud back-end, passerelle télématique, CAN/Ethernet</li>
-                            <li>Réglementation : UNECE R155/R156</li>
-                        </ul>
-                    </div>
-                    <div class="veille-block reveal">
-                        <h3>Cybersécurité automobile</h3>
-                        <p>La sécurité des véhicules connectés est devenue un enjeu majeur : les attaques peuvent viser les ECU, les ports OBD-II ou les interfaces sans fil.</p>
-                        <ul>
-                            <li>Risques : OBD-II, Wi-Fi/Bluetooth, infodivertissement, applications mobiles</li>
-                            <li>Normes : ISO 21434, UNECE R155, ISO/SAE 21434</li>
-                            <li>Approche : Secure by Design, Zero Trust, pentests</li>
-                        </ul>
-                    </div>
-                    <div class="veille-block reveal">
-                        <h3>IA embarquée</h3>
-                        <p>Intelligence artificielle et machine learning sont partout dans l’automobile : conduite autonome, maintenance prédictive, assistant vocal et optimisation de batterie.</p>
-                        <ul>
-                            <li>Conduite autonome (ADAS) : capteurs, traitement temps réel</li>
-                            <li>Maintenance prédictive : données télémétriques</li>
-                            <li>Assistant vocal : NLP, APIs REST, cloud</li>
-                            <li>Cybersécurité IA : détection d’anomalies</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="content-block reveal" style="margin-top: 2rem;">
-                    <h3>Mon rapport complet</h3>
-                    <p>Le PDF regroupe l’analyse détaillée des technologies SDV, OTA, cybersécurité et IA embarquée, ainsi que les compétences SLAM concrètement mobilisées dans chaque cas.</p>
-                    <p>Ce document est conçu pour soutenir une présentation de 10 minutes : il offre des exemples, des chiffres de marché, des normes et des perspectives professionnelles claires.</p>
-                    <a class="btn btn-primary" href="./theme/docs/veille_technologique.pdf" target="_blank" rel="noopener">Télécharger le PDF de veille</a>
-                </div>
-            </div>
-        </section>
+<section id="veille" class="section">
+    <div class="container">
+        <h2 class="section-title">Veille</h2>
+        <div class="veille-grid">
+            <div class="veille-block reveal"><h3>Google Nano Banana</h3><p>Suivi IA mobile.</p><a href="/veille/nouvelle-ia-de-google-nano-banana.html" class="veille-link">Lire</a></div>
+            <div class="veille-block reveal"><h3>ChatGPT-5</h3><p>Sortie OpenAI.</p><a href="/veille/sortie-gpt5.html" class="veille-link">Lire</a></div>
+        </div>
+    </div>
+</section>
 
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Restons en contact</h3>
-                        <p>Envie d’un stage ou d’un projet ? Discutons.</p>
-                        <a href="mailto:louis@example.com" class="contact-link">Email</a>
-                        <a href="https://github.com/louis3701" class="contact-link">GitHub</a>
-                    </div>
-                </div>
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Restons en contact</h3>
+                <p>Envie d’un stage ou d’un projet ? Discutons.</p>
+                <a href="mailto:louis@example.com" class="contact-link">Email</a>
+                <a href="https://github.com/louis3701" class="contact-link">GitHub</a>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     </main>
 
-    <footer class="text-center mt-4 mb-0 bg-dark text-light">
-        <small>&copy; 2026 - Portfolio BTS SIO</small>
-    </footer>
 
-    <script src="./script.js"></script>
+
+<footer class="text-center mt-4 mb-0 bg-dark text-light">
+    <small>&copy; 2026 - Portfolio BTS SIO</small>
+</footer>
+    <script src="./theme/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./theme/js/custom.js"></script>
     <script>
         const btn = document.getElementById('theme-toggle');
         const saved = localStorage.getItem('theme');
@@ -276,4 +220,4 @@
         });
     </script>
 </body>
-</html>
+</html

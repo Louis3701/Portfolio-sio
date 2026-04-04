@@ -39,7 +39,7 @@ PAGE_PATHS = ['pages']          # Sous-dossier de PATH qui contient les pages st
 STATIC_PATHS = []
 
 # Dossier de sortie pour la publication :
-OUTPUT_PATH = 'docs'           # Attention, pour la publication sur GitHub Pages le dossier doit être "/docs"
+OUTPUT_PATH = '.'           # Attention, pour la publication sur GitHub Pages le dossier doit être "/docs"
 
 
 
