@@ -344,6 +344,10 @@ button, .btn {
 .veille-rich .section-header {
     max-width: 980px;
 }
+.veille-rich .section-title {
+    line-height: 1.22;
+    letter-spacing: 0.01em;
+}
 .veille-media-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -366,7 +370,7 @@ button, .btn {
 }
 .veille-media-card img {
     width: 100%;
-    height: 180px;
+    height: 210px;
     object-fit: cover;
     display: block;
     filter: saturate(1.08) contrast(1.04);
@@ -387,14 +391,16 @@ button, .btn {
     border-radius: 20px;
     background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
     border: 1px solid rgba(255,255,255,0.13);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.22);
 }
 .veille-article-card h3 {
     margin: 0 0 0.9rem;
-    font-size: 1.08rem;
+    font-size: 1.14rem;
 }
 .veille-article-card p {
     color: rgba(255,255,255,0.8);
     line-height: 1.78;
+    font-size: 1rem;
     margin: 0 0 0.95rem;
 }
 .veille-bullets {
@@ -501,6 +507,13 @@ button, .btn {
     .timeline-grid {
         grid-template-columns: 1fr;
     }
+
+    .veille-media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .veille-content-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -521,6 +534,13 @@ button, .btn {
     .contact-grid,
     .timeline-grid {
         gap: 1rem;
+    }
+
+    .veille-media-grid {
+        grid-template-columns: 1fr;
+    }
+    .veille-media-card img {
+        height: 180px;
     }
 }
 
