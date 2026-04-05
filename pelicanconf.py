@@ -51,7 +51,7 @@ OUTPUT_PATH = 'docs'           # Attention, pour la publication sur GitHub Pages
 ARTICLE_URL = 'veille/{slug}.html'
 ARTICLE_SAVE_AS = 'veille/{slug}.html'
 
-PAGE_URL = '{slug}.html'
+PAGE_URL = 'pages/{slug}.html'
 PAGE_SAVE_AS = 'pages/{slug}.html'
 
 # Index homepage config
@@ -66,38 +66,38 @@ INDEX_SAVE_AS = 'index.html'
 MENUITEMS = (
     ("Accueil", "/", "house", None, "Page d'accueil du portefolio", None),
 
-    ("Mon parcours", "/pages/parcours", "mortarboard",
+    ("Mon parcours", "/pages/parcours.html", "mortarboard",
         (
-            ("Parcours scolaire", "/pages/parcours-scolaire"),
-            ("Le BTS SIO", "/pages/bts-sio")
+            ("Parcours scolaire", "/pages/parcours-scolaire.html"),
+            ("Le BTS SIO", "/pages/bts-sio.html")
         ),
         "Découvrez mon parcours scolaire et professionnel.", "primary"
     ),
 
-    ("Réalisations", "/pages/realisations", "check2-square",
+    ("Réalisations", "/pages/realisations.html", "check2-square",
         (
-            ("TP majeurs", "/pages/tp-majeurs"),
-            ("Stage de 1ère année", "/pages/stage-sio1"),
-            ("Stage de 2e année", "/pages/stage-sio2"),
-            ("Projets scolaires", "/pages/projets-scolaires"),
-            ("Projets personnels", "/pages/projets-personnels"),                             # Optionnel
-            ("Certifications complémentaires", "/pages/certifications-complementaires") # Optionnel
+            ("TP majeurs", "/pages/tp-majeurs.html"),
+            ("Stage de 1ère année", "/pages/stage-sio1.html"),
+            ("Stage de 2e année", "/pages/stage-sio2.html"),
+            ("Projets scolaires", "/pages/projets-scolaires.html"),
+            ("Projets personnels", "/pages/projets-personnels.html"),                             # Optionnel
+            ("Certifications complémentaires", "/pages/certifications-complementaires.html") # Optionnel
         ),
         "Accédez aux projets et TP réalisés pendant ma formation et à mes projets personnels.", "success"
      ),
 
-    ("Veille techno.", "/ma-veille", "broadcast-pin",
+    ("Veille techno.", "/ma-veille.html", "broadcast-pin",
         (
-        ("Ma veille technologique", "/ma-veille"),
-        ("Archive des articles", "/archives"),
-        ("Liste des catégories", "/categories"),
-        ("Liste des auteurs", "/authors"),
-        ("Liste des mots clés", "/tags")
+        ("Ma veille technologique", "/ma-veille.html"),
+        ("Archive des articles", "/archives.html"),
+        ("Liste des catégories", "/categories.html"),
+        ("Liste des auteurs", "/authors.html"),
+        ("Liste des mots clés", "/tags.html")
         ),
         "Consultez les articles de veille technologique que j’ai suivis durant cette année.", "warning"
     ),
 
-    ("Engagement", "/pages/engagement-etudiant", "people-fill", None, "Présention de mon engagement étudiant.", None),    # Optionnel
+    ("Engagement", "/pages/engagement-etudiant.html", "people-fill", None, "Présention de mon engagement étudiant.", None),    # Optionnel
 
 )
 
