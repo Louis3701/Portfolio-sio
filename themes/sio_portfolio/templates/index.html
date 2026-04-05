@@ -190,32 +190,53 @@
     </div>
 </section>
 
-<section id="veille" class="section section-dark">
+<section id="veille" class="section section-dark veille-rich">
     <div class="container">
         <div class="section-header reveal">
             <span class="section-label">Ma veille</span>
             <h2 class="section-title">Veille technologique BTS SIO SLAM - Informatique embarquee et logiciel automobile</h2>
         </div>
-        <p class="section-text reveal"><strong>Introduction.</strong> La veille technologique est une pratique essentielle en BTS SIO option SLAM. Elle consiste a surveiller, analyser et synthetiser les evolutions technologiques afin d'anticiper les changements et rester competitif. Le secteur automobile vit une revolution numerique: un vehicule moderne peut integrer jusqu'a 100 millions de lignes de code, des architectures logicielles complexes, des systemes connectes et des composants d'intelligence artificielle.</p>
+        <div class="veille-media-grid">
+            <figure class="veille-media-card reveal">
+                <img src="{{ SITEURL }}/theme/backgrounds/baniere.png" alt="Illustration vehicule defini par logiciel">
+                <figcaption>Vehicule defini par logiciel (SDV)</figcaption>
+            </figure>
+            <figure class="veille-media-card reveal">
+                <img src="{{ SITEURL }}/theme/backgrounds/header_background.jpg" alt="Illustration mises a jour OTA et cloud automobile">
+                <figcaption>Mises a jour OTA et architecture cloud</figcaption>
+            </figure>
+            <figure class="veille-media-card reveal">
+                <img src="{{ SITEURL }}/theme/backgrounds/header_background.png" alt="Illustration cybersecurite et intelligence artificielle embarquee">
+                <figcaption>Cybersecurite et IA embarquee</figcaption>
+            </figure>
+        </div>
 
-        <p class="section-text reveal"><strong>Objectif.</strong> Cette veille (annee 2025-2026, mise a jour mars 2026) vise a identifier les grandes tendances logicielles appliquees a l'automobile et a montrer les competences SLAM mobilisables: developpement back-end, API, securite, cloud, data et integration de systemes.</p>
+        <div class="veille-content-grid">
+            <article class="veille-article-card reveal">
+                <h3>Introduction</h3>
+                <p>La veille technologique est essentielle en BTS SIO SLAM: elle permet de surveiller, analyser et synthetiser les innovations pour anticiper les evolutions du metier. Aujourd'hui, l'automobile est un secteur logiciel a part entiere, avec des vehicules connectes, des systemes intelligents et des architectures complexes.</p>
+                <p>L'objectif de cette veille est d'identifier les tendances 2025-2026 de l'informatique embarquee automobile et de montrer les competences SLAM directement mobilisables.</p>
+            </article>
 
-        <h3 class="reveal" style="margin-top: 1.5rem;">Description des tendances et analyses</h3>
-        <p class="section-text reveal"><strong>1) Vehicule defini par logiciel (SDV).</strong> Le Software-Defined Vehicle remplace progressivement des fonctions materielles par des fonctions logicielles mises a jour a distance. Les caracteristiques observees sont l'architecture centralisee (zonal architecture), les fonctionnalites a la demande, les mises a jour OTA et l'integration native de l'IA. Ce modele ouvre des debouches directs pour les profils SLAM: logiciel embarque (C/C++/Rust), integration d'API vehicule, tests de surete et validation de systemes critiques.</p>
+            <article class="veille-article-card reveal">
+                <h3>Description des tendances</h3>
+                <ul class="veille-bullets">
+                    <li><strong>SDV:</strong> logiciel embarque central, fonctionnalites a la demande, OTA, integration IA.</li>
+                    <li><strong>OTA (FOTA/SOTA):</strong> deploiements distants, maintenance continue, conformite UNECE R155/R156.</li>
+                    <li><strong>Cybersecurite:</strong> surface d'attaque etendue, normes ISO 21434, developpement secure by design.</li>
+                    <li><strong>IA embarquee:</strong> ADAS, maintenance predictive, assistants vocaux, analyse comportementale.</li>
+                    <li><strong>Voiture connectee:</strong> architectures cloud, API vehicule, V2X, MQTT/AMQP, microservices.</li>
+                </ul>
+                <p>Ces axes ouvrent de forts debouches pour les profils SLAM: back-end, API, cloud, cybersécurité, data et integration logicielle.</p>
+            </article>
 
-        <p class="section-text reveal"><strong>2) Mises a jour OTA (FOTA/SOTA).</strong> Les mises a jour over-the-air permettent de corriger, securiser et enrichir un vehicule sans passage en concession. Elles reposent sur un back-end cloud, une passerelle telematique, un reseau interne (CAN/Ethernet) et les ECU. Depuis 2024, les reglements UNECE R155/R156 imposent un cadre strict de cybersecurite et de gestion du cycle de vie logiciel, ce qui renforce l'importance des competences SLAM en API REST, bases de donnees, gestion de versions et deploiement.</p>
-
-        <p class="section-text reveal"><strong>3) Cybersecurite automobile.</strong> L'augmentation massive du volume logiciel agrandit la surface d'attaque (OBD-II, Bluetooth, 4G/5G, infotainment, applications mobiles). Les normes ISO 21434 et UNECE R155 structurent les obligations de protection. Pour un profil SLAM, les enjeux sont concrets: developpement securise (Secure by Design), chiffrement des flux vehicule-cloud, pentest et architectures Zero Trust.</p>
-
-        <p class="section-text reveal"><strong>4) Intelligence artificielle embarquee.</strong> L'IA intervient dans l'ADAS, la maintenance predictive, les assistants vocaux, l'optimisation batterie et la detection d'anomalies cyber. Les competences associees sont Python, traitement de donnees, machine learning, APIs et supervision. Le role SLAM se situe dans l'integration de services IA, la creation de tableaux de bord et le developpement d'applications connectees.</p>
-
-        <p class="section-text reveal"><strong>5) Voiture connectee et cloud.</strong> Une architecture type combine couche embarquee (capteurs, ECU), couche reseau (4G/5G, V2X) et couche cloud (data, IA, OTA, gestion de flotte). Les standards AUTOSAR, Android Automotive et les protocoles MQTT/AMQP structurent les implementations. Cela correspond directement aux acquis SLAM: microservices cloud, applications web/mobile, API publiques et exploitation des donnees.</p>
-
-        <p class="section-text reveal"><strong>Synthese.</strong> En 2026, les domaines les plus matures sont OTA et voiture connectee; le SDV et la cybersecurite sont en forte acceleration; l'IA embarquee est en essor rapide. Les opportunites metier pour un profil SLAM sont elevees: developpement embarque, cloud automobile, cybersecurite et applications connectees.</p>
-
-        <p class="section-text reveal"><strong>Conclusion.</strong> L'automobile numerique est un secteur strategique pour les professionnels du logiciel. La convergence entre industrie automobile et technologies de l'information cree un besoin durable en competences SLAM. Cette veille montre que la maitrise des architectures cloud, des API, de la securite et de la qualite logicielle est devenue indispensable pour concevoir les vehicules de nouvelle generation.</p>
-
-        <p class="section-text reveal"><strong>Sources et methodologie.</strong> Cette veille s'appuie sur des sources sectorielles et techniques (Planview, Nextlane, IDTechEx, Global Market Insights, Sonatus, ACTIA, ANSSI) et sur une methode continue via Google Alerts, Feedly, LinkedIn et la veille scientifique (ArXiv), avec comparaison des informations et verification de leur fiabilite avant synthese.</p>
+            <article class="veille-article-card reveal">
+                <h3>Conclusion</h3>
+                <p>L'automobile numerique est l'un des secteurs les plus dynamiques pour les developpeurs. La maitrise du cloud, des API, de la securite et des architectures logicielles devient indispensable pour concevoir les vehicules de nouvelle generation.</p>
+                <p>Cette veille confirme qu'un profil BTS SIO SLAM a une vraie place dans ces transformations, entre innovation technique, fiabilite logicielle et securite des systemes.</p>
+                <p class="veille-source-note"><strong>Sources et methode:</strong> Planview, Nextlane, IDTechEx, Global Market Insights, Sonatus, ACTIA, ANSSI + suivi continu via Google Alerts, Feedly, LinkedIn et ArXiv.</p>
+            </article>
+        </div>
 
         <div class="section-actions reveal">
             <a href="{{ SITEURL }}/ma-veille" class="btn btn-outline">Voir toute la veille</a>

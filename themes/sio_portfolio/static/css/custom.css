@@ -340,6 +340,79 @@ button, .btn {
     gap: 0.5rem;
 }
 
+/* VEILLE RICH LAYOUT */
+.veille-rich .section-header {
+    max-width: 980px;
+}
+.veille-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1rem 0 1.6rem;
+}
+.veille-media-card {
+    margin: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: var(--shadow);
+    transform: translateY(0);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.veille-media-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(0,0,0,0.35);
+}
+.veille-media-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.08) contrast(1.04);
+}
+.veille-media-card figcaption {
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.84);
+}
+.veille-content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+.veille-article-card {
+    padding: 1.3rem;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+    border: 1px solid rgba(255,255,255,0.13);
+}
+.veille-article-card h3 {
+    margin: 0 0 0.9rem;
+    font-size: 1.08rem;
+}
+.veille-article-card p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.78;
+    margin: 0 0 0.95rem;
+}
+.veille-bullets {
+    margin: 0 0 0.95rem;
+    padding-left: 1.1rem;
+    color: rgba(255,255,255,0.82);
+}
+.veille-bullets li {
+    margin-bottom: 0.55rem;
+    line-height: 1.65;
+}
+.veille-source-note {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.72);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 0.8rem;
+}
+
 /* SKILLS */
 .skill-card {
     min-height: 160px;
@@ -421,6 +494,8 @@ button, .btn {
     .hero-container,
     .projects-grid,
     .veille-grid,
+    .veille-media-grid,
+    .veille-content-grid,
     .skills-grid,
     .contact-grid,
     .timeline-grid {
@@ -440,6 +515,8 @@ button, .btn {
     }
     .projects-grid,
     .veille-grid,
+    .veille-media-grid,
+    .veille-content-grid,
     .skills-grid,
     .contact-grid,
     .timeline-grid {
