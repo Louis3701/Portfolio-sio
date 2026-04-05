@@ -1,0 +1,42 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="80" x2="1080" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1D3B"/>
+      <stop offset="1" stop-color="#071326"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="250" y1="190" x2="620" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4FCBFF"/>
+      <stop offset="1" stop-color="#7A7BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="190" cy="580" r="210" fill="#59D7FF" fill-opacity="0.12"/>
+  <circle cx="1020" cy="140" r="180" fill="#7C67FF" fill-opacity="0.18"/>
+
+  <g>
+    <rect x="170" y="420" width="260" height="150" rx="18" fill="#0E2449" stroke="#70B8FF" stroke-opacity="0.8"/>
+    <rect x="760" y="420" width="260" height="150" rx="18" fill="#0E2449" stroke="#70B8FF" stroke-opacity="0.8"/>
+    <text x="225" y="505" fill="#CFE7FF" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Vehicule</text>
+    <text x="840" y="505" fill="#CFE7FF" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700">Cloud</text>
+  </g>
+
+  <g>
+    <ellipse cx="600" cy="300" rx="210" ry="88" fill="url(#cloud)" fill-opacity="0.2" stroke="#8ACDFF" stroke-width="3"/>
+    <circle cx="520" cy="286" r="42" fill="#102D5E"/>
+    <circle cx="585" cy="258" r="56" fill="#12366E"/>
+    <circle cx="660" cy="286" r="50" fill="#102D5E"/>
+    <rect x="510" y="292" width="200" height="56" rx="28" fill="#12366E"/>
+  </g>
+
+  <g stroke="#8ED7FF" stroke-width="8" stroke-linecap="round">
+    <path d="M435 494H565"/>
+    <path d="M780 494H650"/>
+  </g>
+  <g fill="#8ED7FF">
+    <path d="M557 478L582 494L557 510V478Z"/>
+    <path d="M658 478L633 494L658 510V478Z"/>
+  </g>
+
+  <text x="88" y="92" fill="#D7E8FF" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">Mises a jour OTA (FOTA / SOTA)</text>
+  <text x="88" y="136" fill="#9DC3FF" font-family="Segoe UI, Arial, sans-serif" font-size="24">Deploiement distant, patchs securite, evolution continue</text>
+</svg>

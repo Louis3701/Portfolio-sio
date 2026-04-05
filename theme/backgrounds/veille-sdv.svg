@@ -1,0 +1,37 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="60" x2="1080" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B1543"/>
+      <stop offset="1" stop-color="#090818"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="380" y1="220" x2="820" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6B55FF"/>
+      <stop offset="1" stop-color="#50D9FF"/>
+    </linearGradient>
+    <filter id="glow" x="0" y="0" width="1200" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="220" cy="120" r="170" fill="#6B55FF" fill-opacity="0.22"/>
+  <circle cx="980" cy="560" r="220" fill="#4DCEFF" fill-opacity="0.16"/>
+
+  <g filter="url(#glow)">
+    <rect x="430" y="210" width="340" height="190" rx="22" fill="url(#chip)" fill-opacity="0.24" stroke="#9AB6FF" stroke-opacity="0.6"/>
+    <rect x="470" y="250" width="260" height="110" rx="14" fill="#0F1230" stroke="#8FA0FF" stroke-opacity="0.8"/>
+    <path d="M510 305H690" stroke="#67E2FF" stroke-width="6" stroke-linecap="round"/>
+    <path d="M510 332H640" stroke="#9E8CFF" stroke-width="6" stroke-linecap="round"/>
+    <path d="M510 278H620" stroke="#9E8CFF" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g stroke="#8BA2FF" stroke-opacity="0.75" stroke-width="6" stroke-linecap="round">
+    <path d="M280 520H920"/>
+    <path d="M320 520L390 455H810L880 520"/>
+    <circle cx="430" cy="540" r="44" fill="#0D1030"/>
+    <circle cx="770" cy="540" r="44" fill="#0D1030"/>
+  </g>
+
+  <text x="88" y="94" fill="#D8E1FF" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">Software-Defined Vehicle (SDV)</text>
+  <text x="88" y="138" fill="#9DB0FF" font-family="Segoe UI, Arial, sans-serif" font-size="24">Calcul central, APIs vehicule, fonctions pilotées par logiciel</text>
+</svg>
