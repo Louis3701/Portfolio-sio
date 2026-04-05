@@ -2,135 +2,190 @@
 {% block title %}Accueil{% endblock %}
 {% block body_class %}home{% endblock %}
 {% block content %}
-<!-- Hero -->
 <section id="hero" class="hero">
     <div class="hero-bg">
-        <div class="glow glow1"></div>
-        <div class="glow glow2"></div>
-        <div class="glow glow3"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
     </div>
-    <div class="hero-content hero-anim">
-        <span class="hero-eyebrow">Portfolio BTS SIO</span>
-        <h1 class="hero-title">LOUIS <span class="hero-name-accent">3701</span></h1>
-        <p class="hero-subtitle">Étudiant BTS SIO / SLAM - Dév Web & Mobile en quête de stage + projets concrets.</p>
-        <div class="hero-btns">
-            <a class="btn btn-primary" href="#about">À propos</a>
-            <a class="btn btn-outline" href="#projects">Projets</a>
-        </div>
-        <div class="hero-stack">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>SQL</span>
-        </div>
-        <div class="hero-scroll">
-            <div class="scroll-line"></div>
-            <small>Scroll</small>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="section">
-    <div class="container">
-        <h2 class="section-title">À propos</h2>
-        <p class="about-text">J'ai choisi le BTS SIO car il s'inscrit dans la continuité de mon parcours scolaire. Cela m'a permis de me familiariser rapidement avec les notions et les outils du développement. Cette formation me permet de renforcer mes compétences en développement web et de progresser concrètement sur des projets. Et c'est pour cette raison que je souhaite poursuivre en licence pour continuer à évoluer et gagner en expérience professionnelle.</p>
-        <div class="about-qualities">
-            <span>Rigoureux</span><span>Code propre & structuré</span><span>Curieux</span><span>Toujours en apprentissage</span>
-        </div>
-    </div>
-</section>
-
-<section id="stages" class="section section-dark">
-    <div class="container">
-        <h2 class="section-title">Stages</h2>
-        <div class="about-grid">
-            <div class="about-card reveal">
-                <h3>Stage BTS SIO1 - Olevia</h3>
-                <p>19/06/2025 - 29/07/2025 : optimisation WooCommerce, correction panier, restructuration header/footer.</p>
-                <p>Compétences : PHP, WordPress, Git, agile, tests fonctionnels et reporting.</p>
-                <a href="/pages/stage-sio1.html" class="btn btn-outline">Voir rapport Stage 1</a>
+    <div class="container hero-container">
+        <div class="hero-copy reveal">
+            <span class="hero-eyebrow">Portfolio BTS SIO</span>
+            <h1 class="hero-title">LOUIS <span class="hero-name">3701</span></h1>
+            <p class="hero-text">Étudiant BTS SIO / SLAM, je développe des projets web et mobile, je fais de la veille IA et je recherche un stage en développement.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">Voir mes projets</a>
+                <a class="btn btn-outline" href="#veille">Veille techno</a>
             </div>
-            <div class="about-card reveal">
-                <h3>Stage BTS SIO2 - Olevia</h3>
-                <p>01/02/2026 - 31/07/2026 : développement application de gestion de planning / matching commandes backoffice.</p>
-                <p>Compétences : MySQL, API, React, Kotlin, CI/CD, Docker, UX.</p>
-                <a href="/pages/stage-sio2.html" class="btn btn-outline">Voir rapport Stage 2</a>
+            <div class="hero-stack">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Kotlin</span><span>SQL</span>
+            </div>
+        </div>
+        <div class="hero-cards">
+            <div class="hero-card reveal">
+                <span class="hero-card-tag">Mon chemin</span>
+                <p>Études en STMG SIG puis BTS SIO SLAM pour me spécialiser dans le développement web et les systèmes d'information.</p>
+            </div>
+            <div class="hero-card reveal">
+                <span class="hero-card-tag">Ce que je fais</span>
+                <p>Sites web, applications métiers, intégration WordPress, et veille technologique orientée IA.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="bts" class="section">
+<section id="about" class="section section-dark">
     <div class="container">
-        <h2 class="section-title">BTS SIO</h2>
-        <div class="bts-grid">
-            <div class="bts-card reveal">
-                <h3>SISR</h3>
-                <p>Infrastructure / réseaux : serveurs, sécurité, virtualisation.</p>
-            </div>
-            <div class="bts-card reveal">
-                <h3>SLAM</h3>
-                <p>Développement logiciel : Web, Fullstack, API, bases de données.</p>
-            </div>
+        <div class="section-header reveal">
+            <span class="section-label">À propos</span>
+            <h2 class="section-title">Construire l'avenir, une ligne à la fois</h2>
+        </div>
+        <p class="section-text reveal">J’ai choisi le BTS SIO car il s’inscrit dans la continuité de mon bac professionnel SN. Cette formation m’a permis de me familiariser rapidement avec les notions et les outils du développement. Elle me permet aussi de renforcer mes compétences en développement web et d’évoluer sur des projets concrets. Je souhaite poursuivre en licence pour continuer à progresser et gagner en expérience professionnelle.</p>
+        <div class="badge-list reveal">
+            <span>Rigoureux</span>
+            <span>Code propre & structuré</span>
+            <span>Curieux</span>
+            <span>Toujours en apprentissage</span>
         </div>
     </div>
 </section>
 
-<section id="parcours" class="section section-dark">
+<section id="parcours" class="section">
     <div class="container">
-        <h2 class="section-title">Parcours</h2>
-        <div class="parcours-timeline">
-            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2021-2022</h3><h4>Lycée Henri Becquerel</h4><p>Seconde générale</p></div></div>
-            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2022-2024</h3><h4>STMG SIG</h4><p>Données, gestion, systèmes d'information.</p></div></div>
-            <div class="timeline-item reveal"><div class="timeline-dot"></div><div class="timeline-content"><h3>2024-2026</h3><h4>BTS SIO</h4><p>Développement et admin réseau.</p></div></div>
+        <div class="section-header reveal">
+            <span class="section-label">Mon parcours</span>
+            <h2 class="section-title">De la seconde au BTS SIO</h2>
+        </div>
+        <div class="timeline-grid">
+            <article class="timeline-card reveal">
+                <span class="timeline-year">2021-2022</span>
+                <h3>Lycée Henri Becquerel</h3>
+                <p>Seconde générale avec découverte de l'informatique et des systèmes d'information.</p>
+            </article>
+            <article class="timeline-card reveal">
+                <span class="timeline-year">2022-2024</span>
+                <h3>STMG SIG</h3>
+                <p>Apprentissage des données, de la gestion et des systèmes d'information appliqués aux organisations.</p>
+            </article>
+            <article class="timeline-card reveal">
+                <span class="timeline-year">2024-2026</span>
+                <h3>BTS SIO</h3>
+                <p>Formation en développement logiciel, gestion de bases de données et administration réseau.</p>
+            </article>
         </div>
     </div>
 </section>
 
-<section id="projects" class="section">
+<section id="projects" class="section section-dark">
     <div class="container">
-        <h2 class="section-title">Projets</h2>
-        <h3 class="subsection-title">Scolaires</h3>
+        <div class="section-header reveal">
+            <span class="section-label">Projets</span>
+            <h2 class="section-title">Ce que j'ai construit</h2>
+        </div>
         <div class="projects-grid">
-            <div class="project-card reveal"><h3>GeoWorld</h3><p>Plateforme SIG pour suivi de territoire.</p><div class="project-tags"><span>JS</span><span>Leaflet</span><span>GIS</span></div></div>
-            <div class="project-card reveal"><h3>E-commerce Cartes</h3><p>Site boutique cartes à collectionner (td de catégorie)</p><div class="project-tags"><span>HTML/CSS</span><span>JS</span><span>PHP</span></div></div>
-        </div>
-        <h3 class="subsection-title">Persos</h3>
-        <div class="projects-grid">
-            <div class="project-card reveal"><h3>Olevia</h3><p>Refonte front+back du e-shop stage.</p><div class="project-tags"><span>WordPress</span><span>WooCommerce</span></div></div>
-            <div class="project-card reveal"><h3>Portfolio</h3><p>Portfolio actuel sur Pelican + CSS/JS.</p><div class="project-tags"><span>Python</span><span>Pelican</span></div></div>
+            <article class="project-card reveal">
+                <div class="project-top">
+                    <span class="project-badge">Scolaire</span>
+                    <span class="project-category">SIG</span>
+                </div>
+                <h3>GeoWorld</h3>
+                <p>Plateforme de suivi de territoire pour visualiser et analyser des données géographiques.</p>
+                <div class="project-tags"><span>JavaScript</span><span>Leaflet</span><span>GIS</span></div>
+            </article>
+            <article class="project-card reveal">
+                <div class="project-top">
+                    <span class="project-badge">Scolaire</span>
+                    <span class="project-category">E-commerce</span>
+                </div>
+                <h3>E-commerce Cartes</h3>
+                <p>Site boutique de cartes à collectionner avec gestion de catalogue et commandes.</p>
+                <div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP</span></div>
+            </article>
+            <article class="project-card reveal">
+                <div class="project-top">
+                    <span class="project-badge">Stage</span>
+                    <span class="project-category">WordPress</span>
+                </div>
+                <h3>Olevia</h3>
+                <p>Refonte front + back du site e-commerce de stage, optimisation du panier et UX améliorée.</p>
+                <div class="project-tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span></div>
+            </article>
+            <article class="project-card reveal">
+                <div class="project-top">
+                    <span class="project-badge">Perso</span>
+                    <span class="project-category">Portfolio</span>
+                </div>
+                <h3>Portfolio</h3>
+                <p>Portfolio personnel réalisé en Pelican avec un thème personnalisé, responsive et moderne.</p>
+                <div class="project-tags"><span>Python</span><span>Pelican</span><span>CSS</span></div>
+            </article>
         </div>
     </div>
 </section>
 
-<section id="skills" class="section section-dark">
+<section id="skills" class="section">
     <div class="container">
-        <h2 class="section-title">Compétences</h2>
+        <div class="section-header reveal">
+            <span class="section-label">Compétences</span>
+            <h2 class="section-title">Mon arsenal technique</h2>
+        </div>
         <div class="skills-grid">
-            <div class="skill-card reveal"><h3>HTML/CSS</h3><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div><span class="skill-percent">95%</span></div>
-            <div class="skill-card reveal"><h3>JavaScript</h3><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div><span class="skill-percent">80%</span></div>
+            <div class="skill-card reveal"><h3>HTML / CSS</h3><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div><span class="skill-percent">95%</span></div>
+            <div class="skill-card reveal"><h3>JavaScript</h3><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div><span class="skill-percent">82%</span></div>
             <div class="skill-card reveal"><h3>Python</h3><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div><span class="skill-percent">85%</span></div>
             <div class="skill-card reveal"><h3>Kotlin</h3><div class="skill-bar"><div class="skill-fill" data-w="70"></div></div><span class="skill-percent">70%</span></div>
         </div>
     </div>
 </section>
 
-<section id="veille" class="section">
+<section id="veille" class="section section-dark">
     <div class="container">
-        <h2 class="section-title">Veille</h2>
+        <div class="section-header reveal">
+            <span class="section-label">Veille techno</span>
+            <h2 class="section-title">Mes articles de veille</h2>
+        </div>
         <div class="veille-grid">
-            <div class="veille-block reveal"><h3>Google Nano Banana</h3><p>Suivi IA mobile.</p><a href="/veille/nouvelle-ia-de-google-nano-banana.html" class="veille-link">Lire</a></div>
-            <div class="veille-block reveal"><h3>ChatGPT-5</h3><p>Sortie OpenAI.</p><a href="/veille/sortie-gpt5.html" class="veille-link">Lire</a></div>
+            <article class="veille-card reveal">
+                <div class="veille-top"><span class="veille-badge">IA</span><span>Mobile</span></div>
+                <h3>Google Nano Banana</h3>
+                <p>Analyse de la nouvelle IA mobile de Google et de son impact sur les assistants vocaux et applications intelligentes.</p>
+                <a href="/veille/nouvelle-ia-de-google-nano-banana.html" class="btn btn-link">Lire l'article</a>
+            </article>
+            <article class="veille-card reveal">
+                <div class="veille-top"><span class="veille-badge">IA</span><span>Langage</span></div>
+                <h3>Sortie de GPT-5</h3>
+                <p>Retour sur la sortie de GPT-5 et ses nouveautés en compréhension et génération de texte.</p>
+                <a href="/veille/sortie-gpt5.html" class="btn btn-link">Lire l'article</a>
+            </article>
+            <article class="veille-card reveal">
+                <div class="veille-top"><span class="veille-badge">Audio</span><span>Voix</span></div>
+                <h3>Flow VEO-3</h3>
+                <p>Étude de la synthèse vocale Flow VEO-3 et de son rôle dans les interfaces vocales modernes.</p>
+                <a href="/veille/synthese-vocale-avec-flow-veo-3.html" class="btn btn-link">Lire l'article</a>
+            </article>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
     <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Restons en contact</h3>
-                <p>Envie d’un stage ou d’un projet ? Discutons.</p>
-                <a href="mailto:louis@example.com" class="contact-link">Email</a>
-                <a href="https://github.com/louis3701" class="contact-link">GitHub</a>
+        <div class="section-header reveal">
+            <span class="section-label">Contact</span>
+            <h2 class="section-title">Travaillons ensemble</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card reveal">
+                <h3>Envie d’un stage ou d’un projet ?</h3>
+                <p>Je suis disponible pour travailler sur des projets web concrets en développement front-end, back-end et mobile.</p>
+                <a href="mailto:louis@example.com" class="btn btn-primary">Me contacter</a>
+            </div>
+            <div class="contact-card reveal">
+                <h3>Documents</h3>
+                <p>CV et rapports de stage disponibles sur simple demande.</p>
+                <div class="doc-links">
+                    <a href="/theme/docs/Rapport-de-stage.pdf" class="doc-link">Rapport de stage</a>
+                    <a href="/theme/docs/veille_technologique.pdf" class="doc-link">Veille techno</a>
+                </div>
             </div>
         </div>
     </div>
