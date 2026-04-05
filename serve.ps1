@@ -1,4 +1,4 @@
-$path = "docs"
+$path = Get-Location
 $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add("http://localhost:8000/")
 $listener.Start()
