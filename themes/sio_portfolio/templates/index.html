@@ -91,7 +91,7 @@
                 <h3>GeoWorld</h3>
                 <p>Projet scolaire de cartographie interactive pour le suivi de territoire. Le site permet de visualiser des données géographiques et d'analyser des zones via des cartes dynamiques.</p>
                 <div class="project-tags"><span>JavaScript</span><span>Leaflet</span><span>GIS</span></div>
-                <div class="project-links"><a href="/pages/projets-scolaires.html" class="btn btn-outline">Voir le projet</a></div>
+                <div class="project-links"><a href="{{ SITEURL }}/pages/projets-scolaires.html" class="btn btn-outline">Voir le projet</a></div>
             </article>
             <article class="project-card reveal">
                 <div class="project-top">
@@ -101,7 +101,7 @@
                 <h3>E-commerce Cartes</h3>
                 <p>Site de vente de cartes à collectionner avec gestion de catalogue, filtres de catégorie et panier. Ce projet illustre la conception d'une boutique en ligne fonctionnelle pour un usage scolaire.</p>
                 <div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP</span></div>
-                <div class="project-links"><a href="/pages/projets-scolaires.html" class="btn btn-outline">Voir le projet</a></div>
+                <div class="project-links"><a href="{{ SITEURL }}/pages/projets-scolaires.html" class="btn btn-outline">Voir le projet</a></div>
             </article>
             <article class="project-card reveal">
                 <div class="project-top">
@@ -112,7 +112,7 @@
                 <p>Projet de stage professionnel : refonte front + back du site e-commerce Olevia. J'ai travaillé sur l'optimisation du panier, la correction d'erreurs, et l'amélioration de l'expérience utilisateur.</p>
                 <div class="project-tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span></div>
                 <div class="project-links">
-                    <a href="/pages/stage-sio2.html" class="btn btn-outline">Voir le projet</a>
+                    <a href="{{ SITEURL }}/pages/stage-sio2.html" class="btn btn-outline">Voir le projet</a>
                 </div>
             </article>
             <article class="project-card reveal">
@@ -124,6 +124,42 @@
                 <p>Site personnel construit avec Pelican et un thème personnalisé pour présenter mes projets, ma veille technologique et mon parcours BTS SIO SLAM.</p>
                 <div class="project-tags"><span>Python</span><span>Pelican</span><span>CSS</span></div>
             </article>
+        </div>
+    </div>
+</section>
+
+<section id="stages" class="section section-dark">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Stages</span>
+            <h2 class="section-title">Expériences professionnelles</h2>
+        </div>
+        <p class="section-text reveal">Deux stages chez Olevia : correction de bugs WooCommerce, refonte du paiement, amélioration du responsive et développement d’un outil interne.</p>
+        <div class="projects-grid">
+            <article class="project-card reveal">
+                <div class="project-top">
+                    <span class="project-badge">Stage</span>
+                    <span>1ère année</span>
+                </div>
+                <h3>Stage SIO1</h3>
+                <p>Correction du panier, sécurisation du paiement, et refonte du header/footer pour un site WordPress plus stable et lisible.</p>
+                <div class="project-tags"><span>WordPress</span><span>WooCommerce</span><span>Debug</span></div>
+                <div class="project-links"><a href="{{ SITEURL }}/pages/stage-sio1.html" class="btn btn-outline">Voir le stage</a></div>
+            </article>
+            <article class="project-card reveal">
+                <div class="project-top">
+                    <span class="project-badge">Stage</span>
+                    <span>2e année</span>
+                </div>
+                <h3>Stage SIO2</h3>
+                <p>Optimisation du site Olevia, amélioration du checkout, et développement d’un outil de gestion interne pour le suivi des commandes.</p>
+                <div class="project-tags"><span>PHP</span><span>SQL</span><span>Kotlin</span></div>
+                <div class="project-links"><a href="{{ SITEURL }}/pages/stage-sio2.html" class="btn btn-outline">Voir le stage</a></div>
+            </article>
+        </div>
+        <div class="section-actions reveal">
+            <a href="{{ SITEURL }}/theme/docs/Rapport-de-stage.pdf" class="btn btn-primary">Rapport SIO1</a>
+            <a href="{{ SITEURL }}/theme/docs/rapport-de-stage-2-année.pdf" class="btn btn-outline">Rapport SIO2</a>
         </div>
     </div>
 </section>
@@ -182,7 +218,7 @@
             </article>
         </div>
         <div class="section-actions reveal">
-            <a href="/ma-veille" class="btn btn-outline">Voir toute la veille</a>
+            <a href="{{ SITEURL }}/ma-veille" class="btn btn-outline">Voir toute la veille</a>
         </div>
     </div>
 </section>
@@ -203,8 +239,9 @@
                 <h3>Documents</h3>
                 <p>CV et rapports de stage disponibles sur simple demande.</p>
                 <div class="doc-links">
-                    <a href="/theme/docs/Rapport-de-stage.pdf" class="doc-link">Rapport de stage</a>
-                    <a href="/theme/docs/veille_technologique.pdf" class="doc-link">Veille techno</a>
+                    <a href="{{ SITEURL }}/theme/docs/Rapport-de-stage.pdf" class="doc-link">Rapport SIO1</a>
+                    <a href="{{ SITEURL }}/theme/docs/rapport-de-stage-2-année.pdf" class="doc-link">Rapport SIO2</a>
+                    <a href="{{ SITEURL }}/theme/docs/veille_technologique.pdf" class="doc-link">Veille techno</a>
                 </div>
             </div>
         </div>
