@@ -350,7 +350,8 @@ button, .btn {
 }
 .veille-media-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(210px, 260px));
+    justify-content: center;
     gap: 0.9rem;
     margin: 0.8rem 0 1.4rem;
 }
@@ -370,7 +371,7 @@ button, .btn {
 }
 .veille-media-card img {
     width: 100%;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
     display: block;
     filter: saturate(1.08) contrast(1.04);
@@ -554,7 +555,8 @@ button, .btn {
     }
 
     .veille-media-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(220px, 280px));
+        justify-content: center;
     }
     .veille-content-grid {
         grid-template-columns: 1fr;
@@ -585,10 +587,11 @@ button, .btn {
     }
 
     .veille-media-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(220px, 1fr);
+        justify-content: center;
     }
     .veille-media-card img {
-        height: 165px;
+        height: 128px;
     }
     .veille-kpis {
         grid-template-columns: repeat(2, minmax(0, 1fr));

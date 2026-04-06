@@ -1,0 +1,35 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10142C"/>
+      <stop offset="1" stop-color="#0C1B35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+
+  <ellipse cx="600" cy="120" rx="240" ry="80" fill="#2A7BC1" fill-opacity="0.35"/>
+  <text x="460" y="128" fill="#E0F4FF" font-size="34" font-family="Segoe UI, Arial" font-weight="700">Cloud AI Analytics</text>
+  <path d="M600 210V300" stroke="#59A6FF" stroke-width="16" stroke-linecap="round"/>
+  <path d="M600 300L580 274H620L600 300Z" fill="#59A6FF"/>
+
+  <rect x="380" y="310" width="440" height="150" rx="25" fill="#F8D86A" stroke="#D9B74F" stroke-width="5"/>
+  <text x="490" y="398" fill="#25324A" font-size="38" font-family="Segoe UI, Arial" font-weight="700">Autonomous EV</text>
+
+  <g stroke="#5CA8FF" stroke-width="12" stroke-linecap="round">
+    <path d="M180 500L380 420"/>
+    <path d="M380 540V460"/>
+    <path d="M600 540V460"/>
+    <path d="M820 540V460"/>
+    <path d="M1020 500L820 420"/>
+  </g>
+
+  <g fill="#CFE8FF" font-family="Segoe UI, Arial" font-size="30" font-weight="700">
+    <text x="130" y="585">V2V</text>
+    <text x="330" y="585">GPS</text>
+    <text x="550" y="585">LiDAR</text>
+    <text x="760" y="585">Camera</text>
+    <text x="980" y="585">Ultrasound</text>
+  </g>
+
+  <text x="85" y="84" fill="#D4E9FF" font-size="40" font-family="Segoe UI, Arial" font-weight="700">Flux de données, cloud et cybersécurité</text>
+</svg>

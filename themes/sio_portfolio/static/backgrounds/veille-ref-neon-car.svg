@@ -1,0 +1,34 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 350) rotate(90) scale(420 720)">
+      <stop stop-color="#102A4A"/>
+      <stop offset="1" stop-color="#070A18"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <ellipse cx="600" cy="520" rx="420" ry="90" fill="#1BA8D8" fill-opacity="0.2"/>
+
+  <path d="M300 470C380 390 500 360 650 365C760 370 840 400 900 460L885 490C780 500 430 500 315 495L300 470Z" fill="#1D4C6A" stroke="#66D9FF" stroke-width="5"/>
+  <circle cx="430" cy="510" r="52" fill="#132A40" stroke="#6EE6FF" stroke-width="8"/>
+  <circle cx="770" cy="510" r="52" fill="#132A40" stroke="#6EE6FF" stroke-width="8"/>
+  <circle cx="430" cy="510" r="22" fill="#6EE6FF"/>
+  <circle cx="770" cy="510" r="22" fill="#6EE6FF"/>
+
+  <g stroke="#53D8FF" stroke-width="4" stroke-opacity="0.85">
+    <circle cx="250" cy="230" r="58"/>
+    <circle cx="410" cy="170" r="45"/>
+    <circle cx="600" cy="140" r="64"/>
+    <circle cx="790" cy="180" r="50"/>
+    <circle cx="970" cy="250" r="66"/>
+  </g>
+  <g fill="#BCEBFF" font-family="Segoe UI, Arial" font-size="24" font-weight="700">
+    <text x="220" y="236">Wi-Fi</text>
+    <text x="370" y="176">OTA</text>
+    <text x="566" y="146">Zero Trust</text>
+    <text x="760" y="186">API</text>
+    <text x="926" y="256">SIEM</text>
+  </g>
+
+  <text x="80" y="84" fill="#CBEFFF" font-family="Segoe UI, Arial" font-size="42" font-weight="700">Cybersécurité des véhicules connectés</text>
+  <text x="80" y="124" fill="#9FD9FF" font-family="Segoe UI, Arial" font-size="24">Monitoring, authentification, chiffrement et détection d'anomalies</text>
+</svg>
