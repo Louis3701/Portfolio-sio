@@ -467,6 +467,7 @@ button, .btn {
 /* PROJECTS */
 .projects-grid,
 .veille-grid,
+.skills-grid,
 .contact-grid {
     display: grid;
     gap: 1.5rem;
@@ -475,11 +476,15 @@ button, .btn {
 .veille-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.skills-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .contact-grid {
     grid-template-columns: 1.2fr 0.8fr;
 }
 .project-card,
 .veille-card,
+.skill-card,
 .contact-card {
     padding: 1.8rem;
     border-radius: 24px;
@@ -512,6 +517,7 @@ button, .btn {
 }
 .project-card h3,
 .veille-card h3,
+.skill-card h3,
 .contact-card h3 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -714,68 +720,18 @@ button, .btn {
 }
 
 /* SKILLS */
-.text-gradient {
-    background: linear-gradient(90deg, #8f7cff, #62ddff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.skills-panels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-.skills-panel {
-    padding: 1.8rem;
-    border-radius: 24px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: var(--shadow);
-}
-.skills-panel-header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-weight: 700;
-    font-size: 1.05rem;
-    margin-bottom: 1.4rem;
-}
-.skills-panel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-.dot-green  { background: #3ddc97; box-shadow: 0 0 6px #3ddc97aa; }
-.dot-purple { background: #8f7cff; box-shadow: 0 0 6px #8f7cffaa; }
-.skills-rows {
+.skill-card {
+    min-height: 160px;
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
-}
-.skills-label-bar {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 0.85rem;
-    margin-bottom: 0.3rem;
-}
-.skill-label {
-    font-size: 0.97rem;
-    color: rgba(255,255,255,0.9);
-}
-.skill-pct {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
-    font-weight: 600;
 }
 .skill-bar {
-    height: 0.45rem;
+    height: 0.9rem;
     border-radius: 999px;
     background: rgba(255,255,255,0.1);
     overflow: hidden;
-    margin: 0;
+    margin: 1rem 0 0.75rem;
 }
 .skill-fill {
     width: 0;
@@ -784,63 +740,9 @@ button, .btn {
     background: linear-gradient(90deg, rgba(107,85,255,1), rgba(124,199,255,1));
     transition: width 1.2s ease;
 }
-.skills-tools {
-    margin-top: 1.4rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-.skills-tools-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 0.75rem;
-}
-.skills-tools-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-.skills-tool-badge {
-    padding: 0.4rem 0.85rem;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
-    font-size: 0.83rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.85);
-}
-.skills-icon-row {
-    display: grid;
-    grid-template-columns: repeat(10, minmax(0, 1fr));
-    gap: 0.75rem;
-    margin-top: 0.5rem;
-}
-.skills-icon-tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem 0.5rem;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.09);
-    transition: background 0.25s, transform 0.25s;
-}
-.skills-icon-tile:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-3px);
-}
-.skills-icon-tile i {
-    font-size: 1.9rem;
-}
-.skills-icon-tile span {
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.65);
-    font-weight: 600;
-    text-align: center;
+.skill-percent {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.95rem;
 }
 
 /* CONTACT */
@@ -900,13 +802,10 @@ button, .btn {
     .veille-grid,
     .veille-media-grid,
     .veille-content-grid,
-    .skills-panels,
+    .skills-grid,
     .contact-grid,
     .timeline-grid {
         grid-template-columns: 1fr;
-    }
-    .skills-icon-row {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
     .veille-media-grid {
@@ -1023,14 +922,10 @@ button, .btn {
     .veille-grid,
     .veille-media-grid,
     .veille-content-grid,
-    .skills-panels,
+    .skills-grid,
     .contact-grid,
     .timeline-grid {
         gap: 1rem;
-    }
-    .skills-icon-row {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 0.6rem;
     }
 
     .veille-media-grid {

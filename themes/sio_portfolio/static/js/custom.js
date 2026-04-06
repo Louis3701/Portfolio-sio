@@ -108,7 +108,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 // Stagger grids
-document.querySelectorAll('.skills-panels, .projects-grid, .bts-grid').forEach(grid => {
+document.querySelectorAll('.skills-grid, .projects-grid, .bts-grid').forEach(grid => {
     grid.querySelectorAll('.reveal').forEach((child, i) => {
         child.style.transitionDelay = `${i * 90}ms`;
     });
@@ -135,7 +135,7 @@ const skillObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.3 });
 
-document.querySelectorAll('.skills-panel').forEach(card => skillObserver.observe(card));
+document.querySelectorAll('.skill-card').forEach(card => skillObserver.observe(card));
 
 // ==============================
 // CONTACT FORM
