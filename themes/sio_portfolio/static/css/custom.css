@@ -314,93 +314,106 @@ button, .btn {
 #parcours .journey-rail { left: 50% !important; transform: translateX(-50%) !important; }
 #parcours .journey-left { margin-right: auto !important; margin-left: 0 !important; }
 #parcours .journey-right { margin-left: auto !important; margin-right: 0 !important; margin-top: 1.7rem !important; }
-#parcours .timeline-card { width: calc(50% - 2rem) !important; }
+#parcours .timeline-card { width: 100% !important; }
 #parcours .timeline-next-step { width: calc(50% - 2rem) !important; margin-right: auto !important; margin-left: 0 !important; }
 
-/* PARCOURS TIMELINE (Claude structure, scoped) */
+/* PARCOURS TIMELINE (neon alternating cards) */
 #parcours .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 1.6rem 0 0.6rem;
+    padding: 1.6rem 0 0.8rem;
 }
 
 #parcours .timeline::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     top: 0;
     bottom: 0;
     width: 2px;
-    background: rgba(127, 96, 255, 0.75);
+    background: linear-gradient(180deg, rgba(106, 84, 255, 0.86) 0%, rgba(106, 84, 255, 0.42) 100%);
+    box-shadow: 0 0 16px rgba(106, 84, 255, 0.5);
     transform: translateX(-50%);
 }
 
 #parcours .timeline-item {
-    display: flex;
-    width: 50%;
-    padding: 0.8rem 2rem 0.8rem 0;
-    box-sizing: border-box;
     position: relative;
+    width: 50% !important;
+    margin-left: 0 !important;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.85rem 1.9rem 0.85rem 0;
+    box-sizing: border-box;
 }
 
 #parcours .timeline-item.right {
-    margin-left: 50%;
-    padding: 0.8rem 0 0.8rem 2rem;
+    margin-left: 50% !important;
+    justify-content: flex-start;
+    padding: 0.85rem 0 0.85rem 1.9rem;
 }
 
 #parcours .timeline-item::before {
-    content: '';
+    content: "";
     position: absolute;
-    right: -6px;
-    top: 1.6rem;
+    right: -7px;
+    top: 1.75rem;
     width: 12px;
     height: 12px;
-    background: #6c5bff;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(108, 91, 255, 0.2);
+    background: #6b55ff;
+    border: 1px solid rgba(164, 148, 255, 0.95);
+    box-shadow: 0 0 0 5px rgba(107, 85, 255, 0.18), 0 0 20px rgba(107, 85, 255, 0.6);
 }
 
 #parcours .timeline-item.right::before {
     right: auto;
-    left: -6px;
+    left: -7px;
 }
 
 #parcours .timeline .timeline-card {
-    background: #1a1a2e;
-    border: 1px solid #2d2d4e;
-    border-radius: 14px;
+    width: min(430px, 100%);
     padding: 1.05rem 1.2rem;
-    width: 100%;
-    color: #e2e2f0;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+    border-radius: 16px;
+    border: 1px solid rgba(144, 151, 255, 0.22);
+    background: linear-gradient(180deg, rgba(20, 19, 42, 0.9), rgba(13, 12, 34, 0.88));
+    color: #e6e9ff;
+    box-shadow: 0 14px 34px rgba(6, 7, 20, 0.58), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2px);
 }
 
 #parcours .timeline .timeline-card h3 {
-    color: #f4f5ff;
-    margin: 0.35rem 0 0.65rem;
-    font-size: 1.05rem;
+    margin: 0.35rem 0 0.62rem;
+    color: #f7f9ff;
+    font-size: 1.03rem;
+    line-height: 1.35;
 }
 
 #parcours .timeline .timeline-card p {
     margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.72;
-    color: #c4c6e6;
+    color: rgba(226, 231, 255, 0.78);
+    font-size: 0.88rem;
+    line-height: 1.65;
 }
 
 #parcours .timeline .timeline-card ul {
-    padding-left: 1.1rem;
     margin: 0.15rem 0 0;
-    font-size: 0.86rem;
-    color: #b8bcde;
+    padding-left: 1.05rem;
+    color: rgba(225, 230, 255, 0.78);
+    font-size: 0.85rem;
+    line-height: 1.58;
+}
+
+#parcours .timeline .timeline-card ul li {
+    margin-bottom: 0.32rem;
 }
 
 #parcours .timeline .tag {
-    font-size: 0.7rem;
-    color: #9597ba;
+    display: inline-block;
+    font-size: 0.68rem;
+    color: #9ca2de;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.09em;
     font-weight: 700;
 }
 
@@ -408,44 +421,47 @@ button, .btn {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-bottom: 0.4rem;
+    gap: 0.38rem;
+    margin-bottom: 0.35rem;
 }
 
 #parcours .timeline .tag-small {
-    font-size: 0.7rem;
-    background: #2a2a4a;
-    color: #a9add2;
-    padding: 2px 8px;
+    font-size: 0.66rem;
     border-radius: 999px;
+    padding: 2px 8px;
+    color: #a8b2ff;
+    border: 1px solid rgba(129, 141, 255, 0.45);
+    background: rgba(58, 65, 133, 0.32);
 }
 
 #parcours .timeline .tag-company {
-    font-size: 0.7rem;
-    background: #1f3a66;
-    color: #7dc1ff;
-    padding: 2px 8px;
+    font-size: 0.66rem;
     border-radius: 999px;
+    padding: 2px 8px;
+    color: #83d4ff;
+    border: 1px solid rgba(77, 171, 255, 0.46);
+    background: rgba(31, 66, 113, 0.4);
 }
 
 #parcours .timeline .tech-tags {
-    margin-top: 0.7rem;
+    margin-top: 0.72rem;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
 }
 
 #parcours .timeline .tech-tags span {
-    font-size: 0.74rem;
-    background: #2a2a4a;
-    color: #aeb2db;
-    padding: 3px 10px;
-    border-radius: 6px;
+    font-size: 0.7rem;
+    border-radius: 7px;
+    padding: 3px 9px;
+    color: #b7c3ff;
+    border: 1px solid rgba(116, 125, 226, 0.4);
+    background: rgba(55, 61, 122, 0.34);
 }
 
 #parcours .timeline .timeline-card-next {
     border-color: rgba(65, 211, 153, 0.45);
-    background: linear-gradient(180deg, rgba(16, 58, 45, 0.7), rgba(10, 40, 32, 0.65));
+    background: linear-gradient(180deg, rgba(17, 54, 46, 0.85), rgba(11, 36, 32, 0.86));
 }
 
 /* PROJECTS */
@@ -859,18 +875,37 @@ button, .btn {
         margin-top: 0 !important;
     }
 
-        #parcours .timeline::before { left: 16px; transform: none; }
-        #parcours .timeline-item,
-        #parcours .timeline-item.right {
-            width: 100%;
-            margin-left: 0;
-            padding: 0.8rem 0.8rem 0.8rem 2.2rem;
-        }
-        #parcours .timeline-item::before,
-        #parcours .timeline-item.right::before {
-            left: 10px;
-            right: auto;
-        }
+}
+
+@media (max-width: 900px) {
+    #parcours .timeline {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #parcours .timeline::before {
+        left: 16px;
+        transform: none;
+    }
+
+    #parcours .timeline-item,
+    #parcours .timeline-item.right {
+        width: 100%;
+        margin-left: 0;
+        padding: 0.8rem 0.8rem 0.8rem 2.2rem;
+        justify-content: flex-start;
+    }
+
+    #parcours .timeline-item::before,
+    #parcours .timeline-item.right::before {
+        left: 10px;
+        right: auto;
+    }
+
+    #parcours .timeline .timeline-card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
