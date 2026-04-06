@@ -231,23 +231,25 @@ button, .btn {
 .timeline-grid {
     position: relative;
     display: grid;
-    gap: 1.1rem;
-    max-width: 860px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem 1.2rem;
+    max-width: 980px;
     margin-top: 0.5rem;
-    padding-left: 2.4rem;
+    padding: 0.4rem 0;
 }
 .timeline-grid::before {
     content: "";
     position: absolute;
-    left: 0.8rem;
-    top: 0.4rem;
-    bottom: 0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
     width: 2px;
     background: linear-gradient(180deg, rgba(163,134,255,0.85), rgba(88,212,255,0.35));
 }
 .timeline-card {
     position: relative;
-    padding: 1.8rem;
+    padding: 1.35rem;
     border-radius: 24px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -257,13 +259,17 @@ button, .btn {
 .timeline-card::before {
     content: "";
     position: absolute;
-    left: -1.95rem;
+    right: -1.05rem;
     top: 2rem;
     width: 14px;
     height: 14px;
     border-radius: 50%;
     background: linear-gradient(135deg, #8f7cff, #62ddff);
     box-shadow: 0 0 0 5px rgba(143,124,255,0.18);
+}
+.timeline-card:nth-child(even)::before {
+    right: auto;
+    left: -1.05rem;
 }
 .timeline-card:hover {
     transform: translateY(-2px);
@@ -274,6 +280,9 @@ button, .btn {
     margin-bottom: 0.8rem;
     color: var(--accent);
     font-weight: 700;
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 .timeline-card h3 {
     margin: 0 0 0.75rem;
@@ -282,6 +291,22 @@ button, .btn {
     margin: 0;
     color: rgba(255,255,255,0.78);
     line-height: 1.85;
+}
+.timeline-card:nth-child(odd) {
+    grid-column: 1;
+}
+.timeline-card:nth-child(even) {
+    grid-column: 2;
+}
+.timeline-next-step {
+    grid-column: 1 / span 2;
+    border-color: rgba(65, 211, 153, 0.48);
+    background: linear-gradient(180deg, rgba(14, 57, 45, 0.62), rgba(10, 39, 32, 0.58));
+}
+.timeline-next-step::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
 }
 
 /* PROJECTS */
@@ -653,6 +678,25 @@ button, .btn {
 
     .timeline-grid {
         max-width: 100%;
+        grid-template-columns: 1fr;
+        padding-left: 1.9rem;
+    }
+    .timeline-grid::before {
+        left: 0.6rem;
+        transform: none;
+    }
+    .timeline-card,
+    .timeline-card:nth-child(odd),
+    .timeline-card:nth-child(even),
+    .timeline-next-step {
+        grid-column: 1;
+    }
+    .timeline-card::before,
+    .timeline-card:nth-child(even)::before,
+    .timeline-next-step::before {
+        left: -1.55rem;
+        right: auto;
+        transform: none;
     }
 }
 
