@@ -1,0 +1,25 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#160E33"/>
+      <stop offset="1" stop-color="#07162B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1050" cy="130" r="170" fill="#5EE0FF" fill-opacity="0.13"/>
+  <circle cx="140" cy="590" r="190" fill="#8B74FF" fill-opacity="0.16"/>
+
+  <rect x="210" y="210" width="780" height="300" rx="30" fill="#101D43" stroke="#7FA8FF" stroke-width="3"/>
+  <rect x="260" y="260" width="320" height="80" rx="16" fill="#162A5B" stroke="#88BCFF"/>
+  <rect x="620" y="260" width="320" height="80" rx="16" fill="#162A5B" stroke="#88BCFF"/>
+  <rect x="260" y="370" width="320" height="80" rx="16" fill="#162A5B" stroke="#88BCFF"/>
+  <rect x="620" y="370" width="320" height="80" rx="16" fill="#162A5B" stroke="#88BCFF"/>
+
+  <text x="292" y="308" fill="#D5E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">API REST + OAuth2/JWT</text>
+  <text x="650" y="308" fill="#D5E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">DevSecOps + CI/CD</text>
+  <text x="292" y="418" fill="#D5E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Pentest + Wireshark</text>
+  <text x="650" y="418" fill="#D5E7FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Python ML + SIEM</text>
+
+  <text x="90" y="92" fill="#9DD2FF" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">Competences SLAM Mobilisees</text>
+  <text x="90" y="136" fill="#C0CCFF" font-family="Segoe UI, Arial, sans-serif" font-size="22">Back-end securise, architecture Zero Trust, monitoring flotte</text>
+</svg>

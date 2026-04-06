@@ -194,48 +194,69 @@
     <div class="container">
         <div class="section-header reveal">
             <span class="section-label">Ma veille</span>
-            <h2 class="section-title">Veille technologique BTS SIO SLAM - Informatique embarquee et logiciel automobile</h2>
+            <h2 class="section-title">Veille Technologique - Cybersécurité Automobile</h2>
         </div>
         <div class="veille-media-grid">
             <figure class="veille-media-card reveal">
-                <img src="{{ SITEURL }}/theme/backgrounds/veille-sdv.svg" alt="Illustration vehicule defini par logiciel">
-                <figcaption>Vehicule defini par logiciel (SDV)</figcaption>
+                <img src="{{ SITEURL }}/theme/backgrounds/veille-cyber-menaces.svg" alt="Illustration des menaces cyber automobile">
+                <figcaption>Surface d'attaque des véhicules connectés</figcaption>
             </figure>
             <figure class="veille-media-card reveal">
-                <img src="{{ SITEURL }}/theme/backgrounds/veille-ota.svg" alt="Illustration mises a jour OTA et cloud automobile">
-                <figcaption>Mises a jour OTA et architecture cloud</figcaption>
+                <img src="{{ SITEURL }}/theme/backgrounds/veille-cyber-reglementation.svg" alt="Illustration du cadre réglementaire automobile">
+                <figcaption>Réglementation UNECE R155/R156 et ISO 21434</figcaption>
             </figure>
             <figure class="veille-media-card reveal">
-                <img src="{{ SITEURL }}/theme/backgrounds/veille-cyber.svg" alt="Illustration cybersecurite et intelligence artificielle embarquee">
-                <figcaption>Cybersecurite et IA embarquee</figcaption>
+                <img src="{{ SITEURL }}/theme/backgrounds/veille-cyber-competences.svg" alt="Illustration des compétences SLAM en cybersécurité auto">
+                <figcaption>Compétences SLAM mobilisées sur le terrain</figcaption>
             </figure>
         </div>
 
         <div class="veille-content-grid">
             <article class="veille-article-card reveal">
                 <h3>Introduction</h3>
-                <p>Dans le cadre de mon BTS SIO option SLAM, cette veille technologique a pour objectif de suivre les evolutions de l'informatique embarquee et du logiciel automobile. Le vehicule moderne n'est plus uniquement mecanique: il devient une plateforme numerique, connectee et evolutive, pilotee par des millions de lignes de code.</p>
-                <p>Ma demarche consiste a observer les innovations 2025-2026, croiser les sources, evaluer les impacts techniques et identifier les competences directement transferables a mon profil SLAM: conception logicielle, API, cloud, securite et qualite logicielle.</p>
+                <p>La voiture moderne embarque jusqu'a 100 millions de lignes de code et des dizaines d'ECU (Electronic Control Units) interconnectes. Cette transformation numerique ouvre une surface d'attaque inedite pour les cybercriminels, et place la cybersécurité automobile au coeur des priorites industrielles en 2026.</p>
+                <p>Cette veille est realisee dans le cadre du BTS SIO option SLAM (mars 2026) avec un objectif clair: relier les enjeux cyber du secteur automobile aux competences techniques que je developpe en programmation, architecture applicative et securisation des systemes.</p>
+
+                <div class="veille-kpis">
+                    <div class="veille-kpi-item"><span>3,5 Md$</span><small>marche mondial en 2024</small></div>
+                    <div class="veille-kpi-item"><span>13,99 Md$</span><small>projection 2035</small></div>
+                    <div class="veille-kpi-item"><span>+15,3 %</span><small>croissance annuelle</small></div>
+                    <div class="veille-kpi-item"><span>92 %</span><small>attaques a distance en 2025</small></div>
+                </div>
             </article>
 
             <article class="veille-article-card reveal">
-                <h3>Description des tendances</h3>
+                <h3>Analyse des menaces et cas réels</h3>
                 <ul class="veille-bullets">
-                    <li><strong>SDV (Software-Defined Vehicle):</strong> architecture centralisee, fonctions activables a distance et evolution continue du vehicule par logiciel.</li>
-                    <li><strong>OTA (FOTA/SOTA):</strong> deploiement de correctifs et nouvelles fonctions sans passage atelier, avec suivi des versions et orchestration cloud.</li>
-                    <li><strong>Conformite et regulation:</strong> cadre UNECE R155/R156 et normes ISO 21434 qui renforcent les exigences de securite et de tracabilite.</li>
-                    <li><strong>Cybersécurité embarquee:</strong> protection des communications vehicule-cloud, chiffrement, gestion des risques et approches Zero Trust.</li>
-                    <li><strong>IA automobile:</strong> ADAS, maintenance predictive, analyse temps reel et assistance intelligente conducteur.</li>
-                    <li><strong>Voiture connectee:</strong> integration API, protocoles IoT (MQTT/AMQP), V2X, microservices et plateformes de supervision.</li>
+                    <li><strong>APIs vehicule, telematique et cloud:</strong> 67 % des incidents identifies.</li>
+                    <li><strong>Wi-Fi / Bluetooth:</strong> canaux exposes si segmentation et chiffrement insuffisants.</li>
+                    <li><strong>Mises a jour OTA:</strong> risque d'injection malveillante en cas de chaine de confiance faible.</li>
+                    <li><strong>Applications mobiles connectees:</strong> surface d'attaque et fuite de donnees.</li>
+                    <li><strong>Cibles emergentes:</strong> bornes de recharge et communications V2X.</li>
                 </ul>
-                <p>Ces technologies mobilisent concretement les competences d'un developpeur SLAM: modelisation de donnees, services back-end, tests, documentation, securisation des flux et maintenance applicative en environnement critique.</p>
+
+                <div class="veille-case-grid">
+                    <div class="veille-case-card">
+                        <h4>Jaguar Land Rover (2025)</h4>
+                        <p>Ransomware via fournisseur tiers, production bloquee 5 semaines, 1,9 milliard GBP de pertes.</p>
+                    </div>
+                    <div class="veille-case-card">
+                        <h4>CDK Global (2024)</h4>
+                        <p>15 000 concessionnaires americains impacts, 3 semaines d'interruption, 1,02 milliard USD de pertes.</p>
+                    </div>
+                    <div class="veille-case-card">
+                        <h4>Stellantis / Hyundai (2025)</h4>
+                        <p>Fuites massives de donnees clients avec impacts juridiques et risques RGPD eleves.</p>
+                    </div>
+                </div>
             </article>
 
             <article class="veille-article-card reveal">
                 <h3>Conclusion</h3>
-                <p>Cette veille montre que l'automobile numerique est un secteur strategique pour les metiers du logiciel. La convergence entre systemes embarques, cloud et cybersecurite cree un besoin croissant de profils capables de developper, tester et faire evoluer des solutions fiables.</p>
-                <p>Pour mon portfolio, elle demontre ma capacite a produire une analyse structuree, a justifier les choix techniques et a relier les tendances du marche a des competences SLAM operationnelles.</p>
-                <p class="veille-source-note"><strong>Sources et methode:</strong> Planview, Nextlane, IDTechEx, Global Market Insights, Sonatus, ACTIA, ANSSI, veille RSS/Google Alerts, suivi LinkedIn et verification croisee des informations avant synthese.</p>
+                <p>Depuis juillet 2024, tout nouveau vehicule homologue dans 64 pays doit embarquer un CSMS certifie (UNECE R155) et un SUMS (UNECE R156). La norme ISO/SAE 21434 encadre la cybersécurité sur tout le cycle de vie logiciel, renforcee en Europe par NIS2 (2024) et le Cyber Resilience Act (2027).</p>
+                <p>Pour un profil BTS SIO SLAM, les competences mobilisees sont tres concretes: API REST/OAuth2/JWT, developpement back-end des plateformes OTA et monitoring, tests d'intrusion (Burp, Wireshark), architecture Zero Trust, detection d'anomalies en Python/ML, et DevSecOps (Git/CI-CD) pour la tracabilite SUMS.</p>
+                <p>La cybersécurité automobile est aujourd'hui une obligation reglementaire, un enjeu financier majeur et un secteur en forte penurie de talents. Cette veille confirme l'interet strategique du domaine pour mon projet professionnel.</p>
+                <p class="veille-source-note"><strong>Sources et methode:</strong> rapports marches 2024-2026, analyses sectorielles constructeurs/equipementiers, veille technique continue et croisement des donnees avant synthese.</p>
             </article>
         </div>
 

@@ -1,0 +1,27 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="50" y1="30" x2="1120" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101834"/>
+      <stop offset="1" stop-color="#0A0F24"/>
+    </linearGradient>
+    <linearGradient id="card" x1="290" y1="210" x2="890" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#62DBFF" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#8A74FF" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="190" cy="130" r="140" fill="#7A67FF" fill-opacity="0.14"/>
+  <circle cx="1000" cy="610" r="170" fill="#59DFFF" fill-opacity="0.12"/>
+
+  <rect x="270" y="200" width="660" height="320" rx="26" fill="url(#card)" stroke="#8EADFF" stroke-opacity="0.85" stroke-width="3"/>
+  <rect x="330" y="255" width="540" height="56" rx="14" fill="#132450" stroke="#84B9FF"/>
+  <rect x="330" y="335" width="540" height="56" rx="14" fill="#132450" stroke="#84B9FF"/>
+  <rect x="330" y="415" width="540" height="56" rx="14" fill="#132450" stroke="#84B9FF"/>
+
+  <text x="362" y="292" fill="#D8E6FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">UNECE R155 - CSMS obligatoire</text>
+  <text x="362" y="372" fill="#D8E6FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">UNECE R156 - SUMS et traçabilite</text>
+  <text x="362" y="452" fill="#D8E6FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">ISO/SAE 21434 - cycle de vie securise</text>
+
+  <text x="90" y="92" fill="#92CBFF" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">Cadre Reglementaire 2026</text>
+  <text x="90" y="136" fill="#BCCBFF" font-family="Segoe UI, Arial, sans-serif" font-size="22">Conformite CSMS / SUMS, NIS2, Cyber Resilience Act</text>
+</svg>

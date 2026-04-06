@@ -1,0 +1,32 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#130C2D"/>
+      <stop offset="1" stop-color="#081226"/>
+    </linearGradient>
+    <linearGradient id="line" x1="240" y1="170" x2="940" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66E2FF"/>
+      <stop offset="1" stop-color="#8E7CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1060" cy="110" r="150" fill="#5BE3FF" fill-opacity="0.12"/>
+  <circle cx="130" cy="620" r="210" fill="#7D65FF" fill-opacity="0.16"/>
+
+  <rect x="360" y="230" width="480" height="220" rx="24" fill="#0F1A3D" stroke="#6EA4FF" stroke-opacity="0.9" stroke-width="3"/>
+  <rect x="430" y="180" width="340" height="70" rx="16" fill="#111F48" stroke="#7FB8FF" stroke-width="2"/>
+  <circle cx="470" cy="215" r="12" fill="#5EE0FF"/>
+  <path d="M510 215H720" stroke="#8AB8FF" stroke-width="8" stroke-linecap="round"/>
+
+  <g stroke="url(#line)" stroke-width="5" stroke-linecap="round">
+    <path d="M220 500H360"/>
+    <path d="M840 500H980"/>
+    <path d="M430 560V450"/>
+    <path d="M770 560V450"/>
+  </g>
+
+  <g fill="#8FD0FF" font-family="Segoe UI, Arial, sans-serif" font-weight="700">
+    <text x="90" y="92" font-size="36">Menaces Cyber Automobile</text>
+    <text x="90" y="136" font-size="22" fill="#B4C6FF">APIs, telematique cloud, OTA, Wi-Fi/Bluetooth, V2X</text>
+  </g>
+</svg>
