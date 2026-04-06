@@ -900,9 +900,13 @@ button, .btn {
     .veille-grid,
     .veille-media-grid,
     .veille-content-grid,
+    .skills-panels,
     .contact-grid,
     .timeline-grid {
         grid-template-columns: 1fr;
+    }
+    .skills-icon-row {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
     .veille-media-grid {
@@ -974,16 +978,6 @@ button, .btn {
 
 }
 
-@media (max-width: 768px) {
-    .skills-panels {
-        grid-template-columns: 1fr;
-    }
-    .skills-icon-row {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 0.5rem;
-    }
-}
-
 @media (max-width: 900px) {
     #parcours .timeline {
         max-width: 100%;
@@ -1029,9 +1023,14 @@ button, .btn {
     .veille-grid,
     .veille-media-grid,
     .veille-content-grid,
+    .skills-panels,
     .contact-grid,
     .timeline-grid {
         gap: 1rem;
+    }
+    .skills-icon-row {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.6rem;
     }
 
     .veille-media-grid {
