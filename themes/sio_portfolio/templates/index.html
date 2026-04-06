@@ -196,23 +196,15 @@
             <span class="section-label">Ma veille</span>
             <h2 class="section-title">Veille Technologique - Cybersécurité Automobile</h2>
         </div>
-        <div class="veille-media-grid">
-            <figure class="veille-media-card reveal">
-                <img src="{{ SITEURL }}/theme/backgrounds/veille-ref-attack-surface.svg" alt="Illustration des menaces cyber automobile">
-                <figcaption>Surfaces d'attaque: API, OTA, V2X et mobile</figcaption>
-            </figure>
-            <figure class="veille-media-card reveal">
-                <img src="{{ SITEURL }}/theme/backgrounds/veille-ref-neon-car.svg" alt="Illustration du véhicule connecté et de sa protection">
-                <figcaption>Véhicule connecté: monitoring et défense active</figcaption>
-            </figure>
-            <figure class="veille-media-card reveal">
-                <img src="{{ SITEURL }}/theme/backgrounds/veille-ref-cloud-flow.svg" alt="Illustration flux cloud et cybersécurité automobile">
-                <figcaption>Flux cloud, capteurs et sécurité des données</figcaption>
-            </figure>
-        </div>
+        <div class="veille-layout">
+            <div class="veille-main-column">
+                <figure class="veille-media-card veille-media-top reveal">
+                    <img src="{{ SITEURL }}/theme/backgrounds/veille-ref-attack-surface.svg" alt="Illustration des menaces cyber automobile">
+                    <figcaption>Surfaces d'attaque: API, OTA, V2X et mobile</figcaption>
+                </figure>
 
-        <div class="veille-content-grid">
-            <article class="veille-article-card reveal">
+                <div class="veille-content-stack">
+                    <article class="veille-article-card reveal">
                 <h3>Introduction</h3>
                 <p>La voiture moderne embarque jusqu'a 100 millions de lignes de code et des dizaines d'ECU (Electronic Control Units) interconnectes. Cette transformation numerique ouvre une surface d'attaque inedite pour les cybercriminels, et place la cybersécurité automobile au coeur des priorites industrielles en 2026.</p>
                 <p>Cette veille est realisee dans le cadre du BTS SIO option SLAM (mars 2026) avec un objectif clair: relier les enjeux cyber du secteur automobile aux competences techniques que je developpe en programmation, architecture applicative et securisation des systemes.</p>
@@ -223,9 +215,9 @@
                     <div class="veille-kpi-item"><span>+15,3 %</span><small>croissance annuelle</small></div>
                     <div class="veille-kpi-item"><span>92 %</span><small>attaques a distance en 2025</small></div>
                 </div>
-            </article>
+                    </article>
 
-            <article class="veille-article-card reveal">
+                    <article class="veille-article-card reveal">
                 <h3>Analyse des menaces et cas réels</h3>
                 <ul class="veille-bullets">
                     <li><strong>APIs vehicule, telematique et cloud:</strong> 67 % des incidents identifies.</li>
@@ -249,15 +241,29 @@
                         <p>Fuites massives de donnees clients avec impacts juridiques et risques RGPD eleves.</p>
                     </div>
                 </div>
-            </article>
+                    </article>
 
-            <article class="veille-article-card reveal">
+                    <article class="veille-article-card reveal">
                 <h3>Conclusion</h3>
                 <p>Depuis juillet 2024, tout nouveau vehicule homologue dans 64 pays doit embarquer un CSMS certifie (UNECE R155) et un SUMS (UNECE R156). La norme ISO/SAE 21434 encadre la cybersécurité sur tout le cycle de vie logiciel, renforcee en Europe par NIS2 (2024) et le Cyber Resilience Act (2027).</p>
                 <p>Pour un profil BTS SIO SLAM, les competences mobilisees sont tres concretes: API REST/OAuth2/JWT, developpement back-end des plateformes OTA et monitoring, tests d'intrusion (Burp, Wireshark), architecture Zero Trust, detection d'anomalies en Python/ML, et DevSecOps (Git/CI-CD) pour la tracabilite SUMS.</p>
                 <p>La cybersécurité automobile est aujourd'hui une obligation reglementaire, un enjeu financier majeur et un secteur en forte penurie de talents. Cette veille confirme l'interet strategique du domaine pour mon projet professionnel.</p>
                 <p class="veille-source-note"><strong>Sources et methode:</strong> rapports marches 2024-2026, analyses sectorielles constructeurs/equipementiers, veille technique continue et croisement des donnees avant synthese.</p>
-            </article>
+                    </article>
+                </div>
+
+                <figure class="veille-media-card veille-media-bottom reveal">
+                    <img src="{{ SITEURL }}/theme/backgrounds/veille-ref-cloud-flow.svg" alt="Illustration flux cloud et cybersécurité automobile">
+                    <figcaption>Flux cloud, capteurs et sécurité des données</figcaption>
+                </figure>
+            </div>
+
+            <aside class="veille-side-column reveal">
+                <figure class="veille-media-card veille-media-side">
+                    <img src="{{ SITEURL }}/theme/backgrounds/veille-ref-neon-car.svg" alt="Illustration du véhicule connecté et de sa protection">
+                    <figcaption>Véhicule connecté: monitoring et défense active</figcaption>
+                </figure>
+            </aside>
         </div>
 
         <div class="section-actions reveal">
