@@ -230,26 +230,27 @@ button, .btn {
 /* TIMELINE */
 .timeline-grid {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
     max-width: 980px;
-    margin-top: 0.5rem;
-    padding: 0.4rem 0;
+    margin: 0.8rem auto 0;
+    padding: 0.2rem 0;
 }
 .timeline-grid::before {
     content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 0;
-    bottom: 0;
+    top: 0.2rem;
+    bottom: 0.2rem;
     width: 2px;
-    background: linear-gradient(180deg, rgba(163,134,255,0.85), rgba(88,212,255,0.35));
+    background: linear-gradient(180deg, rgba(163,134,255,0.9), rgba(88,212,255,0.45));
 }
 .timeline-card {
     position: relative;
     padding: 1.35rem;
+    width: calc(50% - 1.8rem);
     border-radius: 24px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -259,7 +260,7 @@ button, .btn {
 .timeline-card::before {
     content: "";
     position: absolute;
-    right: -1.05rem;
+    right: -1.86rem;
     top: 2rem;
     width: 14px;
     height: 14px;
@@ -269,7 +270,7 @@ button, .btn {
 }
 .timeline-card:nth-child(even)::before {
     right: auto;
-    left: -1.05rem;
+    left: -1.86rem;
 }
 .timeline-card:hover {
     transform: translateY(-2px);
@@ -293,20 +294,21 @@ button, .btn {
     line-height: 1.85;
 }
 .timeline-card:nth-child(odd) {
-    grid-column: 1;
+    margin-right: auto;
 }
 .timeline-card:nth-child(even) {
-    grid-column: 2;
+    margin-left: auto;
 }
 .timeline-next-step {
-    grid-column: 1 / span 2;
+    width: calc(50% - 1.8rem);
+    margin-right: auto;
     border-color: rgba(65, 211, 153, 0.48);
     background: linear-gradient(180deg, rgba(14, 57, 45, 0.62), rgba(10, 39, 32, 0.58));
 }
 .timeline-next-step::before {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    left: auto;
+    right: -1.86rem;
+    transform: none;
 }
 
 /* PROJECTS */
@@ -678,8 +680,8 @@ button, .btn {
 
     .timeline-grid {
         max-width: 100%;
-        grid-template-columns: 1fr;
         padding-left: 1.9rem;
+        gap: 1rem;
     }
     .timeline-grid::before {
         left: 0.6rem;
@@ -689,7 +691,9 @@ button, .btn {
     .timeline-card:nth-child(odd),
     .timeline-card:nth-child(even),
     .timeline-next-step {
-        grid-column: 1;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
     .timeline-card::before,
     .timeline-card:nth-child(even)::before,
