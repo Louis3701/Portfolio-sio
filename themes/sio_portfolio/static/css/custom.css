@@ -12,6 +12,9 @@
     --neon-purple: rgba(120, 70, 255, 0.55);
     --neon-pink: rgba(200, 60, 255, 0.30);
     --neon-blue: rgba(60, 130, 255, 0.22);
+    /* Override Bootstrap dark theme */
+    --bs-body-bg: #0e0520;
+    --bs-body-color: rgba(255,255,255,0.92);
 }
 
 body {
@@ -20,10 +23,14 @@ body {
         radial-gradient(ellipse 80% 60% at 10% 15%,  rgba(110, 60, 255, 0.45), transparent),
         radial-gradient(ellipse 70% 55% at 90% 80%,  rgba(180, 50, 255, 0.32), transparent),
         radial-gradient(ellipse 60% 50% at 55% 45%,  rgba(80, 40, 200, 0.22), transparent),
-        linear-gradient(160deg, #0e0520 0%, #0a0628 55%, #0c0830 100%);
-    background-attachment: fixed;
+        linear-gradient(160deg, #0e0520 0%, #0a0628 55%, #0c0830 100%) !important;
+    background-attachment: fixed !important;
     color: var(--text);
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.page-wrapper {
+    background: transparent !important;
 }
 
 body::before {
@@ -35,7 +42,7 @@ body::before {
         radial-gradient(ellipse 45% 30% at 20% 70%, rgba(100, 50, 255, 0.16), transparent),
         radial-gradient(ellipse 35% 25% at 50% 90%, rgba(160, 70, 255, 0.14), transparent);
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
 }
 
 * {
@@ -200,10 +207,12 @@ button, .btn {
     padding: 80px 0;
     position: relative;
     z-index: 1;
+    background: transparent;
 }
 .section-dark {
-    background: rgba(80, 40, 180, 0.08);
-    box-shadow: inset 0 0 140px rgba(110, 55, 255, 0.10);
+    background: rgba(70, 30, 160, 0.12);
+    border-top: 1px solid rgba(120, 70, 255, 0.12);
+    border-bottom: 1px solid rgba(120, 70, 255, 0.12);
 }
 .section-header {
     max-width: 650px;
