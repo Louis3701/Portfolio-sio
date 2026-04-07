@@ -1,21 +1,26 @@
 :root {
-    --bg-dark: #0a0520;
-    --bg-darker: #070317;
+    --bg-dark: #0d0520;
+    --bg-darker: #090314;
     --surface: rgba(255,255,255,0.08);
     --surface-strong: rgba(255,255,255,0.12);
     --text: rgba(255,255,255,0.92);
     --text-muted: rgba(255,255,255,0.72);
-    --accent: #a386ff;
-    --accent-strong: #6b55ff;
+    --accent: #b898ff;
+    --accent-strong: #7c5fff;
     --border: rgba(255,255,255,0.14);
-    --shadow: 0 28px 80px rgba(0,0,0,0.25);
+    --shadow: 0 28px 80px rgba(0,0,0,0.35);
+    --neon-purple: rgba(120, 70, 255, 0.55);
+    --neon-pink: rgba(200, 60, 255, 0.30);
+    --neon-blue: rgba(60, 130, 255, 0.22);
 }
 
 body {
     min-height: 100vh;
-    background: radial-gradient(circle at top left, rgba(91, 62, 255, 0.16), transparent 26%),
-                radial-gradient(circle at bottom right, rgba(250, 91, 255, 0.12), transparent 20%),
-                linear-gradient(180deg, #09040f 0%, #0a0923 100%);
+    background:
+        radial-gradient(ellipse 70% 50% at 15% 10%,  rgba(110, 60, 255, 0.38), transparent),
+        radial-gradient(ellipse 60% 45% at 85% 90%,  rgba(180, 50, 255, 0.28), transparent),
+        radial-gradient(ellipse 50% 40% at 50% 50%,  rgba(80, 40, 200, 0.18), transparent),
+        linear-gradient(160deg, #0e0520 0%, #0a0628 55%, #0c0830 100%);
     color: var(--text);
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -24,7 +29,9 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.03), transparent 30%);
+    background:
+        radial-gradient(ellipse 40% 30% at 80% 20%, rgba(140, 80, 255, 0.14), transparent),
+        radial-gradient(ellipse 35% 25% at 20% 75%, rgba(100, 50, 255, 0.12), transparent);
     pointer-events: none;
     z-index: -1;
 }
@@ -49,9 +56,10 @@ button, .btn {
 /* NAVBAR */
 .navbar-wrapper,
 .container-fluid.sticky-top {
-    background: rgba(10, 6, 28, 0.92) !important;
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(12, 5, 28, 0.94) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(140, 80, 255, 0.18);
+    box-shadow: 0 1px 30px rgba(100, 40, 255, 0.12);
 }
 .nav-link {
     color: rgba(255,255,255,0.78) !important;
@@ -86,25 +94,28 @@ button, .btn {
     opacity: 0.85;
 }
 .hero-shape-1 {
-    width: 360px;
-    height: 360px;
-    top: -80px;
-    left: -80px;
-    background: rgba(108, 74, 255, 0.55);
+    width: 480px;
+    height: 480px;
+    top: -120px;
+    left: -100px;
+    background: rgba(110, 60, 255, 0.72);
+    box-shadow: 0 0 120px rgba(110, 60, 255, 0.5);
 }
 .hero-shape-2 {
-    width: 260px;
-    height: 260px;
-    top: 120px;
-    right: -60px;
-    background: rgba(255, 98, 211, 0.28);
+    width: 320px;
+    height: 320px;
+    top: 100px;
+    right: -80px;
+    background: rgba(200, 60, 255, 0.45);
+    box-shadow: 0 0 80px rgba(200, 60, 255, 0.35);
 }
 .hero-shape-3 {
-    width: 420px;
-    height: 420px;
-    bottom: -120px;
-    left: 40%;
-    background: rgba(0, 143, 255, 0.16);
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    left: 38%;
+    background: rgba(60, 80, 255, 0.28);
+    box-shadow: 0 0 100px rgba(60, 80, 255, 0.2);
 }
 .hero-container {
     position: relative;
@@ -187,7 +198,8 @@ button, .btn {
     padding: 80px 0;
 }
 .section-dark {
-    background: rgba(255,255,255,0.03);
+    background: rgba(110, 60, 255, 0.055);
+    box-shadow: inset 0 0 80px rgba(100, 40, 255, 0.07);
 }
 .section-header {
     max-width: 650px;
@@ -488,9 +500,17 @@ button, .btn {
 .contact-card {
     padding: 1.8rem;
     border-radius: 24px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: var(--shadow);
+    background: rgba(30, 15, 70, 0.55);
+    border: 1px solid rgba(140, 90, 255, 0.2);
+    box-shadow: var(--shadow), 0 0 30px rgba(100, 50, 255, 0.08);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.project-card:hover,
+.veille-card:hover,
+.skill-card:hover,
+.contact-card:hover {
+    border-color: rgba(160, 110, 255, 0.42);
+    box-shadow: var(--shadow), 0 0 40px rgba(120, 60, 255, 0.18);
 }
 .project-top,
 .veille-top {
