@@ -64,13 +64,12 @@ INDEX_SAVE_AS = 'index.html'
 
 # ((nom, url, icone, (nom, url, icone),description, couleur)...)
 MENUITEMS = (
-    ("Accueil",                 "/",                 None, None, "", None),
-    ("A propos de moi",         "/#a-propos",        None, None, "", None),
-    ("Mon parcours",            "/#parcours",        None, None, "", None),
-    ("Mes realisations",        "/#projects",        None, None, "", None),
-    ("Mes experiences",         "/pages/stage-sio1", None, None, "", None),
-    ("Ma veille technologique", "/ma-veille",        None, None, "", None),
-    ("Mes contacts",            "/#contact",         None, None, "", None),
+    ("A propos",      "/#about",    None, None, "", None),
+    ("Parcours",      "/#parcours", None, None, "", None),
+    ("Realisations",  "/#projects", None, None, "", None),
+    ("Experiences",   "/#stages",   None, None, "", None),
+    ("Veille techno", "/#veille",   None, None, "", None),
+    ("Contacts",      "/#contact",  None, None, "", None),
 )
 
 MAINITEMS = MENUITEMS[1:4]
