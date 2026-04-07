@@ -38,20 +38,9 @@ _______________________________________________________________________________
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav nav-links mx-auto mb-md-0 mt-3 mt-md-0 fw-bold gap-1">
                         {% for nom, url, icone, sousNav, description, couleur in MENUITEMS %}
-                        {% if sousNav %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link py-2 dropdown-toggle" href="{{ SITEURL }}{{ url }}" data-bs-toggle="dropdown">{{ nom }}</a>
-                            <ul class="dropdown-menu">
-                                {% for subnom, suburl in sousNav %}
-                                <li><a class="dropdown-item" href="{{ SITEURL }}{{ suburl }}">{{ subnom }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                        {% else %}
                         <li class="nav-item">
                             <a class="nav-link py-2" href="{{ SITEURL }}{{ url }}">{{ nom }}</a>
                         </li>
-                        {% endif %}
                         {% endfor %}
                     </ul>
                     <button id="theme-toggle">🌙 Sombre</button>
