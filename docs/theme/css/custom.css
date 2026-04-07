@@ -166,8 +166,8 @@ button, .btn {
 .hero-stack span {
     padding: 0.65rem 0.95rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(100, 55, 220, 0.18);
+    border: 1px solid rgba(140, 90, 255, 0.28);
 }
 .hero-cards {
     display: grid;
@@ -176,9 +176,9 @@ button, .btn {
 .hero-card {
     padding: 1.6rem;
     border-radius: 24px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: var(--shadow);
+    background: rgba(25, 10, 65, 0.70);
+    border: 1px solid rgba(130, 85, 255, 0.30);
+    box-shadow: var(--shadow), 0 0 28px rgba(100, 50, 255, 0.10);
 }
 .hero-card-tag {
     display: inline-block;
@@ -202,8 +202,8 @@ button, .btn {
     z-index: 1;
 }
 .section-dark {
-    background: rgba(110, 60, 255, 0.07);
-    box-shadow: inset 0 0 120px rgba(100, 40, 255, 0.09);
+    background: rgba(80, 40, 180, 0.08);
+    box-shadow: inset 0 0 140px rgba(110, 55, 255, 0.10);
 }
 .section-header {
     max-width: 650px;
@@ -237,10 +237,11 @@ button, .btn {
 .badge-list span {
     padding: 0.75rem 1rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.85);
+    background: rgba(100, 55, 220, 0.18);
+    border: 1px solid rgba(140, 90, 255, 0.30);
+    color: rgba(255,255,255,0.9);
     font-size: 0.95rem;
+    box-shadow: 0 0 12px rgba(120, 70, 255, 0.10);
 }
 
 /* TIMELINE */
@@ -530,7 +531,8 @@ button, .btn {
     align-items: center;
     padding: 0.55rem 0.9rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.12);
+    background: rgba(110, 60, 255, 0.22);
+    border: 1px solid rgba(150, 100, 255, 0.35);
     color: var(--accent);
     font-size: 0.85rem;
     font-weight: 700;
@@ -574,8 +576,8 @@ button, .btn {
 .project-tags span {
     padding: 0.55rem 0.8rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(100, 55, 220, 0.18);
+    border: 1px solid rgba(140, 90, 255, 0.28);
     font-size: 0.82rem;
 }
 .btn-link {
@@ -623,9 +625,9 @@ button, .btn {
     margin: 0;
     border-radius: 16px;
     overflow: hidden;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.14);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.24);
+    background: rgba(20, 8, 55, 0.75);
+    border: 1px solid rgba(130, 85, 255, 0.28);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.30), 0 0 20px rgba(100, 50, 255, 0.10);
     transform: translateY(0);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -669,9 +671,9 @@ button, .btn {
 .veille-article-card {
     padding: 1.25rem;
     border-radius: 20px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
-    border: 1px solid rgba(255,255,255,0.13);
-    box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+    background: rgba(25, 10, 65, 0.70);
+    border: 1px solid rgba(130, 85, 255, 0.25);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.30), 0 0 24px rgba(100, 50, 255, 0.08);
 }
 .veille-article-card h3 {
     margin: 0 0 0.9rem;
@@ -707,8 +709,9 @@ button, .btn {
 .veille-kpi-item {
     padding: 0.7rem 0.8rem;
     border-radius: 12px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(100, 55, 220, 0.20);
+    border: 1px solid rgba(140, 90, 255, 0.32);
+    box-shadow: 0 0 14px rgba(120, 70, 255, 0.10);
 }
 .veille-kpi-item span {
     display: block;
@@ -730,8 +733,8 @@ button, .btn {
 .veille-case-card {
     padding: 0.85rem;
     border-radius: 12px;
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(90, 50, 200, 0.18);
+    border: 1px solid rgba(130, 85, 255, 0.28);
 }
 .veille-case-card h4 {
     margin: 0 0 0.4rem;
@@ -753,7 +756,8 @@ button, .btn {
 .skill-bar {
     height: 0.9rem;
     border-radius: 999px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(100, 55, 220, 0.22);
+    border: 1px solid rgba(130, 85, 255, 0.20);
     overflow: hidden;
     margin: 1rem 0 0.75rem;
 }
@@ -780,10 +784,15 @@ button, .btn {
     align-items: center;
     padding: 0.9rem 1rem;
     border-radius: 14px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.88);
+    background: rgba(100, 55, 220, 0.18);
+    border: 1px solid rgba(140, 90, 255, 0.30);
+    color: rgba(255,255,255,0.92);
     font-weight: 600;
+    transition: background 0.25s, box-shadow 0.25s;
+}
+.doc-link:hover {
+    background: rgba(110, 65, 235, 0.28);
+    box-shadow: 0 0 20px rgba(130, 70, 255, 0.18);
 }
 
 /* BUTTONS */
