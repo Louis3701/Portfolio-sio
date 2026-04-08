@@ -935,14 +935,14 @@ body.light-mode .hero-profile-meta span {
 }
 .veille-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 290px;
-    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 1.25rem;
     align-items: start;
 }
 .veille-main-column {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 1.1rem;
 }
 .veille-content-stack {
     display: grid;
@@ -974,10 +974,32 @@ body.light-mode .hero-profile-meta span {
 }
 .veille-media-card img {
     width: 100%;
-    height: 120px;
+    height: 230px;
     object-fit: cover;
     display: block;
     filter: saturate(1.08) contrast(1.04);
+}
+.veille-media-link {
+    display: block;
+    position: relative;
+}
+.veille-media-link::after {
+    content: "Cliquer pour agrandir";
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    padding: 0.28rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(238, 249, 255, 0.96);
+    background: rgba(7, 20, 44, 0.62);
+    border: 1px solid rgba(113, 210, 255, 0.42);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.veille-media-card:hover .veille-media-link::after {
+    opacity: 1;
 }
 .veille-media-card figcaption {
     padding: 0.7rem 0.9rem;
@@ -986,18 +1008,18 @@ body.light-mode .hero-profile-meta span {
     color: rgba(255,255,255,0.84);
 }
 .veille-media-top {
-    max-width: 520px;
+    max-width: 100%;
 }
 .veille-media-side {
-    max-width: 290px;
+    max-width: 100%;
 }
 .veille-media-bottom {
-    max-width: 520px;
+    max-width: 100%;
 }
 .veille-media-side img,
 .veille-media-top img,
 .veille-media-bottom img {
-    height: 132px;
+    height: clamp(220px, 30vw, 330px);
 }
 .veille-content-grid {
     display: grid;
@@ -1434,12 +1456,12 @@ body.light-mode .hero-profile-meta span {
         justify-content: center;
     }
     .veille-media-card img {
-        height: 128px;
+        height: 210px;
     }
     .veille-media-side img,
     .veille-media-top img,
     .veille-media-bottom img {
-        height: 126px;
+        height: 210px;
     }
     .veille-kpis {
         grid-template-columns: repeat(2, minmax(0, 1fr));
