@@ -270,11 +270,48 @@ body.light-mode .contact-info-card p {
     color: rgba(44, 66, 130, 0.80);
 }
 
+body.light-mode .hero-pill {
+    background: rgba(166, 188, 255, 0.24);
+    border-color: rgba(100, 124, 214, 0.42);
+    color: #2d488f;
+}
+
+body.light-mode .hero-eyebrow {
+    color: #286ac2;
+}
+
+body.light-mode .hero-name {
+    color: #2a6bc0;
+}
+
+body.light-mode .hero-profile-portrait {
+    background: linear-gradient(180deg, rgba(219, 236, 255, 0.84), rgba(199, 222, 255, 0.92));
+    border-color: rgba(110, 141, 227, 0.35);
+    color: rgba(43, 115, 188, 0.5);
+    box-shadow: 0 18px 34px rgba(112, 139, 216, 0.24);
+}
+
+body.light-mode .hero-profile-meta {
+    background: rgba(245, 250, 255, 0.92);
+    border-color: rgba(110, 141, 227, 0.34);
+}
+
+body.light-mode .hero-profile-meta strong {
+    color: #20458f;
+}
+
+body.light-mode .hero-profile-meta span {
+    color: rgba(52, 83, 155, 0.72);
+}
+
 /* HERO */
 .hero {
     position: relative;
-    padding: 90px 0 60px;
+    min-height: calc(100vh - 72px);
+    padding: 96px 0 60px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 .hero-bg {
     position: absolute;
@@ -315,32 +352,47 @@ body.light-mode .contact-info-card p {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1.35fr 0.95fr;
+    gap: 40px;
     align-items: center;
 }
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.05rem;
+    border-radius: 999px;
+    border: 1px solid rgba(102, 229, 255, 0.24);
+    background: rgba(14, 48, 84, 0.34);
+    color: rgba(191, 226, 255, 0.84);
+    font-size: 0.84rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
 .hero-eyebrow {
-    display: inline-block;
+    display: block;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.75);
-    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    color: #1ecbff;
+    font-size: 0.92rem;
+    font-weight: 800;
 }
 .hero-title {
-    font-size: clamp(3rem, 5vw, 5rem);
-    line-height: 1.02;
+    font-size: clamp(3.2rem, 6vw, 6rem);
+    line-height: 0.98;
     letter-spacing: -0.05em;
     margin: 0 0 1rem;
+    text-transform: uppercase;
 }
 .hero-name {
-    color: var(--accent);
+    color: #15c7ff;
+    display: block;
 }
 .hero-text {
     max-width: 680px;
-    margin-bottom: 1.8rem;
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.82);
+    margin-bottom: 1.5rem;
+    font-size: 1.08rem;
+    color: rgba(224,236,255,0.82);
     line-height: 1.8;
 }
 .hero-actions {
@@ -364,6 +416,56 @@ body.light-mode .contact-info-card p {
 .hero-cards {
     display: grid;
     gap: 1rem;
+}
+.hero-profile {
+    width: min(360px, 100%);
+    justify-self: center;
+}
+
+.hero-profile-portrait {
+    min-height: 330px;
+    border-radius: 24px;
+    border: 1px solid rgba(64, 202, 255, 0.28);
+    background: linear-gradient(180deg, rgba(11, 43, 73, 0.35), rgba(4, 21, 42, 0.78));
+    display: grid;
+    place-items: center;
+    color: rgba(27, 185, 245, 0.36);
+    font-size: 4rem;
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.38), 0 0 24px rgba(43, 194, 255, 0.16);
+}
+
+.hero-profile-meta {
+    margin-top: -34px;
+    margin-inline: auto;
+    width: calc(100% - 34px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 1rem 0.8rem;
+    border-radius: 16px;
+    border: 1px solid rgba(72, 201, 255, 0.25);
+    background: rgba(11, 21, 56, 0.90);
+    backdrop-filter: blur(10px);
+}
+
+.hero-profile-meta div {
+    text-align: center;
+}
+
+.hero-profile-meta strong {
+    display: block;
+    font-size: 1.95rem;
+    line-height: 1.05;
+    color: #f1f6ff;
+}
+
+.hero-profile-meta span {
+    display: block;
+    margin-top: 0.15rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    color: rgba(173, 199, 235, 0.7);
 }
 .hero-card {
     padding: 1.6rem;
@@ -1167,6 +1269,16 @@ body.light-mode .contact-info-card p {
         max-width: 100%;
     }
 
+    .hero {
+        min-height: auto;
+        padding-top: 88px;
+    }
+
+    .hero-profile {
+        width: min(420px, 100%);
+        justify-self: start;
+    }
+
     .journey-timeline {
         max-width: 100%;
         padding-left: 1.9rem;
@@ -1253,6 +1365,18 @@ body.light-mode .contact-info-card p {
     }
     .hero-text {
         font-size: 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.4rem, 12vw, 3.7rem);
+    }
+
+    .hero-profile-portrait {
+        min-height: 230px;
+    }
+
+    .hero-profile-meta strong {
+        font-size: 1.45rem;
     }
     .projects-grid,
     .veille-grid,
