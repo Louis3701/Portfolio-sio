@@ -822,6 +822,10 @@ body.light-mode .hero-profile-meta span {
 .veille-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.stages-grid {
+    gap: 2rem;
+    margin-top: 0.9rem;
+}
 .skills-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -915,6 +919,10 @@ body.light-mode .hero-profile-meta span {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.stage-report-link {
+    margin-top: 1rem;
 }
 
 /* VEILLE RICH LAYOUT */
