@@ -3,17 +3,49 @@
 {% block title %}Veille Technologique{% endblock %}
 
 {% block content %}
-    <h1>Veille technologique</h1>
+<section class="section veille-page">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Veille technologique</span>
+            <h1 class="section-title">Ma veille active</h1>
+            <p class="section-text">Une presentation claire des sujets que je suis, des enjeux et des retombees concretes.</p>
+        </div>
 
-      {{ page.content }}
+        <article class="veille-article-card reveal">
+            {{ page.content }}
+        </article>
 
-    <ul class="list-group">
-    {% for article in articles %}
-        <li class="list-group-item">
-            <h5><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h5>
-            <p><small>{{ article.date.strftime('%d/%m/%Y') }} | Tags : {{ article.tags|join(', ') }}</small></p>
-            <p>{{ article.summary }}</p>
-        </li>
-    {% endfor %}
-    </ul>
+        <div class="veille-two-col reveal">
+            <article class="veille-article-card">
+                <h3>Avantages</h3>
+                <ul class="veille-bullets">
+                    <li>Veille continue sur des technologies a fort impact metier.</li>
+                    <li>Mise a jour reguliere des sources et des tendances.</li>
+                    <li>Vision synthetique utile pour des decisions de projet.</li>
+                </ul>
+            </article>
+            <article class="veille-article-card">
+                <h3>Inconvenients / limites</h3>
+                <ul class="veille-bullets">
+                    <li>Le rythme des innovations rend certaines infos vite obsoletes.</li>
+                    <li>Les annonces marketing peuvent exagerer les performances reelles.</li>
+                    <li>La validation de certaines donnees demande du croisement de sources.</li>
+                </ul>
+            </article>
+        </div>
+
+        <article class="veille-article-card reveal veille-feed-card">
+            <h3>Articles de veille publies</h3>
+            <ul class="veille-feed-list">
+            {% for article in articles %}
+                <li>
+                    <h5><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h5>
+                    <p><small>{{ article.date.strftime('%d/%m/%Y') }} | Tags : {{ article.tags|join(', ') }}</small></p>
+                    <p>{{ article.summary }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        </article>
+    </div>
+</section>
 {% endblock %}

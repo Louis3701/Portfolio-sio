@@ -1105,6 +1105,68 @@ body.light-mode .hero-profile-meta span {
     line-height: 1.55;
 }
 
+/* VEILLE PAGE (ma-veille.html) */
+.veille-page .section-header {
+    margin-bottom: 1.25rem;
+}
+
+.veille-page .section-title {
+    max-width: 900px;
+}
+
+.veille-page .section-text {
+    max-width: 900px;
+}
+
+.veille-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.veille-feed-card {
+    margin-top: 1rem;
+}
+
+.veille-feed-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.veille-feed-list li {
+    padding: 1rem;
+    border-radius: 14px;
+    background: rgba(90, 50, 200, 0.12);
+    border: 1px solid rgba(130, 85, 255, 0.24);
+}
+
+.veille-feed-list h5 {
+    margin: 0 0 0.3rem;
+    font-size: 1.02rem;
+}
+
+.veille-feed-list h5 a {
+    color: rgba(222, 236, 255, 0.96);
+}
+
+.veille-feed-list h5 a:hover {
+    color: #8be7ff;
+}
+
+.veille-feed-list small {
+    color: rgba(176, 194, 232, 0.72);
+}
+
+.veille-feed-list p {
+    margin: 0.35rem 0 0;
+    color: rgba(214, 226, 252, 0.82);
+    line-height: 1.6;
+}
+
 /* SKILLS */
 .skill-card {
     min-height: 160px;
@@ -1330,6 +1392,10 @@ body.light-mode .hero-profile-meta span {
     .veille-media-bottom,
     .veille-media-side {
         max-width: 100%;
+    }
+
+    .veille-two-col {
+        grid-template-columns: 1fr;
     }
 
     .hero {

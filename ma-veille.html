@@ -7,17 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veille Technologique</title>
     
-    <link rel="icon" type="image/png" sizes="16x16" href="./theme/logo/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./theme/logo/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="./theme/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="./theme/logo/favicon-48x48.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./theme/logo/favicon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./theme/logo/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="./theme/logo/favicon-512x512.png">
     <link rel="shortcut icon" href="./theme/logo/favicon.ico">
     <link rel="stylesheet" href="./theme/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./theme/vendor/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./theme/vendor/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="./theme/css/custom.css">
+    <link rel="stylesheet" href="./theme/css/home.css">
 </head>
 
 <body class="m-0 p-0 ">
@@ -73,51 +69,83 @@
     </div>
 
     <main class="page-wrapper min-vh-100">
-    <h1>Veille technologique</h1>
+    <section class="section veille-page">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Veille technologique</span>
+                <h1 class="section-title">Ma veille active</h1>
+                <p class="section-text">Une presentation claire des sujets que je suis, des enjeux et des retombees concretes.</p>
+            </div>
 
-      <p>Bienvenue sur ma page de veille technologique.</p>
-<p>Pendant mon BTS SIO, j'ai suivi et analysé plusieurs tendances clés en IA, cybersécurité et nouvelles technologies. Voici ma veille active (issues de mes recherches et de mes lectures de terrain) :</p>
-<ul>
-<li><strong>Choose France 2025</strong> : financement de 20 milliards d’euros pour des projets IA et deeptech en France, comme suivi du sommet du 19 mai 2025.</li>
-<li><strong>Nano Banana (Google)</strong> : nouveau modèle de retouche d’images intégré à Gemini, avec focus sur l’expérience visuelle et la création instantanée.</li>
-<li><strong>Veo 3 (Google)</strong> : disponibilité du modèle de génération vidéo en France et amélioration de l’audio/vidéo pour production de contenu.</li>
-<li><strong>GPT-5 (OpenAI)</strong> : lancement de la version majeure avec impacts sur assistants, automatisation et traitement du langage.</li>
-<li><strong>Flow + Veo 3 (Google)</strong> : ajout de synthèse vocale sur séquences d’images, évolution vers des workflows vidéo+voix.</li>
-</ul>
-<p>Ces articles sont regroupés dans mon blog de veille, et je les mets régulièrement à jour avec des résumés, liens sources et pistes de projet.</p>
+            <article class="veille-article-card reveal">
+                <p>Bienvenue sur ma page de veille technologique.</p>
+                <p>Pendant mon BTS SIO, j'ai suivi et analysé plusieurs tendances clés en IA, cybersécurité et nouvelles technologies. Voici ma veille active (issues de mes recherches et de mes lectures de terrain) :</p>
+                <ul class="veille-bullets">
+                    <li><strong>Choose France 2025</strong> : financement de 20 milliards d’euros pour des projets IA et deeptech en France, comme suivi du sommet du 19 mai 2025.</li>
+                    <li><strong>Nano Banana (Google)</strong> : nouveau modèle de retouche d’images intégré à Gemini, avec focus sur l’expérience visuelle et la création instantanée.</li>
+                    <li><strong>Veo 3 (Google)</strong> : disponibilité du modèle de génération vidéo en France et amélioration de l’audio/vidéo pour production de contenu.</li>
+                    <li><strong>GPT-5 (OpenAI)</strong> : lancement de la version majeure avec impacts sur assistants, automatisation et traitement du langage.</li>
+                    <li><strong>Flow + Veo 3 (Google)</strong> : ajout de synthèse vocale sur séquences d’images, évolution vers des workflows vidéo+voix.</li>
+                </ul>
+                <p>Ces articles sont regroupés dans mon blog de veille, et je les mets régulièrement à jour avec des résumés, liens sources et pistes de projet.</p>
+            </article>
 
-    <ul class="list-group">
-        <li class="list-group-item">
-            <h5><a href="./veille/lancement-de-gpt-5.html">Lancement de GPT-5</a></h5>
-            <p><small>01/09/2025 | Tags : intelligence-artificielle, nlp</small></p>
-            <p><p>OpenAI annonce la sortie de GPT-5.</p></p>
-        </li>
-        <li class="list-group-item">
-            <h5><a href="./veille/nouvelle-ia-de-google-nano-banana.html">Nouvelle IA de Google : Nano-Banana</a></h5>
-            <p><small>27/08/2025 | Tags : image, Google, Nano-Banana, Gemini</small></p>
-            <p><p>Nano-Banana, le modèle de retouche d'images signé Google qui fait fureur</p></p>
-        </li>
-        <li class="list-group-item">
-            <h5><a href="./veille/openai-sort-chatgpt-5.html">OpenAI sort ChatGPT-5</a></h5>
-            <p><small>07/08/2025 | Tags : LLM, ChatGPT, ChatGPT5, OpenAI</small></p>
-            <p><p>Aujourd'hui la nouvelle version de ChatGTP est disponible pour le public.</p></p>
-        </li>
-        <li class="list-group-item">
-            <h5><a href="./veille/synthese-vocale-avec-flow-veo-3.html">Synthèse vocale avec Flow & Veo 3</a></h5>
-            <p><small>11/07/2025 | Tags : Veo, Google, Flow</small></p>
-            <p><p>Google étoffe Flow avec la synthèse vocale sur images dans Veo 3</p></p>
-        </li>
-        <li class="list-group-item">
-            <h5><a href="./veille/veo-3-est-disponible-en-france.html">Veo 3 est disponible en France</a></h5>
-            <p><small>04/07/2025 | Tags : Google, Veo, vidéo</small></p>
-            <p><p>Google met à disposition sont modèle de génération <strong>Veo 3</strong> pour la France.</p></p>
-        </li>
-        <li class="list-group-item">
-            <h5><a href="./veille/evenement-choose-france.html">Evènement Choose France</a></h5>
-            <p><small>19/05/2025 | Tags : Choose France, investissement</small></p>
-            <p><p>LE 8e sommet Choose France s'est déroulé</p></p>
-        </li>
-    </ul>
+            <div class="veille-two-col reveal">
+                <article class="veille-article-card">
+                    <h3>Avantages</h3>
+                    <ul class="veille-bullets">
+                        <li>Vision claire des tendances IA et cyber utiles pour mes projets.</li>
+                        <li>Mise a jour reguliere avec des cas concrets et des sources verifiees.</li>
+                        <li>Aide a orienter mes choix techniques et mon positionnement pro.</li>
+                    </ul>
+                </article>
+                <article class="veille-article-card">
+                    <h3>Inconvenients / limites</h3>
+                    <ul class="veille-bullets">
+                        <li>Certaines annonces evoluent vite et deviennent rapidement obsoletes.</li>
+                        <li>Les effets d'annonce marketing ne refletent pas toujours la realite terrain.</li>
+                        <li>Le croisement des sources prend du temps pour rester fiable.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <article class="veille-article-card reveal veille-feed-card">
+                <h3>Articles de veille publies</h3>
+                <ul class="veille-feed-list">
+                    <li>
+                        <h5><a href="./veille/lancement-de-gpt-5.html">Lancement de GPT-5</a></h5>
+                        <p><small>01/09/2025 | Tags : intelligence-artificielle, nlp</small></p>
+                        <p>OpenAI annonce la sortie de GPT-5.</p>
+                    </li>
+                    <li>
+                        <h5><a href="./veille/nouvelle-ia-de-google-nano-banana.html">Nouvelle IA de Google : Nano-Banana</a></h5>
+                        <p><small>27/08/2025 | Tags : image, Google, Nano-Banana, Gemini</small></p>
+                        <p>Nano-Banana, le modèle de retouche d'images signé Google qui fait fureur.</p>
+                    </li>
+                    <li>
+                        <h5><a href="./veille/openai-sort-chatgpt-5.html">OpenAI sort ChatGPT-5</a></h5>
+                        <p><small>07/08/2025 | Tags : LLM, ChatGPT, ChatGPT5, OpenAI</small></p>
+                        <p>Aujourd'hui la nouvelle version de ChatGPT est disponible pour le public.</p>
+                    </li>
+                    <li>
+                        <h5><a href="./veille/synthese-vocale-avec-flow-veo-3.html">Synthèse vocale avec Flow & Veo 3</a></h5>
+                        <p><small>11/07/2025 | Tags : Veo, Google, Flow</small></p>
+                        <p>Google étoffe Flow avec la synthèse vocale sur images dans Veo 3.</p>
+                    </li>
+                    <li>
+                        <h5><a href="./veille/veo-3-est-disponible-en-france.html">Veo 3 est disponible en France</a></h5>
+                        <p><small>04/07/2025 | Tags : Google, Veo, vidéo</small></p>
+                        <p>Google met à disposition son modèle de génération <strong>Veo 3</strong> pour la France.</p>
+                    </li>
+                    <li>
+                        <h5><a href="./veille/evenement-choose-france.html">Evènement Choose France</a></h5>
+                        <p><small>19/05/2025 | Tags : Choose France, investissement</small></p>
+                        <p>Le 8e sommet Choose France s'est déroulé.</p>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </section>
     </main>
 
 
