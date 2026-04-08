@@ -77,6 +77,29 @@ button, .btn {
     border-bottom: 1px solid var(--nav-border);
     box-shadow: 0 10px 34px rgba(42, 20, 100, 0.24), inset 0 -1px 0 rgba(188, 145, 255, 0.08);
 }
+
+.navbar-brand-lcn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-grid;
+    place-items: center;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(193, 157, 255, 0.52);
+    background: linear-gradient(145deg, rgba(118, 72, 255, 0.40), rgba(45, 22, 112, 0.72));
+    color: rgba(248, 242, 255, 0.98) !important;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    box-shadow: 0 8px 18px rgba(67, 36, 170, 0.32);
+}
+
+.navbar-brand-lcn:hover {
+    color: #ffffff !important;
+    border-color: rgba(226, 198, 255, 0.72);
+    box-shadow: 0 10px 22px rgba(83, 50, 190, 0.40);
+}
 .nav-link {
     color: var(--nav-link) !important;
     font-weight: 600;
@@ -148,6 +171,13 @@ body.light-mode .navbar.scrolled {
     background: rgba(243, 247, 255, 0.90) !important;
     border-bottom-color: rgba(121, 135, 221, 0.28);
     box-shadow: 0 10px 24px rgba(137, 153, 226, 0.22), inset 0 -1px 0 rgba(255, 255, 255, 0.42);
+}
+
+body.light-mode .navbar-brand-lcn {
+    border-color: rgba(112, 133, 225, 0.50);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(222, 232, 255, 0.96));
+    color: #334a98 !important;
+    box-shadow: 0 8px 16px rgba(114, 136, 220, 0.26);
 }
 
 body.light-mode .nav-link {
