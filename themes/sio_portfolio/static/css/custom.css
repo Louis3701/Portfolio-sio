@@ -999,3 +999,141 @@ button, .btn {
         justify-content: center;
     }
 }
+
+/* ─── BTS SIO SECTION ─────────────────────────────────────── */
+.bts-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.bts-option-card {
+    background: rgba(30,15,70,0.50);
+    border: 1px solid rgba(140,90,255,0.20);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+}
+
+.bts-option-card.bts-option-active {
+    border-color: rgba(140,90,255,0.55);
+    box-shadow: 0 0 32px rgba(120,70,255,0.18);
+}
+
+.bts-option-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+    background: linear-gradient(135deg, #b898ff, #7c5fff);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+.bts-option-card h3 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #b898ff, #7c5fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.25rem;
+}
+
+.bts-option-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.bts-option-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bts-option-list li {
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.bts-option-list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.bts-modules {
+    margin-top: 2.5rem;
+}
+
+.bts-modules-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.bts-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.bts-module-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(30,15,70,0.35);
+    border: 1px solid rgba(140,90,255,0.12);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+
+.bts-module-code {
+    background: linear-gradient(135deg, #b898ff, #7c5fff);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.bts-module-item strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.bts-module-item p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .bts-options-grid {
+        grid-template-columns: 1fr;
+    }
+}

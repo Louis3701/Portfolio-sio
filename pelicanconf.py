@@ -65,6 +65,7 @@ INDEX_SAVE_AS = 'index.html'
 # ((nom, url, icone, (nom, url, icone),description, couleur)...)
 MENUITEMS = (
     ("A propos",      "/#about",    None, None, "", None),
+    ("Le BTS SIO",   "/#bts-sio",  None, None, "", None),
     ("Parcours",      "/#parcours", None, None, "", None),
     ("Realisations",  "/#projects", None, None, "", None),
     ("Experiences",   "/#stages",   None, None, "", None),
