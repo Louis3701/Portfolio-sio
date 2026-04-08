@@ -1,7 +1,9 @@
 Title: GeoWorld
-Summary: Projet scolaire de cartographie interactive pour la visualisation de données territoriales.
+Summary: Application web geopolitiques avec filtrage dynamique par continent.
 
-GeoWorld est une application de suivi de territoire qui permet de consulter des cartes dynamiques, d’afficher des zones d’intérêt et de filtrer les couches d’information.
+Application web de consultation de donnees geopolitiques avec filtrage dynamique par continent.
+
+Refonte d'une application existante de donnees geographiques. Developpement de requetes SQL dynamiques pour le filtrage par continent, affichage des donnees pays (population, superficie, capitales) avec une interface responsive.
 
 - Gestion des couches géographiques
 - Filtres de recherches cartographiques
