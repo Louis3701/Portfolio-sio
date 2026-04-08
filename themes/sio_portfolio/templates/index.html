@@ -1,64 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Accueil{% endblock %}
 {% block body_class %}home{% endblock %}
-{% block site_stylesheet %}
-<link rel="stylesheet" href="{{ SITEURL }}/theme/css/home.css">
-<style>
-#bts-sio .bts-options-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
-    gap: 1.4rem !important;
-    align-items: stretch !important;
-}
-#bts-sio .bts-option-card {
-    display: flex !important;
-    flex-direction: column !important;
-    background: linear-gradient(160deg, rgba(33, 14, 77, 0.94), rgba(16, 8, 44, 0.98)) !important;
-    border: 1px solid rgba(145, 106, 255, 0.44) !important;
-    border-radius: 18px !important;
-    padding: 2rem 1.6rem 1.5rem !important;
-    box-shadow: 0 0 0 1px rgba(145, 106, 255, 0.16), 0 14px 34px rgba(12, 5, 36, 0.62) !important;
-}
-#bts-sio .bts-option-card.bts-option-active {
-    border-color: rgba(198, 164, 255, 0.88) !important;
-    box-shadow: 0 0 0 1px rgba(198, 164, 255, 0.36), 0 0 34px rgba(141, 104, 255, 0.56), 0 18px 42px rgba(12, 5, 36, 0.72) !important;
-    transform: translateY(-3px) !important;
-}
-#bts-sio .bts-option-badge {
-    background: linear-gradient(135deg, #d2bbff, #7e61ff) !important;
-    color: #fff !important;
-    box-shadow: 0 0 14px rgba(126, 97, 255, 0.66) !important;
-}
-#bts-sio .bts-option-list {
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-#bts-sio .bts-option-list li {
-    list-style: none !important;
-    margin: 0 0 0.55rem 0 !important;
-    padding: 0.52rem 0.75rem 0.52rem 1.9rem !important;
-    border: 1px solid rgba(124, 93, 230, 0.32) !important;
-    border-radius: 9px !important;
-    background: rgba(96, 66, 198, 0.18) !important;
-    color: rgba(239, 231, 255, 0.94) !important;
-    position: relative !important;
-}
-#bts-sio .bts-option-list li::before {
-    content: ">" !important;
-    position: absolute !important;
-    left: 0.7rem !important;
-    top: 0.47rem !important;
-    color: #bf9aff !important;
-    font-weight: 900 !important;
-}
-@media (max-width: 980px) {
-    #bts-sio .bts-options-grid {
-        grid-template-columns: 1fr !important;
-    }
-}
-</style>
-{% endblock %}
 {% block content %}
 <section id="hero" class="hero">
     <div class="hero-bg">
@@ -464,22 +406,54 @@
     <div class="container">
         <div class="section-header reveal">
             <span class="section-label">Contact</span>
-            <h2 class="section-title">Travaillons ensemble</h2>
+            <h2 class="section-title">Contactez-moi</h2>
         </div>
-        <div class="contact-grid">
-            <div class="contact-card reveal">
-                <h3>Envie d’un stage ou d’un projet ?</h3>
-                <p>Je suis disponible pour travailler sur des projets web concrets en développement front-end, back-end et mobile.</p>
-                <a href="mailto:louis@example.com" class="btn btn-primary">Me contacter</a>
-            </div>
-            <div class="contact-card reveal">
-                <h3>Documents</h3>
-                <p>CV et rapports de stage disponibles sur simple demande.</p>
-                <div class="doc-links">
-                    <a href="{{ SITEURL }}/theme/docs/Rapport-de-stage.pdf" class="doc-link">Rapport SIO1</a>
-                    <a href="{{ SITEURL }}/theme/docs/rapport-de-stage-2-année.pdf" class="doc-link">Rapport SIO2</a>
-                    <a href="{{ SITEURL }}/theme/docs/veille_technologique.pdf" class="doc-link">Veille techno</a>
+        <div class="contact-panel reveal">
+            <div class="contact-hero-card">
+                <div class="contact-hero-identity">
+                    <div class="contact-avatar"><i class="bi bi-person-fill"></i></div>
+                    <div>
+                        <span class="contact-overline">Etudiant en BTS SIO SLAM</span>
+                        <h3>Louis Caron-Nagel</h3>
+                        <p>N'hesite pas a me contacter pour echanger sur mon parcours, mes projets et mes stages.</p>
+                    </div>
                 </div>
+                <div class="contact-hero-actions">
+                    <a href="mailto:louis.caron16@gmail.com" class="btn btn-primary">M'envoyer un mail</a>
+                    <a href="#hero" class="btn btn-outline">Retour accueil</a>
+                </div>
+            </div>
+
+            <div class="contact-info-grid">
+                <article class="contact-info-card">
+                    <span class="contact-info-icon"><i class="bi bi-envelope"></i></span>
+                    <h4>Email</h4>
+                    <a href="mailto:louis.caron16@gmail.com">louis.caron16@gmail.com</a>
+                </article>
+
+                <article class="contact-info-card">
+                    <span class="contact-info-icon"><i class="bi bi-github"></i></span>
+                    <h4>GitHub</h4>
+                    <a href="https://github.com/Louis3701" target="_blank" rel="noopener">github.com/Louis3701</a>
+                </article>
+
+                <article class="contact-info-card">
+                    <span class="contact-info-icon"><i class="bi bi-linkedin"></i></span>
+                    <h4>LinkedIn</h4>
+                    <p>Non renseigne pour le moment</p>
+                </article>
+
+                <article class="contact-info-card">
+                    <span class="contact-info-icon"><i class="bi bi-telephone"></i></span>
+                    <h4>Telephone</h4>
+                    <a href="tel:+33749102808">07 49 10 28 08</a>
+                </article>
+
+                <article class="contact-info-card">
+                    <span class="contact-info-icon"><i class="bi bi-geo-alt"></i></span>
+                    <h4>Localisation</h4>
+                    <p>Nangis 77370</p>
+                </article>
             </div>
         </div>
     </div>
