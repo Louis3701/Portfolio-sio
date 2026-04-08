@@ -175,6 +175,72 @@ body.light-mode .hero-card p {
     color: rgba(36, 50, 103, 0.82);
 }
 
+body.light-mode .hero-card,
+body.light-mode .project-card,
+body.light-mode .veille-card,
+body.light-mode .skill-card,
+body.light-mode .contact-card,
+body.light-mode .timeline-card,
+body.light-mode .bts-option-card,
+body.light-mode .bts-module-item,
+body.light-mode .veille-article-card {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: rgba(122, 138, 225, 0.28);
+    box-shadow: 0 14px 30px rgba(120, 136, 214, 0.16);
+}
+
+body.light-mode .section-dark {
+    background: rgba(168, 183, 255, 0.14);
+    border-top-color: rgba(121, 135, 221, 0.22);
+    border-bottom-color: rgba(121, 135, 221, 0.22);
+}
+
+body.light-mode .section-title,
+body.light-mode .hero-title,
+body.light-mode .project-card h3,
+body.light-mode .veille-card h3,
+body.light-mode .skill-card h3,
+body.light-mode .contact-card h3,
+body.light-mode .timeline-card h3,
+body.light-mode .bts-option-card h3,
+body.light-mode .bts-module-item strong {
+    color: #1e2d70;
+}
+
+body.light-mode .project-card p,
+body.light-mode .veille-card p,
+body.light-mode .contact-card p,
+body.light-mode .timeline-card p,
+body.light-mode .bts-option-subtitle,
+body.light-mode .bts-module-item p,
+body.light-mode .veille-source-note,
+body.light-mode .skill-percent,
+body.light-mode .project-category {
+    color: rgba(33, 48, 106, 0.74);
+}
+
+body.light-mode .hero-stack span,
+body.light-mode .badge-list span,
+body.light-mode .project-tags span,
+body.light-mode .doc-link,
+body.light-mode .bts-option-list li,
+body.light-mode .veille-kpi-item,
+body.light-mode .veille-case-card {
+    background: rgba(136, 153, 236, 0.12);
+    border-color: rgba(116, 134, 222, 0.30);
+    color: rgba(32, 47, 106, 0.86);
+}
+
+body.light-mode .btn-outline {
+    border-color: rgba(104, 124, 221, 0.45);
+    color: #253878;
+    background: rgba(255, 255, 255, 0.52);
+}
+
+body.light-mode .btn-link {
+    color: #2b3f85;
+}
+
 /* HERO */
 .hero {
     position: relative;
