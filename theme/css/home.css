@@ -69,6 +69,9 @@ button, .btn {
 /* NAVBAR */
 .navbar-wrapper,
 .container-fluid.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1100;
     background: var(--nav-bg) !important;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--nav-border);
